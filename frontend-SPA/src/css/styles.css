@@ -1,1 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
+header {
+    font-size: 3em;
+border: 1px solid black;
+}
+.login {
+    margin-top: 10em;
+    border: 1px solid red;
+}
