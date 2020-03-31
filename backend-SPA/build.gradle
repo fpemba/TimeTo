@@ -4,6 +4,9 @@ plugins {
 	id 'java'
 }
 
+apply plugin: 'java'
+apply plugin: 'application'
+
 group = 'com.TimeTo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -14,6 +17,11 @@ configurations {
 		extendsFrom developmentOnly
 	}
 }
+
+mainClassName = 'CalendarQuickstart'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0'
 
 repositories {
 	mavenCentral()
@@ -30,6 +38,9 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	compile 'com.google.api-client:google-api-client:1.23.0'
+	compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+	compile 'com.google.apis:google-api-services-calendar:v3-rev305-1.23.0'
 }
 
 test {
