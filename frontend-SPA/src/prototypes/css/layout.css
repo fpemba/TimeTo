@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-template-rows: 10% 90% 10%;
+    height: 95vh;
+    width: 95vw;
+}
+header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+main {
+    grid-row-start: 2;
+    grid-row-end: 3; 
+}
+footer {
+    grid-row-start: 3;
+    grid-row-end: 4;   
+}
