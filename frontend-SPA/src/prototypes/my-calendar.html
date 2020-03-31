@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <title>My Calendar</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="css/Hamburger.css">
 </head>
 <body>
+    <div class="container">
     <header>My Calendar</header>
-    <nav class="hamburger-button"><p>hamburger button</p>
-       <ul class="hamburger-button-content">
-        <li><button>Invite</button></li>
-        <li><button>Compare</button></li>
-        <li><button>Create Group</button></li>
-       <li><button>Import Calendar</button></li>
-        <li><button>View Friends</button></li>
-    </ul>
-    <img src="images/left-arrow.png" width="100" height="100">
-    <span>Current Month</span>
-    <img src="images/right-arrow.png" width="100" height="100">
-    <div class="calendar"><img src="./images/index.png" width="400" height="400"></div>
-    </nav>
 
+  
+<nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+      
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <ul id="menu">
+        <a href="#"><li>Invite</li></a>
+        <a href="./compare-page.html"><li>Compare</li></a>
+        <a href="./create-group.html"><li>Manage Groups</li></a>
+        <a href="#"><li>Import Calendar</li></a>
+        <a href="#"><li>View Friends</li></a>
+      </ul>
+    </div>
+  </nav>
+   
+    <main>
+        <div class="monthHeader">
+    <img src="./css/images/left-arrow.png" width="100" height="100">
+    <span class="currentMonth">Month</span>
+    <img src="./css/images/right-arrow.png" width="100" height="100">
+        </div>
+    <div class="calendar"><img src="./css/images/index.png" width="600" height="400"></div>
+</main>
     <footer>Copyright TimeTo 2020</footer>
-
+</div>
 </body>
 </html>
