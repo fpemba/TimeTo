@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Groups</title>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Hamburger.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Groups</title>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/Hamburger.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div class="container">
-    <header>Manage Groups</header>
-    <nav role="navigation">
-        <div id="menuToggle">
-    
-          <input type="checkbox" />
-          
-          <span></span>
-          <span></span>
-          <span></span>
-          
-          <ul id="menu">
-            <a href="#"><li>Invite</li></a>
-            <a href="#"><li>Compare</li></a>
-            <a href="#"><li>Manage Groups</li></a>
-            <a href="#"><li>Import Calendar</li></a>
-            <a href="#"><li>View Friends</li></a>
-          </ul>
-        </div>
-      </nav>
-       <main>
-    <section class="create-group-body">
-        <br>
-            <button>add friends</button><br>
-            <button>display groups</button><br>
-            <button>create group name</button><br>
-            <button>show group schedule</button><br>
 
+<body class="group-container">
+  
+    <header class="groups-header">Manage Groups</header>
+    <nav role="navigation" class="groups-hamburger">
+      <div id="menuToggle">
+
+        <input type="checkbox" />
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a href="#">
+            <li>Invite</li>
+          </a>
+          <a href="#">
+            <li>Compare</li>
+          </a>
+          <a href="#">
+            <li>Manage Groups</li>
+          </a>
+          <a href="#">
+            <li>Import Calendar</li>
+          </a>
+          <a href="#">
+            <li>View Friends</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="current-groups-body">
+      <button>Create New Group</button><br>
+      <h3 class="group-titles">Current Groups</h3>
+      Groups you're already in will be displayed here.
     </section>
-</main>
-    <footer>Copyright TimeTo 2020</footer>
-
-</div>
+    <section class="group-schedule">
+      <h3 class="group-titles">Group Schedule</h3>
+      After clicking a group, the group's schedule will be displayed here!
+    </section>
+  
+  <footer>Copyright TimeTo 2020</footer>
 </body>
+
 </html>
