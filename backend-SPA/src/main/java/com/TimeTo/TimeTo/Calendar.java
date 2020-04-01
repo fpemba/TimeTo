@@ -2,8 +2,8 @@ package com.TimeTo.TimeTo;
 
 
 import javax.persistence.*;
-import java.time.Month;
 import java.time.Year;
+import java.util.Collection;
 
 @Entity
 public class Calendar {
@@ -11,7 +11,10 @@ public class Calendar {
     @Id
     @GeneratedValue
     private Long id;
-    private Month month;
+
+    @OneToMany(mappedBy = "calendar")
+    private Collection<Month> months;
+
     private Year year;
     @OneToOne
     private UserAccount userAccount;
@@ -20,14 +23,13 @@ public class Calendar {
 
     }
 
-    public Calendar(Month month, Day day, Year year, UserAccount userAccount) {
-        this.month = month;
+    public Calendar(Year year, UserAccount userAccount) {
         this.year = year;
         this.userAccount = userAccount;
     }
 
-    public Month getMonth() {
-        return month;
+    public Collection<Month> getMonths() {
+        return months;
     }
 
     public Year getYear() {
@@ -36,6 +38,10 @@ public class Calendar {
 
     public UserAccount getUserAccount() {
         return userAccount;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
 
