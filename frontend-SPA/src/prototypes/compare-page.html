@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/01727be7cf.js" crossorigin="anonymous"></script>
-    <title>Compare</title>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Hamburger.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>Compare with Friends</header>
-    <nav role="navigation">
-        <div id="menuToggle">
-    
-          <input type="checkbox" />
-          
-          <span></span>
-          <span></span>
-          <span></span>
-          
-          <ul id="menu">
-            <a href="#"><li>Invite</li></a>
-            <a href="#"><li>Compare</li></a>
-            <a href="#"><li>Manage Groups</li></a>
-            <a href="#"><li>Import Calendar</li></a>
-            <a href="#"><li>View Friends</li></a>
-          </ul>
-        </div>
-      </nav>
-       
-     <i class="fas fa-arrow-circle-left"></i>
-     <span>Current Month</span>
-     <i class="fas fa-arrow-right" id="arrow"></i>
-     <div class="calendar">
-        
-        <section class="friends-list">
-        <ul class="friends-list-list">
-            <li>friend 1</li>
-            <li>friend 2</li>
-            <li>friend 3</li>
-           </ul>
-        </section>
-           <img src="./css/images/index.png" width="200" height="200"><img src="./css/images/index.png" width="200" height="200"></div>
 
-    <footer>Copyright TimeTo 2020</footer>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/Hamburger.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="compare_container">
+  <header class="compare_header">
+    Compare with Friends
+  </header><br>
+  <h3 class="month">Current Month</h3>
+  <nav role="navigation" class="compare_nav">
+    <div id="menuToggle" class="compare_hamburger">
+
+      <input type="checkbox" />
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <a href="#">
+          <li>Invite</li>
+        </a>
+        <a href="#">
+          <li>Compare</li>
+        </a>
+        <a href="#">
+          <li>Manage Groups</li>
+        </a>
+        <a href="#">
+          <li>Import Calendar</li>
+        </a>
+        <a href="#">
+          <li>View Friends</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <img src="./css/images/index.png" class="my_calendar" width="200" height="200">
+  <img src="./css/images/index.png" class="friend_calendar" width="200" height="200">
+  <ul class="friends-list">
+    <h3>Your Friends</h3>
+    <li>friend 1</li>
+    <li>friend 2</li>
+    <li>friend 3</li>
+  </ul>
+  <footer>Copyright TimeTo 2020</footer>
 </body>
+
 </html>
