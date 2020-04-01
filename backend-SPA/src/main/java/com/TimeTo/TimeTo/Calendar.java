@@ -14,16 +14,16 @@ public class Calendar {
     private Month month;
     private Year year;
     @OneToOne
-    private User user;
+    private UserAccount userAccount;
 
     public Calendar() {
 
     }
 
-    public Calendar(Month month, Day day, Year year, User user) {
+    public Calendar(Month month, Day day, Year year, UserAccount userAccount) {
         this.month = month;
         this.year = year;
-        this.user = user;
+        this.userAccount = userAccount;
     }
 
     public Month getMonth() {
@@ -34,8 +34,8 @@ public class Calendar {
         return year;
     }
 
-    public User getUser() {
-        return user;
+    public UserAccount getUserAccount() {
+        return userAccount;
     }
 }
 

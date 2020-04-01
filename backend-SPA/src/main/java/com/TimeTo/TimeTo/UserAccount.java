@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class User {
+public class UserAccount {
 
     @Id
     @GeneratedValue
@@ -15,13 +15,13 @@ public class User {
 //    @OneToOne
 //    private FriendList friendList;
     @OneToMany
-    private Collection<Group> groups;
+    private Collection<Party> parties;
 
-    public User() {
+    public UserAccount() {
 
     }
 
-    public User(String firstName, String lastName, String userName) {
+    public UserAccount(String firstName, String lastName, String userName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -44,7 +44,7 @@ public class User {
 //        return friendList;
 //    }
 
-    public Collection<Group> getGroups() {
-        return groups;
+    public Collection<Party> getParties() {
+        return parties;
     }
 }

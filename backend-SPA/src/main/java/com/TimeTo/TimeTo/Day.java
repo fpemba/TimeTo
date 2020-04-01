@@ -13,7 +13,7 @@ public class Day {
     private Long id;
     @ManyToOne
     private Month month;
-    @ManyToMany
+    @OneToMany(mappedBy = "day")
     private Collection<Event> events;
 
     public Day(){
@@ -29,5 +29,9 @@ public class Day {
 
     public Collection<Event> getEvents() {
         return events;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
