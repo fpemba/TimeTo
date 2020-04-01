@@ -10,33 +10,35 @@ public class Event {
     @GeneratedValue
     private Long id;
     @ManyToMany
-    private Collection<User> users;
+    private Collection<UserAccount> userAccounts;
     @ManyToOne
-    private Group group;
-    @ManyToMany
-    private Collection<Day> day;
+    private Party party;
+    @ManyToOne
+    private Day day;
 
 
     public Event() {
 
     }
-    public Event(Collection<User> users, Group group,Collection<Day> day) {
-        this.users = users;
-        this.group = group;
+    public Event(Day day) {
         this.day = day;
     }
 
 
 
-    public Collection<User> getUsers() {
-        return users;
+    public Collection<UserAccount> getUserAccounts() {
+        return userAccounts;
     }
 
-    public Group getGroup() {
-        return group;
+    public Party getParty() {
+        return party;
     }
 
-    public Collection<Day> getDay() {
+    public Day getDay() {
         return day;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

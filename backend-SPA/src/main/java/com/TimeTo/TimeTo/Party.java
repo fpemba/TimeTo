@@ -4,31 +4,31 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Group {
+public class Party {
 
     @Id
     @GeneratedValue
     private Long id;
     private String groupName;
     @ManyToMany
-    private Collection<User> users;
-    @OneToMany(mappedBy = "group")
+    private Collection<UserAccount> userAccounts;
+    @OneToMany(mappedBy = "party")
     private Collection<Event> event;
 
-    public Group(){
+    public Party(){
 
     }
 
-    public Group(String groupName, Collection<User> users) {
+    public Party(String groupName, Collection<UserAccount> userAccounts) {
         this.groupName = groupName;
-        this.users = users;
+        this.userAccounts = userAccounts;
     }
 
     public String getGroupName() {
         return groupName;
     }
 
-    public Collection<User> getUsers() {
-        return users;
+    public Collection<UserAccount> getUserAccounts() {
+        return userAccounts;
     }
 }

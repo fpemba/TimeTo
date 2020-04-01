@@ -22,9 +22,8 @@ public class Month {
         return id;
     }
 
-    public Month(Calendar calendar, Collection<Day> days) {
+    public Month(Calendar calendar) {
         this.calendar = calendar;
-        this.days = days;
     }
 
     public Calendar getCalendar() {
