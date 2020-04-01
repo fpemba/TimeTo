@@ -4,7 +4,6 @@ body {
     box-sizing: border-box;
     text-align: center;
     background-color: rgba(46, 99, 146);
-
 }
 
 .home {
@@ -92,16 +91,18 @@ nav {
     text-align: center;
     grid-column-start: 2;
     grid-column-end: 4;
-
-
 }
 
-.month {
-    text-align: center;
+.month_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     grid-column-start: 2;
     grid-column-end: 4;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    height: 50px;
 }
 
 .compare_container {
@@ -116,8 +117,11 @@ nav {
     line-height: 3em;
     grid-column-start: 4;
     grid-column-end: 5;
-    margin-top: 2em;
-    height: 100vh;
+    /* margin-top: 2em; */
+    padding-right: 3em;
+    height: 25rem;
+    overflow-y: scroll;
+    
 }
 
 .friends-list h3 {
@@ -130,14 +134,14 @@ nav {
 }
 
 .my_calendar {
-    padding-top: 2em;
+    padding-top: 6em;
     grid-column-start: 2;
     grid-column-end: 3;
     justify-self: center;
 }
 
 .friend_calendar {
-    padding-top: 2em;
+    padding-top: 6em;
     grid-column-start: 3;
     grid-column-end: 4;
     justify-self: center;
@@ -148,4 +152,46 @@ footer {
     position: absolute;
     left: 5px;
     bottom: 5px;
+}
+
+.group-container{
+    display: grid;
+    grid-template-columns: 2fr 4fr 6fr;
+    grid-template-rows: 2fr 1fr 8fr;
+}
+
+.groups-header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+}
+
+.groups-hamburger{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.current-groups-body{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    color: white;
+}
+
+.group-schedule{
+    border-left: 1px solid white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4; 
+    color: white;
+}
+
+.group-titles{
+    color:white;
 }
