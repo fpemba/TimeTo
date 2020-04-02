@@ -11,6 +11,8 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class DayControllerTest {
     private DayRepository dayRepository;
@@ -46,5 +48,18 @@ public class DayControllerTest {
     public void retrieveDaysReturnsListOfDaysContainingMockDay(){
         Collection<Day> result = underTest.retrieveDays();
         assertThat(result).contains(testDay);
+    }
+
+//    @Test
+//    public void underTestIsWiredCorrectly() throws Exception{
+//        mockMvc.perform(get("/days/"))
+//                .andExpect(status().isOk());
+//    }
+
+    @Test
+   public void retrieveSingleDayReturnsASingleDay(){
+        Day result = underTest.retrieveSingleDay(1L);
+        verify(dayRepository).findById(1L);
+        assertThat(result).isEqualTo(testDay);
     }
 }
