@@ -8,6 +8,8 @@ import com.TimeTo.TimeTo.Repositories.MonthRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -17,6 +19,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DirtiesContext
 public class MonthControllerTest {
@@ -49,12 +52,12 @@ public class MonthControllerTest {
         assertThat(result).contains(testMonth);
     }
 
-//    @Test
-//    public void underTestIsWiredCorrectlyWithAnnotations() throws Exception{
-//        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
-//        mockMvc.perform(get("/months/"))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    public void underTestIsWiredCorrectlyWithAnnotations() throws Exception{
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
+        mockMvc.perform(get("/months/"))
+                .andExpect(status().isOk());
+    }
 
     @Test
     public void retrieveSingleMonthReturnsASingleMonth(){

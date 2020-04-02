@@ -20,6 +20,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DirtiesContext
 public class DayControllerTest {
@@ -58,11 +59,11 @@ public class DayControllerTest {
         assertThat(result).contains(testDay);
     }
 
-//    @Test
-//    public void underTestIsWiredCorrectly() throws Exception{
-//        mockMvc.perform(get("/days/"))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    public void underTestIsWiredCorrectly() throws Exception{
+        mockMvc.perform(get("/days/"))
+                .andExpect(status().isOk());
+    }
 
     @Test
    public void retrieveSingleDayReturnsASingleDay(){
