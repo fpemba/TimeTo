@@ -5,9 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 public class DayControllerTest {
@@ -38,5 +40,11 @@ public class DayControllerTest {
     public void retrieveDaysReturnsListOfDays(){
         underTest.retrieveDays();
         verify(dayRepository).findAll();
+    }
+
+    @Test
+    public void retrieveDaysReturnsListOfDaysContainingMockDay(){
+        Collection<Day> result = underTest.retrieveDays();
+        assertThat(result).contains(testDay);
     }
 }
