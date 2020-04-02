@@ -15,6 +15,7 @@ public class Day {
     private Month month;
     @OneToMany(mappedBy = "day")
     private Collection<Event> events;
+    private int dayNumber;
 
     public Day(){
 

@@ -21,7 +21,31 @@ public class JpaWiringTest {
     private UserRepository userRepository;
     @Autowired
     private TestEntityManager entityManager;
+    @Autowired
+    private AccountRepository accountRepository;
+//    @Autowired
+//    private PersonRepository personRepository;
 
+    @Test
+    public void accountShouldHaveUserAndAFriendsList(){
+        UserAccount testUser = new UserAccount("Tom", "Henderson", "Henderson81");
+        userRepository.save(testUser);
+
+        Account testAccount = new Account(testUser);
+        accountRepository.save(testAccount);
+
+        UserAccount testFriend = new UserAccount("John", "Sad", "SadJohn");
+        userRepository.save(testFriend);
+        testAccount.addFriend(testFriend);
+        accountRepository.save(testAccount);
+
+        entityManager.flush();
+        entityManager.clear();
+
+        UserAccount retrievedUser = userRepository.findById(testUser.getId()).get();
+        assertThat(retrievedUser.getAccount()).isEqualTo(testAccount);
+        assertThat(retrievedUser.getAccount().getFriends()).contains(testFriend);
+    }
 
     @Test
     public void EventsShouldHaveADay(){
