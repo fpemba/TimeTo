@@ -3,8 +3,10 @@ package com.TimeTo.TimeTo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
 import java.util.Collections;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.*;
@@ -31,5 +33,11 @@ public class MonthControllerTest {
     public void retrieveMonthsReturnsAListOfMonthsFromMockRepo(){
         underTest.retrieveMonths();
         verify(monthRepository).findAll();
+    }
+
+    @Test
+    public void retrieveMonthsReturnsListOfMonthsContainingMockMonth(){
+        Collection<Month> result = underTest.retrieveMonths();
+        assertThat(result).contains(testMonth);
     }
 }
