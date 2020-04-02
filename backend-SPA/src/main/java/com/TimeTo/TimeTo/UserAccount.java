@@ -2,6 +2,8 @@ package com.TimeTo.TimeTo;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class UserAccount {
@@ -12,10 +14,10 @@ public class UserAccount {
     private String firstName;
     private String lastName;
     private String userName;
-//    @OneToOne
-//    private FriendList friendList;
-    @OneToMany
-    private Collection<Party> parties;
+    @OneToOne(mappedBy = "userAccount")
+    private Account account;
+    @ManyToMany(mappedBy = "friends")
+    private Set<Account> friendAccounts;
 
     public UserAccount() {
 
@@ -25,7 +27,6 @@ public class UserAccount {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-//        this.friendList = friendList;
     }
 
     public String getFirstName() {
@@ -40,11 +41,31 @@ public class UserAccount {
         return userName;
     }
 
-//    public FriendList getFriendList() {
-//        return friendList;
-//    }
+    public Set<Account> getFriendAccounts(){
+        return friendAccounts;
+    }
 
-    public Collection<Party> getParties() {
-        return parties;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserAccount that = (UserAccount) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(firstName, that.firstName) &&
+                Objects.equals(lastName, that.lastName) &&
+                Objects.equals(userName, that.userName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, userName);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Account getAccount() {
+        return account;
     }
 }
