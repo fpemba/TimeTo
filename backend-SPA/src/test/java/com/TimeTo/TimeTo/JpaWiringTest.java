@@ -1,5 +1,7 @@
 package com.TimeTo.TimeTo;
 
+import com.TimeTo.TimeTo.Models.*;
+import com.TimeTo.TimeTo.Repositories.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

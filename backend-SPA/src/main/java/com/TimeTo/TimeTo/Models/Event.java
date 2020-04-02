@@ -1,4 +1,8 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.Models;
+
+import com.TimeTo.TimeTo.Models.Day;
+import com.TimeTo.TimeTo.Models.Party;
+import com.TimeTo.TimeTo.Models.UserAccount;
 
 import javax.persistence.*;
 import java.util.Collection;

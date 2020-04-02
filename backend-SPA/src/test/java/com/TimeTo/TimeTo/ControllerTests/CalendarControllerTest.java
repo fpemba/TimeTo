@@ -1,10 +1,11 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.ControllerTests;
 
+import com.TimeTo.TimeTo.Controllers.CalendarController;
+import com.TimeTo.TimeTo.Models.Calendar;
+import com.TimeTo.TimeTo.Repositories.CalendarRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -12,7 +13,6 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DirtiesContext
 public class CalendarControllerTest {

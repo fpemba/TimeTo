@@ -1,4 +1,4 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.Models;
 
 
 

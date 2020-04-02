@@ -1,5 +1,10 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.ControllerTests;
 
+import com.TimeTo.TimeTo.Controllers.EventController;
+import com.TimeTo.TimeTo.Models.Day;
+import com.TimeTo.TimeTo.Models.Event;
+import com.TimeTo.TimeTo.Repositories.DayRepository;
+import com.TimeTo.TimeTo.Repositories.EventRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;

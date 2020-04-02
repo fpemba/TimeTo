@@ -1,5 +1,7 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.Controllers;
 
+import com.TimeTo.TimeTo.Models.Event;
+import com.TimeTo.TimeTo.Repositories.EventRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
