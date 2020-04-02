@@ -1,5 +1,12 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.ControllerTests;
 
+import com.TimeTo.TimeTo.Controllers.DayController;
+import com.TimeTo.TimeTo.Models.Calendar;
+import com.TimeTo.TimeTo.Models.Day;
+import com.TimeTo.TimeTo.Models.Event;
+import com.TimeTo.TimeTo.Models.Month;
+import com.TimeTo.TimeTo.Repositories.DayRepository;
+import com.TimeTo.TimeTo.Repositories.EventRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.DirtiesContext;
@@ -13,7 +20,6 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DirtiesContext
 public class DayControllerTest {

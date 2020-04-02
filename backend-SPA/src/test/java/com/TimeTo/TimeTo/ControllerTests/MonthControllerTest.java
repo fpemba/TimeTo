@@ -1,10 +1,13 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.ControllerTests;
 
+import com.TimeTo.TimeTo.Controllers.MonthController;
+import com.TimeTo.TimeTo.Models.Calendar;
+import com.TimeTo.TimeTo.Models.Month;
+import com.TimeTo.TimeTo.Repositories.DayRepository;
+import com.TimeTo.TimeTo.Repositories.MonthRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -14,7 +17,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DirtiesContext
 public class MonthControllerTest {

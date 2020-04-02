@@ -1,5 +1,8 @@
-package com.TimeTo.TimeTo;
+package com.TimeTo.TimeTo.Models;
 
+
+import com.TimeTo.TimeTo.Models.Calendar;
+import com.TimeTo.TimeTo.Models.Day;
 
 import javax.persistence.*;
 import java.util.Collection;
