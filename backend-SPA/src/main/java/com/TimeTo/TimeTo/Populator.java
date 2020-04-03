@@ -45,7 +45,7 @@ public class Populator implements CommandLineRunner {
 
         Month july2020 = new Month("July", 7 , 4, 2020, masterCalendar);
         monthRepository.save(july2020);
-        createJulyDays(july2020)
+        createJulyDays(july2020);
 
 
         Month august2020 = new Month("August", 8, 7, 2020, masterCalendar);
