@@ -15,19 +15,19 @@ public class EventController {
         this.eventRepository = eventRepository;
     }
 
-    @GetMapping("/events")
+    @GetMapping("/events/")
     public Collection<Event> retrieveEvents() {
         return (Collection<Event>) eventRepository.findAll();
     }
-    @GetMapping("/events/{id}")
+    @GetMapping("/events/{id}/")
     public Optional<Event> retrieveEventById(@PathVariable Long id) {
         return eventRepository.findById(id);
     }
-    @DeleteMapping("/events/{id}")
+    @DeleteMapping("/events/{id}/")
     public void deleteEvent(@PathVariable Long id) {
         eventRepository.deleteById(id);
     }
-    @PostMapping("/events")
+    @PostMapping("/events/")
     public Event createEvent(@RequestBody Event eventToAdd) {
         return eventRepository.save(eventToAdd);
     }
