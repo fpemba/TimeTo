@@ -40,10 +40,10 @@ public class DayControllerTest {
         underTest = new DayController(dayRepository, eventRepository);
         testCalendar = new Calendar();
         testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
-        testDay = new Day(testMonth, 1);
+        testDay = new Day("1", testMonth, 1);
         testEvent = new Event(testDay);
         when(dayRepository.findAll()).thenReturn(Collections.singletonList(testDay));
-        when(dayRepository.findById(1L)).thenReturn(Optional.of(testDay));
+        when(dayRepository.findById("1")).thenReturn(Optional.of(testDay));
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
     }
 
@@ -67,8 +67,8 @@ public class DayControllerTest {
 
     @Test
    public void retrieveSingleDayReturnsASingleDay(){
-        Day result = underTest.retrieveSingleDay(1L);
-        verify(dayRepository).findById(1L);
+        Day result = underTest.retrieveSingleDay("1");
+        verify(dayRepository).findById("1");
         assertThat(result).isEqualTo(testDay);
     }
 }

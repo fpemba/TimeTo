@@ -29,10 +29,10 @@ class EventControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(eventController).build();
     }
 
-    @Test
-    public void shouldRetrieveEvents() throws Exception{
-        Day testDay = new Day();
-    }
+//    @Test
+//    public void shouldRetrieveEvents() throws Exception{
+//        Day testDay = new Day();
+//    }
 
     @Test
     public void shouldRetrieveEventById() throws Exception{
