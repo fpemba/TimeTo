@@ -1,6 +1,7 @@
 package com.TimeTo.TimeTo;
 
 import com.TimeTo.TimeTo.Models.Calendar;
+import com.TimeTo.TimeTo.Models.Day;
 import com.TimeTo.TimeTo.Models.Month;
 import com.TimeTo.TimeTo.Repositories.CalendarRepository;
 import com.TimeTo.TimeTo.Repositories.DayRepository;
@@ -32,6 +33,8 @@ public class Populator implements CommandLineRunner {
 
         Month april2020 = new Month("April", 4, 4, 2020, masterCalendar);
         monthRepository.save(april2020);
+        createAprilDays(april2020);
+
         Month may2020 = new Month("May", 5, 6, 2020, masterCalendar);
         monthRepository.save(may2020);
         Month june2020 = new Month("June", 6, 2, 2020, masterCalendar);
@@ -49,4 +52,11 @@ public class Populator implements CommandLineRunner {
         Month december2020 = new Month("December", 12, 3, 2020, masterCalendar);
         monthRepository.save(december2020);
     }
+    private void createAprilDays(Month april) {
+        for(int i = 0 ; i < 30; i ++){
+            Day newDay = new Day(april, i);
+            dayRepository.save(newDay);
+        }
+    }
 }
+

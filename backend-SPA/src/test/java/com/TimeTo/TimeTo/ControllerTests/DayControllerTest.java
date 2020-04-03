@@ -40,7 +40,7 @@ public class DayControllerTest {
         underTest = new DayController(dayRepository, eventRepository);
         testCalendar = new Calendar();
         testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
-        testDay = new Day(testMonth);
+        testDay = new Day(testMonth, 1);
         testEvent = new Event(testDay);
         when(dayRepository.findAll()).thenReturn(Collections.singletonList(testDay));
         when(dayRepository.findById(1L)).thenReturn(Optional.of(testDay));

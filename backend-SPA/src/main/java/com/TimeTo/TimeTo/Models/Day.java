@@ -20,8 +20,9 @@ public class Day {
     public Day(){
 
     }
-    public Day(Month month) {
+    public Day(Month month, int dayNumber) {
         this.month = month;
+        this.dayNumber = dayNumber;
     }
 
     public Month getMonth() {
@@ -34,5 +35,9 @@ public class Day {
 
     public Long getId() {
         return id;
+    }
+
+    public int getDayNumber() {
+        return dayNumber;
     }
 }
