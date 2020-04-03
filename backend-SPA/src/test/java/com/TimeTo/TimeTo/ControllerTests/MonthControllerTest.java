@@ -34,7 +34,7 @@ public class MonthControllerTest {
         monthRepository = mock(MonthRepository.class);
         underTest = new MonthController(monthRepository, dayRepository);
         testCalendar = new Calendar();
-        testMonth = new Month(testCalendar);
+        testMonth = new Month("testMonth", 1, 1, 2020, testCalendar);
         when(monthRepository.findAll()).thenReturn(Collections.singletonList(testMonth));
         when(monthRepository.findById(2L)).thenReturn(java.util.Optional.ofNullable(testMonth));
 

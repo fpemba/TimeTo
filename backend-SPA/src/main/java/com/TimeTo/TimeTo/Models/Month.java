@@ -13,6 +13,12 @@ public class Month {
     @Id
     @GeneratedValue
     private Long id;
+
+    private String nameOfMonth;
+    private int numberOfMonth;
+    private int firstDayOfMonth;
+    private int year;
+
     @ManyToOne
     private Calendar calendar;
     @OneToMany(mappedBy = "month")
@@ -25,7 +31,11 @@ public class Month {
         return id;
     }
 
-    public Month(Calendar calendar) {
+    public Month(String nameOfMonth, int numberOfMonth, int firstDayOfMonth, int year, Calendar calendar) {
+        this.nameOfMonth = nameOfMonth;
+        this.numberOfMonth = numberOfMonth;
+        this.firstDayOfMonth = firstDayOfMonth;
+        this.year = year;
         this.calendar = calendar;
     }
 
@@ -35,5 +45,21 @@ public class Month {
 
     public Collection<Day> getDays() {
         return days;
+    }
+
+    public String getNameOfMonth() {
+        return nameOfMonth;
+    }
+
+    public int getNumberOfMonth() {
+        return numberOfMonth;
+    }
+
+    public int getFirstDayOfMonth() {
+        return firstDayOfMonth;
+    }
+
+    public int getYear() {
+        return year;
     }
 }

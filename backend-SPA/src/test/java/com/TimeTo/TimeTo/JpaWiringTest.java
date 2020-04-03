@@ -57,7 +57,7 @@ public class JpaWiringTest {
         Calendar testCalendar = new Calendar();
         calendarRepository.save(testCalendar);
 
-        Month testMonth = new Month(testCalendar);
+        Month testMonth = new Month("testMonth", 1, 1, 2020, testCalendar);
         monthRepository.save(testMonth);
 
         Day testDay = new Day(testMonth);
@@ -83,7 +83,7 @@ public class JpaWiringTest {
         Calendar testCalendar = new Calendar();
         calendarRepository.save(testCalendar);
 
-        Month testMonth = new Month(testCalendar);
+        Month testMonth = new Month("testMonth", 1, 1, 2020, testCalendar);
         monthRepository.save(testMonth);
 
         Day testDay1 = new Day(testMonth);
@@ -106,10 +106,10 @@ public class JpaWiringTest {
         Calendar testCalendar = new Calendar();
         calendarRepository.save(testCalendar);
 
-        Month testMonth1 = new Month(testCalendar);
+        Month testMonth1 = new Month("testMonth1", 1, 1, 2020, testCalendar);
         monthRepository.save(testMonth1);
 
-        Month testMonth2 = new Month(testCalendar);
+        Month testMonth2 = new Month("testMonth2", 2, 2, 2020, testCalendar);
         monthRepository.save(testMonth2);
 
         entityManager.flush();
