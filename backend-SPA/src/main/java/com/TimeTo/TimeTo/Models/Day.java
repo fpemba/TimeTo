@@ -11,8 +11,7 @@ import java.util.Collection;
 public class Day {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     @JsonIgnore
     @ManyToOne
@@ -24,7 +23,8 @@ public class Day {
     public Day(){
 
     }
-    public Day(Month month, int dayNumber) {
+    public Day(String id, Month month, int dayNumber) {
+        this.id = id;
         this.month = month;
         this.dayNumber = dayNumber;
     }
@@ -37,7 +37,7 @@ public class Day {
         return events;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

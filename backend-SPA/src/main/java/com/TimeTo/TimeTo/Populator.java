@@ -72,55 +72,64 @@ public class Populator implements CommandLineRunner {
     }
     private void createAprilDays(Month april) {
         for(int i = 1 ; i < 31; i ++){
-            Day newDay = new Day(april, i);
+            String idToSet = "04-" + i + "-" + april.getYear();
+            Day newDay = new Day(idToSet, april, i);
             dayRepository.save(newDay);
         }
     }
     private void createMayDays(Month may){
         for(int i = 1; i < 32; i++){
-            Day newDay = new Day(may, i);
+            String idToSet = "05-" + i + "-" + may.getYear();
+            Day newDay = new Day(idToSet, may, i);
             dayRepository.save(newDay);
         }
     }
     private void createJuneDays(Month june) {
         for(int i = 1 ; i < 31; i ++){
-            Day newDay = new Day(june, i);
+            String idToSet = "06-" + i + "-" + june.getYear();
+            Day newDay = new Day(idToSet, june, i);
             dayRepository.save(newDay);
         }
     }
     private void createJulyDays(Month july){
         for(int i = 1; i < 32; i++){
-            Day newDay = new Day(july, i);
+            String idToSet = "07-" + i + "-" + july.getYear();
+            Day newDay = new Day(idToSet, july, i);
             dayRepository.save(newDay);
         }
     }
     private void createAugustDays(Month august){
         for(int i = 1; i < 32; i++){
-            Day newDay = new Day(august, i);
+            String idToSet = "08-" + i + "-" + august.getYear();
+            Day newDay = new Day(idToSet, august, i);
             dayRepository.save(newDay);
         }
     }
     private void createSeptemberDays(Month september) {
         for(int i = 1 ; i < 31; i ++){
-            Day newDay = new Day(september, i);
+            String idToSet = "09-" + i + "-" + september.getYear();
+            Day newDay = new Day(idToSet, september, i);
             dayRepository.save(newDay);
         }
     }
     private void createOctoberDays(Month october){
         for(int i = 1; i < 32; i++){
-            Day newDay = new Day(october, i);
+            String idToSet = "10-" + i + "-" + october.getYear();
+            Day newDay = new Day(idToSet, october, i);
             dayRepository.save(newDay);
         }
     }
     private void createNovemberDays(Month november) {
         for(int i = 1 ; i < 31; i ++){
-            Day newDay = new Day(november, i);
+            String idToSet = "11-" + i + "-" + november.getYear();
+            Day newDay = new Day(idToSet, november, i);
             dayRepository.save(newDay);
         }
     }
     private void createDecemberDays(Month december){
         for(int i = 1; i < 32; i++){
-            Day newDay = new Day(december, i);
+            String idToSet = "12-" + i + "-" + december.getYear();
+            Day newDay = new Day(idToSet, december, i);
             dayRepository.save(newDay);
         }
     }
