@@ -36,16 +36,16 @@ header {
     font-size: 18px;
 }
 
-#SignIn {
+.signIn {
     font-size: 30px;
 }
 
-#forgotUserOrPw {
+.forgotUserOrPw {
     font-size: 14px;
     color: white;
 }
 
-#forgotUserOrPw:hover {
+.forgotUserOrPw:hover {
     color: blue;
 }
 

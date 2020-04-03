@@ -1,30 +1,3 @@
-// class HomePageCreator{
-
-//     constructor(){
-//     this._main = document.createElement("main");
-//     this._header = document.createElement("header");
-//     this._span = document.createElement("span");
-//     this._login = document.createElement("p");
-//     this._form = document.createElement("form");
-//     this._forgotPW = document.createElement("a");
-//     this._submitButton = document.createElement("button");
-//     this._footer = document.createElement("footer");
-//     }
-
-//     render(){
-//         this._container.className = 'homePage';
-//         this._container.append(this._main);
-//         this._container.append(this._header);
-//         this._container.append(this._span);
-//         this._container.append(this._login);
-//         this._container.append(this._form);
-//         this._container.append(this._forgotPW);
-//         this._container.append(this._submitButton);
-//         this._footer.append(this._footer);
-//         return this._container;
-//     }
-// }
-
 const renderHeader = ()=> {
     const headerElement = document.createElement("header");
     headerElement.classList.add("header");
@@ -51,21 +24,36 @@ const renderLogin = ()=>{
     signIn.classList.add("signIn");
     loginSection.appendChild(signIn);
     signIn.innerText = "Sign In!"
+   
+
+    const loginForm = document.createElement("form");
+    loginForm.classList.add("loginForm");
+    loginSection.appendChild(loginForm);
+
+    const usernameInput = document.createElement("input");
+    usernameInput.setAttribute("placeholder", "Username");
+    loginForm.appendChild(usernameInput);
+
+    const passwordInput = document.createElement("input");
+    passwordInput.setAttribute("placeholder", "Password");
+    loginForm.appendChild(passwordInput);
+
+    const loginButton = document.createElement("button");
+    loginButton.classList.add("loginButton");
+    loginButton.innerText = "Log In";
+    loginForm.appendChild(loginButton);
+
+    const forgotPW = document.createElement("a");
+    forgotPW.classList.add("forgotUserOrPw");
+    forgotPW.innerText = "Forgot username or password";
+    loginForm.appendChild(forgotPW);
+
+    const registerButton = document.createElement("button");
+    registerButton.classList.add("registerButton");
+    registerButton.innerText = "Register";
+    loginSection.appendChild(registerButton);
+
     return mainSection;
-
-    // const loginForm = document.createElement("form");
-    // loginForm.classList.add("loginForm");
-
-    // const forgotPW = document.createElement("a");
-    // forgotPW.classList.add("forgotPW");
-
-    // const loginButton = document.createElement("button");
-    // loginButton.classList.add("loginButton");
-    // loginForm.appendChild(loginButton);
-
-    // const registerButton = document.createElement("button");
-    // registerButton.classList.add("registerButton");
-
 }
 
 const displayHome = () =>{
