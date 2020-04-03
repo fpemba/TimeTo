@@ -3,6 +3,7 @@ package com.TimeTo.TimeTo.Models;
 import com.TimeTo.TimeTo.Models.Day;
 import com.TimeTo.TimeTo.Models.Party;
 import com.TimeTo.TimeTo.Models.UserAccount;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -17,6 +18,8 @@ public class Event {
     private Collection<UserAccount> userAccounts;
     @ManyToOne
     private Party party;
+
+    @JsonIgnore
     @ManyToOne
     private Day day;
 

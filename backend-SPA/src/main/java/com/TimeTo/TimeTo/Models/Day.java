@@ -2,6 +2,8 @@ package com.TimeTo.TimeTo.Models;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -11,6 +13,8 @@ public class Day {
     @Id
     @GeneratedValue
     private Long id;
+
+    @JsonIgnore
     @ManyToOne
     private Month month;
     @OneToMany(mappedBy = "day")

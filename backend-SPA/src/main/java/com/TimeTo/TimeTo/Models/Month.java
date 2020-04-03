@@ -3,6 +3,7 @@ package com.TimeTo.TimeTo.Models;
 
 import com.TimeTo.TimeTo.Models.Calendar;
 import com.TimeTo.TimeTo.Models.Day;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -19,6 +20,7 @@ public class Month {
     private int firstDayOfMonth;
     private int year;
 
+    @JsonIgnore
     @ManyToOne
     private Calendar calendar;
     @OneToMany(mappedBy = "month")
