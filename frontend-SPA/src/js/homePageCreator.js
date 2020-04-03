@@ -55,8 +55,13 @@ const renderLogin = ()=>{
 
     return mainSection;
 }
+const renderBackground = ()=> {
+    const backgroundElement = document.querySelector(".home")
+    backgroundElement.style.background = "img"
+}
 
 const displayHome = () =>{
+    renderBackground();
     const container = document.querySelector(".container");
     const mainSection = document.querySelector(".main");
     container.prepend(renderHeader());
