@@ -46,19 +46,48 @@ const renderMonth = ()=> {
 }
 
 const hamburgerBtn = () => {
-    const nav = document.createElement('nav')
-    nav.classList.add('navigation')
-    nav.setAttribute('input','checkbox')
-    document.createElement('span')
-    document.createElement('span')
-    document.createElement('span')
-    btnContainer.appendChild(nav);
+//     const nav = document.querySelector('nav');
+//     nav.innerHTML = "
+//     <div id= 'menuToggle\'>
+
+//     <input type='checkbox'/>
+
+//     <span></span>
+//     <span></span>
+//     <span></span>
+
+//     <ul id='menu'>
+//       <a href="#">
+//         <li>Invite</li>
+//       </a>
+//       <a href='./compare-page.html'>
+//         <li>Compare</li>
+//       </a>
+//       <a href='./create-group.html'>
+//         <li>Manage Groups</li>
+//       </a>
+//       <a href='#'>
+//         <li>Import Calendar</li>
+//       </a>
+//       <a href='#'>
+//         <li>View Friends</li>
+//       </a>
+//     </ul>
+
+//   </div>"
+
+   
+    // nav.setAttribute('input','checkbox')
+    // document.createElement('span')
+    // document.createElement('span')
+    // document.createElement('span')
+    // btnContainer.appendChild(nav);
 
     return nav;
 
     //need to add menu toggle class then appen to nav
     // figure out how to use span to create lines
-    
+
 
 }
 
