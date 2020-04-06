@@ -1,13 +1,7 @@
 package com.TimeTo.TimeTo;
 
-import com.TimeTo.TimeTo.Models.Calendar;
-import com.TimeTo.TimeTo.Models.Day;
-import com.TimeTo.TimeTo.Models.Event;
-import com.TimeTo.TimeTo.Models.Month;
-import com.TimeTo.TimeTo.Repositories.CalendarRepository;
-import com.TimeTo.TimeTo.Repositories.DayRepository;
-import com.TimeTo.TimeTo.Repositories.EventRepository;
-import com.TimeTo.TimeTo.Repositories.MonthRepository;
+import com.TimeTo.TimeTo.Models.*;
+import com.TimeTo.TimeTo.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -28,9 +22,16 @@ public class Populator implements CommandLineRunner {
     @Autowired
     private EventRepository eventRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private AccountRepository accountRepository;
+
 
     @Override
     public void run(String... args) throws Exception {
+
         Calendar masterCalendar = new Calendar();
         calendarRepository.save(masterCalendar);
 
@@ -234,6 +235,8 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createHours(Day day){
+        UserAccount simba = new UserAccount("Simba", "Mufasason", "LionKing95");
+        userRepository.save(simba);
         for(int h =0; h<24; h++){
             LocalTime startTime = LocalTime.of(h,0,0);
             int endHour;
@@ -246,6 +249,7 @@ public class Populator implements CommandLineRunner {
             LocalTime endTime = LocalTime.of(endHour, 0, 0);
             Event newHour = new Event(idToSet, day, true, startTime, endTime, "Free Time");
             eventRepository.save(newHour);
+            newHour.addUser(simba);
         }
     }
 

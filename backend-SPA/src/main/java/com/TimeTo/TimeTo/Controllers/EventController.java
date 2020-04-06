@@ -26,12 +26,6 @@ public class EventController {
         return eventRepository.findById(id);
     }
 
-//    @GetMapping("/events/{startTime}/")
-//    public Optional<Event> retrieveEventByStartTime(@PathVariable String id){
-//        LocalTime time = LocalTime.of(startTime, 0, 0);
-//        return eventRepository.findByStartTime(time);
-//    }
-
     @DeleteMapping("/events/{id}/")
     public void deleteEvent(@PathVariable String id) {
         eventRepository.deleteById(id);
