@@ -12,7 +12,7 @@ public class Account {
     @Id
     @GeneratedValue
     private Long id;
-    
+    @JsonIgnore
     @OneToOne
     private UserAccount userAccount;
     @ManyToMany
@@ -35,7 +35,11 @@ public class Account {
         return id;
     }
 
-    public UserAccount getUserAccount() {
+    public String getUserName() {
+        return userAccount.getUserName();
+    }
+
+    public UserAccount getUserAccount(){
         return userAccount;
     }
 
@@ -49,6 +53,14 @@ public class Account {
 
     public void addFriend(UserAccount friend){
         friends.add(friend);
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", userAccount=" + userAccount +
+                '}';
     }
 
     @Override

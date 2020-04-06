@@ -18,7 +18,7 @@ public class Calendar {
 
     @OneToMany(mappedBy = "calendar")
     private Collection<Month> months;
-
+    @JsonIgnore
     @OneToMany(mappedBy= "calendar")
     private Set<Account> accounts;
 
