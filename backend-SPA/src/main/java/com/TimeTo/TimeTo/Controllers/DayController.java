@@ -14,7 +14,7 @@ public class DayController {
     private DayRepository dayRepository;
     private EventRepository eventRepository;
 
-    public DayController(DayRepository dayRepository, EventRepository eventRepository){
+    public DayController(DayRepository dayRepository, EventRepository eventRepository) {
         this.dayRepository = dayRepository;
         this.eventRepository = eventRepository;
     }

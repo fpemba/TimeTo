@@ -1,7 +1,6 @@
 package com.TimeTo.TimeTo.Models;
 
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -20,9 +19,10 @@ public class Day {
     private Collection<Event> events;
     private int dayNumber;
 
-    public Day(){
+    public Day() {
 
     }
+
     public Day(String id, Month month, int dayNumber) {
         this.id = id;
         this.month = month;

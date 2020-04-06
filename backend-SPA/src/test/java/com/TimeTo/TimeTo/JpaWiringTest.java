@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.DirtiesContext;
 
+import java.time.LocalTime;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -63,10 +65,13 @@ public class JpaWiringTest {
         Day testDay = new Day("1", testMonth, 1);
         dayRepository.save(testDay);
 
-        Event testEvent1 = new Event(testDay);
+        LocalTime start = LocalTime.of(8,0,0);
+        LocalTime end = LocalTime.of(10,0,0);
+
+        Event testEvent1 = new Event(testDay, false, start, end, "Yay");
         eventRepository.save(testEvent1);
 
-        Event testEvent2 = new Event(testDay);
+        Event testEvent2 = new Event(testDay, false, start, end, "Happy");
         eventRepository.save(testEvent2);
 
         entityManager.flush();

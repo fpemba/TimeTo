@@ -40,7 +40,7 @@ public class UserAccount {
         return userName;
     }
 
-    public Set<Account> getFriendAccounts(){
+    public Set<Account> getFriendAccounts() {
         return friendAccounts;
     }
 
@@ -66,5 +66,12 @@ public class UserAccount {
 
     public Account getAccount() {
         return account;
+    }
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "firstName='" + firstName + '\'' +
+                '}';
     }
 }
