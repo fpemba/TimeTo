@@ -13,6 +13,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.time.LocalTime;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
@@ -41,7 +42,9 @@ public class DayControllerTest {
         testCalendar = new Calendar();
         testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
         testDay = new Day("1", testMonth, 1);
-        testEvent = new Event(testDay);
+        LocalTime startTime = LocalTime.of(4,0,0);
+        LocalTime endTime = LocalTime.of(6,0,0);
+        testEvent = new Event(testDay, false, startTime, endTime, "Funzone");
         when(dayRepository.findAll()).thenReturn(Collections.singletonList(testDay));
         when(dayRepository.findById("1")).thenReturn(Optional.of(testDay));
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();

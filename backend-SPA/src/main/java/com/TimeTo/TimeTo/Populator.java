@@ -234,10 +234,17 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createHours(Day day){
-        for(int h =1; h<25; h++){
+        for(int h =0; h<24; h++){
             LocalTime startTime = LocalTime.of(h,0,0);
-            LocalTime endTime = LocalTime.of(h+1, 0, 0);
-            Event newHour = new Event(day, true, startTime, endTime, "Free Time");
+            int endHour;
+            if(h>=23){
+                endHour = h;
+            } else {
+                endHour = 0;
+            }
+            String idToSet = day.getId() + "-" + h;
+            LocalTime endTime = LocalTime.of(endHour, 0, 0);
+            Event newHour = new Event(idToSet, day, true, startTime, endTime, "Free Time");
             eventRepository.save(newHour);
         }
     }

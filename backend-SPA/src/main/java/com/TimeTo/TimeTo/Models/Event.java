@@ -12,8 +12,7 @@ import java.util.Collection;
 public class Event {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
     @ManyToMany
     private Collection<UserAccount> userAccounts;
 //    @ManyToOne
@@ -31,7 +30,8 @@ public class Event {
     public Event() {
 
     }
-    public Event(Day day, boolean available, LocalTime startTime, LocalTime endTime, String name) {
+    public Event(String id, Day day, boolean available, LocalTime startTime, LocalTime endTime, String name) {
+        this.id = id;
         this.day = day;
         this.available = available;
         this.startTime = startTime;
@@ -51,7 +51,7 @@ public class Event {
         return day;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
