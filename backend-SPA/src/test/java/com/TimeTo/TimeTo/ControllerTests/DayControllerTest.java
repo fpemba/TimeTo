@@ -44,7 +44,7 @@ public class DayControllerTest {
         testDay = new Day("1", testMonth, 1);
         LocalTime startTime = LocalTime.of(4,0,0);
         LocalTime endTime = LocalTime.of(6,0,0);
-        testEvent = new Event(testDay, false, startTime, endTime, "Funzone");
+        testEvent = new Event("5",testDay, false, startTime, endTime, "Funzone");
         when(dayRepository.findAll()).thenReturn(Collections.singletonList(testDay));
         when(dayRepository.findById("1")).thenReturn(Optional.of(testDay));
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();

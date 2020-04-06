@@ -44,4 +44,24 @@ public class Day {
     public int getDayNumber() {
         return dayNumber;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Day day = (Day) o;
+
+        if (dayNumber != day.dayNumber) return false;
+        if (id != null ? !id.equals(day.id) : day.id != null) return false;
+        return month != null ? month.equals(day.month) : day.month == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (month != null ? month.hashCode() : 0);
+        result = 31 * result + dayNumber;
+        return result;
+    }
 }

@@ -68,10 +68,10 @@ public class JpaWiringTest {
         LocalTime start = LocalTime.of(8,0,0);
         LocalTime end = LocalTime.of(10,0,0);
 
-        Event testEvent1 = new Event(testDay, false, start, end, "Yay");
+        Event testEvent1 = new Event("1000", testDay, false, start, end, "Yay");
         eventRepository.save(testEvent1);
 
-        Event testEvent2 = new Event(testDay, false, start, end, "Happy");
+        Event testEvent2 = new Event("10002", testDay, false, start, end, "Happy");
         eventRepository.save(testEvent2);
 
         entityManager.flush();

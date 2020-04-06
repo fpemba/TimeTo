@@ -22,10 +22,15 @@ public class Populator implements CommandLineRunner {
     @Autowired
     private EventRepository eventRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public void run(String... args) throws Exception {
+        UserAccount simba = new UserAccount("Simba", "Mufasason", "LionKing95");
+        userRepository.save(simba);
 
-        Calendar masterCalendar = new Calendar();
+        Calendar masterCalendar = new Calendar(simba);
         calendarRepository.save(masterCalendar);
 
         Month april2020 = new Month("April", 4, 4, 2020, masterCalendar);
