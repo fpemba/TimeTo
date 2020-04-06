@@ -2,6 +2,7 @@ package com.TimeTo.TimeTo;
 
 import com.TimeTo.TimeTo.Models.Calendar;
 import com.TimeTo.TimeTo.Models.Day;
+import com.TimeTo.TimeTo.Models.Event;
 import com.TimeTo.TimeTo.Models.Month;
 import com.TimeTo.TimeTo.Repositories.CalendarRepository;
 import com.TimeTo.TimeTo.Repositories.DayRepository;
@@ -10,6 +11,8 @@ import com.TimeTo.TimeTo.Repositories.MonthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalTime;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -80,6 +83,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, january, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
 
@@ -93,6 +97,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, february, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
 
@@ -106,6 +111,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, march, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
 
@@ -119,6 +125,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, april, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createMayDays(Month may){
@@ -131,6 +138,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, may, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createJuneDays(Month june) {
@@ -143,6 +151,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, june, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createJulyDays(Month july){
@@ -155,6 +164,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, july, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createAugustDays(Month august){
@@ -167,6 +177,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, august, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createSeptemberDays(Month september) {
@@ -179,6 +190,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, september, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createOctoberDays(Month october){
@@ -191,6 +203,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, october, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createNovemberDays(Month november) {
@@ -203,6 +216,7 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, november, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
     private void createDecemberDays(Month december){
@@ -215,7 +229,18 @@ public class Populator implements CommandLineRunner {
             }
             Day newDay = new Day(idToSet, december, i);
             dayRepository.save(newDay);
+            createHours(newDay);
         }
     }
+
+    private void createHours(Day day){
+        for(int h =1; h<25; h++){
+            LocalTime startTime = LocalTime.of(h,0,0);
+            LocalTime endTime = LocalTime.of(h+1, 0, 0);
+            Event newHour = new Event(day, true, startTime, endTime, "Free Time");
+            eventRepository.save(newHour);
+        }
+    }
+
 }
 
