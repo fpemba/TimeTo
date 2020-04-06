@@ -15,15 +15,15 @@ public class Event {
 
     @Id
     private String id;
-    @ManyToMany
-    private Set<UserAccount> userAccounts;
+
 //    @ManyToOne
 //    private Party party;
     private boolean available;
     private LocalTime startTime;
     private LocalTime endTime;
     private String name;
-
+//    @ManyToMany
+//    private Set<UserAccount> userAccounts;
     @JsonIgnore
     @ManyToOne
     private Day day;
@@ -39,16 +39,16 @@ public class Event {
         this.startTime = startTime;
         this.endTime = endTime;
         this.name = name;
-        userAccounts = new HashSet<>();
+//        userAccounts = new HashSet<>();
     }
 
-    public Collection<UserAccount> getUserAccounts() {
-        return userAccounts;
-    }
-
-    public void addUser(UserAccount user){
-        userAccounts.add(user);
-    }
+//    public Collection<UserAccount> getUserAccounts() {
+//        return userAccounts;
+//    }
+//
+//    public void addUser(UserAccount user){
+//        userAccounts.add(user);
+//    }
 
 //    public Party getParty() {
 //        return party;

@@ -235,13 +235,13 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createHours(Day day){
-        UserAccount simba = new UserAccount("Simba", "Mufasason", "LionKing95");
-        userRepository.save(simba);
+//        UserAccount simba = new UserAccount("Simba", "Mufasason", "LionKing95");
+//        userRepository.save(simba);
         for(int h =0; h<24; h++){
             LocalTime startTime = LocalTime.of(h,0,0);
             int endHour;
-            if(h>=23){
-                endHour = h;
+            if(h <= 22){
+                endHour = h+1;
             } else {
                 endHour = 0;
             }
@@ -249,7 +249,7 @@ public class Populator implements CommandLineRunner {
             LocalTime endTime = LocalTime.of(endHour, 0, 0);
             Event newHour = new Event(idToSet, day, true, startTime, endTime, "Free Time");
             eventRepository.save(newHour);
-            newHour.addUser(simba);
+//            newHour.addUser(simba);
         }
     }
 

@@ -67,4 +67,11 @@ public class UserAccount {
     public Account getAccount() {
         return account;
     }
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "firstName='" + firstName + '\'' +
+                '}';
+    }
 }
