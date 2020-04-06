@@ -22,13 +22,6 @@ public class Populator implements CommandLineRunner {
     @Autowired
     private EventRepository eventRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private AccountRepository accountRepository;
-
-
     @Override
     public void run(String... args) throws Exception {
 
@@ -47,7 +40,7 @@ public class Populator implements CommandLineRunner {
         monthRepository.save(june2020);
         createJuneDays(june2020);
 
-        Month july2020 = new Month("July", 7 , 4, 2020, masterCalendar);
+        Month july2020 = new Month("July", 7, 4, 2020, masterCalendar);
         monthRepository.save(july2020);
         createJulyDays(july2020);
 
@@ -74,10 +67,11 @@ public class Populator implements CommandLineRunner {
         createDecemberDays(december2020);
 
     }
+
     private void createJanuaryDays(Month january) {
-        for(int i = 1 ; i < 31; i ++){
+        for (int i = 1; i < 31; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "01-0" + i + "-" + january.getYear();
             } else {
                 idToSet = "01-" + i + "-" + january.getYear();
@@ -89,9 +83,9 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createFebruaryDays(Month february) {
-        for(int i = 1 ; i < 31; i ++){
+        for (int i = 1; i < 31; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "02-0" + i + "-" + february.getYear();
             } else {
                 idToSet = "02-" + i + "-" + february.getYear();
@@ -103,9 +97,9 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createMarchDays(Month march) {
-        for(int i = 1 ; i < 32; i ++){
+        for (int i = 1; i < 32; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "03-0" + i + "-" + march.getYear();
             } else {
                 idToSet = "03-" + i + "-" + march.getYear();
@@ -117,9 +111,9 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createAprilDays(Month april) {
-        for(int i = 1 ; i < 31; i ++){
+        for (int i = 1; i < 31; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "04-0" + i + "-" + april.getYear();
             } else {
                 idToSet = "04-" + i + "-" + april.getYear();
@@ -129,10 +123,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
-    private void createMayDays(Month may){
-        for(int i = 1; i < 32; i++){
+
+    private void createMayDays(Month may) {
+        for (int i = 1; i < 32; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "05-0" + i + "-" + may.getYear();
             } else {
                 idToSet = "05-" + i + "-" + may.getYear();
@@ -142,10 +137,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
+
     private void createJuneDays(Month june) {
-        for(int i = 1 ; i < 31; i ++){
+        for (int i = 1; i < 31; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "06-0" + i + "-" + june.getYear();
             } else {
                 idToSet = "06-" + i + "-" + june.getYear();
@@ -155,10 +151,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
-    private void createJulyDays(Month july){
-        for(int i = 1; i < 32; i++){
+
+    private void createJulyDays(Month july) {
+        for (int i = 1; i < 32; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "07-0" + i + "-" + july.getYear();
             } else {
                 idToSet = "07-" + i + "-" + july.getYear();
@@ -168,10 +165,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
-    private void createAugustDays(Month august){
-        for(int i = 1; i < 32; i++){
+
+    private void createAugustDays(Month august) {
+        for (int i = 1; i < 32; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "08-0" + i + "-" + august.getYear();
             } else {
                 idToSet = "08-" + i + "-" + august.getYear();
@@ -181,10 +179,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
+
     private void createSeptemberDays(Month september) {
-        for(int i = 1 ; i < 31; i ++){
+        for (int i = 1; i < 31; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "09-0" + i + "-" + september.getYear();
             } else {
                 idToSet = "09-" + i + "-" + september.getYear();
@@ -194,10 +193,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
-    private void createOctoberDays(Month october){
-        for(int i = 1; i < 32; i++){
+
+    private void createOctoberDays(Month october) {
+        for (int i = 1; i < 32; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "10-0" + i + "-" + october.getYear();
             } else {
                 idToSet = "10-" + i + "-" + october.getYear();
@@ -207,10 +207,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
+
     private void createNovemberDays(Month november) {
-        for(int i = 1 ; i < 31; i ++){
+        for (int i = 1; i < 31; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "11-0" + i + "-" + november.getYear();
             } else {
                 idToSet = "11-" + i + "-" + november.getYear();
@@ -220,10 +221,11 @@ public class Populator implements CommandLineRunner {
             createHours(newDay);
         }
     }
-    private void createDecemberDays(Month december){
-        for(int i = 1; i < 32; i++){
+
+    private void createDecemberDays(Month december) {
+        for (int i = 1; i < 32; i++) {
             String idToSet;
-            if(i < 10){
+            if (i < 10) {
                 idToSet = "12-0" + i + "-" + december.getYear();
             } else {
                 idToSet = "12-" + i + "-" + december.getYear();
@@ -234,14 +236,12 @@ public class Populator implements CommandLineRunner {
         }
     }
 
-    private void createHours(Day day){
-//        UserAccount simba = new UserAccount("Simba", "Mufasason", "LionKing95");
-//        userRepository.save(simba);
-        for(int h =0; h<24; h++){
-            LocalTime startTime = LocalTime.of(h,0,0);
+    private void createHours(Day day) {
+        for (int h = 0; h < 24; h++) {
+            LocalTime startTime = LocalTime.of(h, 0, 0);
             int endHour;
-            if(h <= 22){
-                endHour = h+1;
+            if (h <= 22) {
+                endHour = h + 1;
             } else {
                 endHour = 0;
             }
@@ -249,7 +249,6 @@ public class Populator implements CommandLineRunner {
             LocalTime endTime = LocalTime.of(endHour, 0, 0);
             Event newHour = new Event(idToSet, day, true, startTime, endTime, "Free Time");
             eventRepository.save(newHour);
-//            newHour.addUser(simba);
         }
     }
 

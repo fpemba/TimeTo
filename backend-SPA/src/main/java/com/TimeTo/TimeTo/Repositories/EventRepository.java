@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.time.LocalTime;
 import java.util.Optional;
 
-public interface EventRepository extends CrudRepository <Event, String>{
+public interface EventRepository extends CrudRepository<Event, String> {
     Optional<Event> findByStartTime(LocalTime startTime);
 }

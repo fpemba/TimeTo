@@ -40,7 +40,7 @@ public class UserAccount {
         return userName;
     }
 
-    public Set<Account> getFriendAccounts(){
+    public Set<Account> getFriendAccounts() {
         return friendAccounts;
     }
 

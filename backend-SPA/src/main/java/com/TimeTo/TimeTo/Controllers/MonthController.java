@@ -14,7 +14,7 @@ public class MonthController {
     private MonthRepository monthRepository;
     private DayRepository dayRepository;
 
-    public MonthController(MonthRepository monthRepository, DayRepository dayRepository){
+    public MonthController(MonthRepository monthRepository, DayRepository dayRepository) {
         this.monthRepository = monthRepository;
         this.dayRepository = dayRepository;
     }
