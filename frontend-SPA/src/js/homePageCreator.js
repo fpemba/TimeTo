@@ -57,7 +57,7 @@ const renderLogin = ()=>{
 }
 const renderBackground = ()=> {
     const backgroundElement = document.querySelector(".home")
-    backgroundElement.style.background = "img"
+    backgroundElement.style.backgroundImage = "url('./images/mountain.gif')"
 }
 
 const displayHome = () =>{
