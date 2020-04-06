@@ -16,24 +16,24 @@ const renderMonth = ()=> {
 }
 
 const clearBackground = () => {
-    const body = document.querySelector('.home');
-    body.classList.remove('.home');
+    const home = document.querySelector('.home');
+    home.style.backgroundImage = "";
 }
 const clearView = () => {
-    const body = document.querySelector("body")
-    while (body.firstChild) {
-        body.removeChild(body.firstChild);
+    const container = document.querySelector(".container")
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
-    
 }
 const renderBackground = () => {
     const backgroundElement = document.querySelector(".my_background")
     document.body.style.background = "blue";
 }
+
 const displayMyPage = () => {
     clearView();
     const container = document.querySelector(".container");
-    // clearBackground();
+    clearBackground();
     // renderBackground();
     container.appendChild(renderMyHeader());
     container.append(renderMonth());
