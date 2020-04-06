@@ -25,12 +25,13 @@ public class Populator implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private AccountRepository accountRepository;
+
     @Override
     public void run(String... args) throws Exception {
-        UserAccount simba = new UserAccount("Simba", "Mufasason", "LionKing95");
-        userRepository.save(simba);
 
-        Calendar masterCalendar = new Calendar(simba);
+        Calendar masterCalendar = new Calendar();
         calendarRepository.save(masterCalendar);
 
         Month april2020 = new Month("April", 4, 4, 2020, masterCalendar);
@@ -70,6 +71,17 @@ public class Populator implements CommandLineRunner {
         Month december2020 = new Month("December", 12, 3, 2020, masterCalendar);
         monthRepository.save(december2020);
         createDecemberDays(december2020);
+
+        UserAccount userAccount1 = new UserAccount("Stuart", "Maxwell", "stumax7");
+        userRepository.save(userAccount1);
+        UserAccount userAccount2 = new UserAccount("Gaelan", "Shively", "Praetor");
+        userRepository.save(userAccount2);
+
+
+        for (UserAccount userAccount: userRepository.findAll()) {
+            Account accountCreated = new Account(userAccount, masterCalendar);
+            accountRepository.save(accountCreated);
+        }
 
     }
 

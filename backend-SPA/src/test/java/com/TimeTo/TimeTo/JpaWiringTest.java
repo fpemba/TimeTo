@@ -38,7 +38,9 @@ public class JpaWiringTest {
         UserAccount testUser = new UserAccount("Tom", "Henderson", "Henderson81");
         userRepository.save(testUser);
 
-        Account testAccount = new Account(testUser);
+        Calendar testCalendar = new Calendar();
+
+        Account testAccount = new Account(testUser, testCalendar);
         accountRepository.save(testAccount);
 
         UserAccount testFriend = new UserAccount("John", "Sad", "SadJohn");
