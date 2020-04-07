@@ -95,7 +95,7 @@ const createHamburgerBtn = () => {
     importText.innerText = "Import Calendar";
     importLink.appendChild(importText);
 
-    return nav;
+    // return nav;
 
         // const navElement = document.createElement("nav");
         // navElement.classList.add("navigation");
@@ -121,7 +121,37 @@ const createHamburgerBtn = () => {
         // toggleSection.appendChild(burgerMenu);
 
         // return navElement;
+
+    //     const nav = document.createElement("nav");
+    //     nav.innerHTML = `<div class="menuToggle">
+
+    //     <input type="checkbox" />
+
+    //     <span></span>
+    //     <span></span>
+    //     <span></span>
+
+    //     <ul class="menu">
+    //       <a href="#">
+    //         <li>Invite</li>
+    //       </a>
+    //       <a href="./compare-page.html">
+    //         <li>Compare</li>
+    //       </a>
+    //       <a href="./create-group.html">
+    //         <li>Manage Groups</li>
+    //       </a>
+    //       <a href="#">
+    //         <li>Import Calendar</li>
+    //       </a>
+    //       <a href="#">
+    //         <li>View Friends</li>
+    //       </a>
+    //     </ul>
+    //   </div>`
+
           
+      return nav;
         }
 
     //need to add menu toggle class then append to nav
