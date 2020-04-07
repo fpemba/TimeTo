@@ -55,17 +55,24 @@ const createHamburgerBtn = () => {
     input.setAttribute('type','checkbox');
     menuToggle.appendChild(input);
 
-    const burger = document.createElement('h1')
-    burger.innerText = "&#9776;";
-    // const span2 = document.createElement('span')
-    // const span3 = document.createElement('span')
-    // menuToggle.appendChild(span1);
-    // menuToggle.appendChild(span2);
-    // menuToggle.appendChild(span3);
+    const span1 = document.createElement('span')
+    // burger.innerText = "&#9776;";
+    const span2 = document.createElement('span')
+    const span3 = document.createElement('span')
+    menuToggle.appendChild(span1);
+    menuToggle.appendChild(span2);
+    menuToggle.appendChild(span3);
 
     const navList = document.createElement("ul");
     navList.classList.add("menu");
     menuToggle.appendChild(navList);
+
+    const myCalendarLink = document.createElement("a");
+    myCalendarLink.setAttribute('href', '#');
+    navList.appendChild(myCalendarLink);
+    const myCalendarText = document.createElement("li");
+    myCalendarText.innerText = "My Calendar";
+    myCalendarLink.appendChild(myCalendarText);
 
     const inviteLink = document.createElement("a");
     inviteLink.setAttribute('href', '#');
@@ -76,7 +83,7 @@ const createHamburgerBtn = () => {
 
     const compareLink = document.createElement("a");
     compareLink.setAttribute('href', '#');
-    navList.appendChild(inviteLink);
+    navList.appendChild(compareLink);
     const compareText = document.createElement("li");
     compareText.innerText = "Compare";
     compareLink.appendChild(compareText);
