@@ -7,6 +7,6 @@ displayHome();
 const loginButton = document.querySelector(".loginButton");
 loginButton.addEventListener('click', ()=>{displayMyPage()});
 
-const monthPicture = document.querySelector(".calendar");
-monthPicture.addEventListener('click', ()=>{displayComparePage()});
+// const monthPicture = document.querySelector(".calendar");
+// monthPicture.addEventListener('click', ()=>{displayComparePage()});
 
