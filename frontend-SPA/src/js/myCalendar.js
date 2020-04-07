@@ -15,6 +15,7 @@ const renderFooter = ()=>{
 const renderMonth = ()=> {
 
     const mainHeader = document.createElement('main');
+    mainHeader.classList.add("calendar_container");
     const monthHeader = document.createElement("div");
     monthHeader.classList.add("monthHeader")
 
@@ -39,16 +40,16 @@ const renderMonth = ()=> {
     monthPicture.setAttribute('src','./images/index.png')
     monthPicture.setAttribute('width','600')
     monthPicture.setAttribute('height','400')
-    mainHeader.appendChild(monthPicture)
-
+    monthPicture.setAttribute('a', 'href')
+    mainHeader.appendChild(monthPicture);
     
     return mainHeader;
 }
 
 const hamburgerBtn = () => {
 //     const nav = document.querySelector('nav');
-//     nav.innerHTML = "
-//     <div id= 'menuToggle\'>
+//     nav.innerHTML = 
+//     <div id= \'menuToggle'>
 
 //     <input type='checkbox'/>
 
@@ -73,8 +74,7 @@ const hamburgerBtn = () => {
 //         <li>View Friends</li>
 //       </a>
 //     </ul>
-
-//   </div>"
+//   </div>
 
    
     // nav.setAttribute('input','checkbox')
@@ -85,7 +85,7 @@ const hamburgerBtn = () => {
 
     return nav;
 
-    //need to add menu toggle class then appen to nav
+    //need to add menu toggle class then append to nav
     // figure out how to use span to create lines
 
 
