@@ -18,12 +18,15 @@ public class Calendar {
 
     @OneToMany(mappedBy = "calendar")
     private Collection<Month> months;
-    @JsonIgnore
-    @OneToMany(mappedBy= "calendar")
-    private Set<Account> accounts;
+    @OneToOne
+    private Account account;
+
+    public Calendar(Account account){
+        this.account = account;
+    }
 
     public Calendar(){
-        accounts = new HashSet<>();
+
     }
 
     public Collection<Month> getMonths() {
@@ -34,8 +37,8 @@ public class Calendar {
         return id;
     }
 
-    public Set<Account> getAccounts() {
-        return accounts;
+    public Account getAccount() {
+        return account;
     }
 
     @Override
@@ -45,12 +48,15 @@ public class Calendar {
 
         Calendar calendar = (Calendar) o;
 
-        return id != null ? id.equals(calendar.id) : calendar.id == null;
+        if (id != null ? !id.equals(calendar.id) : calendar.id != null) return false;
+        return account != null ? account.equals(calendar.account) : calendar.account == null;
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (account != null ? account.hashCode() : 0);
+        return result;
     }
 }
 

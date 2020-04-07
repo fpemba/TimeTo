@@ -8,4 +8,8 @@ import java.util.Optional;
 
 public interface EventRepository extends CrudRepository<Event, String> {
     Optional<Event> findByStartTime(LocalTime startTime);
+
+//    void delete(Event retrievedEvent);
+
+    Optional<Event> findById(String id);
 }

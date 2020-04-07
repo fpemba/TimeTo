@@ -24,7 +24,7 @@ public class DayController {
         return (Collection<Day>) dayRepository.findAll();
     }
 
-    @GetMapping
+    @GetMapping("/days/{id}/")
     public Day retrieveSingleDay(@PathVariable String id) {
         return dayRepository.findById(id).get();
     }

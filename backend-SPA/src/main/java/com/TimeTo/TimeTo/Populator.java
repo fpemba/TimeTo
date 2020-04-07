@@ -31,229 +31,228 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Calendar masterCalendar = new Calendar();
-        calendarRepository.save(masterCalendar);
-
-        Month april2020 = new Month("April", 4, 4, 2020, masterCalendar);
-        monthRepository.save(april2020);
-        createAprilDays(april2020);
-
-        Month may2020 = new Month("May", 5, 6, 2020, masterCalendar);
-        monthRepository.save(may2020);
-        createMayDays(may2020);
-
-        Month june2020 = new Month("June", 6, 2, 2020, masterCalendar);
-        monthRepository.save(june2020);
-        createJuneDays(june2020);
-
-        Month july2020 = new Month("July", 7, 4, 2020, masterCalendar);
-        monthRepository.save(july2020);
-        createJulyDays(july2020);
-
-
-        Month august2020 = new Month("August", 8, 7, 2020, masterCalendar);
-        monthRepository.save(august2020);
-        createAugustDays(august2020);
-
-
-        Month september2020 = new Month("September", 9, 3, 2020, masterCalendar);
-        monthRepository.save(september2020);
-        createSeptemberDays(september2020);
-
-        Month october2020 = new Month("October", 10, 5, 2020, masterCalendar);
-        monthRepository.save(october2020);
-        createOctoberDays(october2020);
-
-        Month november2020 = new Month("November", 11, 1, 2020, masterCalendar);
-        monthRepository.save(november2020);
-        createNovemberDays(november2020);
-
-        Month december2020 = new Month("December", 12, 3, 2020, masterCalendar);
-        monthRepository.save(december2020);
-        createDecemberDays(december2020);
-
         UserAccount userAccount1 = new UserAccount("Stuart", "Maxwell", "stumax7");
         userRepository.save(userAccount1);
         UserAccount userAccount2 = new UserAccount("Gaelan", "Shively", "Praetor");
         userRepository.save(userAccount2);
 
 
-        for (UserAccount userAccount: userRepository.findAll()) {
+        for (UserAccount userAccount : userRepository.findAll()) {
+            Calendar masterCalendar = new Calendar();
+            calendarRepository.save(masterCalendar);
             Account accountCreated = new Account(userAccount, masterCalendar);
             accountRepository.save(accountCreated);
+
+            Month april2020 = new Month("April", 4, 4, 2020, masterCalendar);
+            monthRepository.save(april2020);
+            createAprilDays(april2020, accountCreated);
+
+            Month may2020 = new Month("May", 5, 6, 2020, masterCalendar);
+            monthRepository.save(may2020);
+            createMayDays(may2020, accountCreated);
+
+            Month june2020 = new Month("June", 6, 2, 2020, masterCalendar);
+            monthRepository.save(june2020);
+            createJuneDays(june2020, accountCreated);
+
+            Month july2020 = new Month("July", 7, 4, 2020, masterCalendar);
+            monthRepository.save(july2020);
+            createJulyDays(july2020, accountCreated);
+
+
+            Month august2020 = new Month("August", 8, 7, 2020, masterCalendar);
+            monthRepository.save(august2020);
+            createAugustDays(august2020, accountCreated);
+
+
+            Month september2020 = new Month("September", 9, 3, 2020, masterCalendar);
+            monthRepository.save(september2020);
+            createSeptemberDays(september2020, accountCreated);
+
+            Month october2020 = new Month("October", 10, 5, 2020, masterCalendar);
+            monthRepository.save(october2020);
+            createOctoberDays(october2020, accountCreated);
+
+            Month november2020 = new Month("November", 11, 1, 2020, masterCalendar);
+            monthRepository.save(november2020);
+            createNovemberDays(november2020, accountCreated);
+
+            Month december2020 = new Month("December", 12, 3, 2020, masterCalendar);
+            monthRepository.save(december2020);
+            createDecemberDays(december2020, accountCreated);
         }
 
     }
 
-    private void createJanuaryDays(Month january) {
+    private void createJanuaryDays(Month january, Account account) {
         for (int i = 1; i < 31; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "01-0" + i + "-" + january.getYear();
+                idToSet = account.getUserName() + "-01-0" + i + "-" + january.getYear();
             } else {
-                idToSet = "01-" + i + "-" + january.getYear();
+                idToSet = account.getUserName() + "-01-" + i + "-" + january.getYear();
             }
             Day newDay = new Day(idToSet, january, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createFebruaryDays(Month february) {
+    private void createFebruaryDays(Month february, Account account) {
         for (int i = 1; i < 31; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "02-0" + i + "-" + february.getYear();
+                idToSet = account.getUserName() + "-02-0" + i + "-" + february.getYear();
             } else {
-                idToSet = "02-" + i + "-" + february.getYear();
+                idToSet = account.getUserName() + "-02-" + i + "-" + february.getYear();
             }
             Day newDay = new Day(idToSet, february, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createMarchDays(Month march) {
+    private void createMarchDays(Month march, Account account) {
         for (int i = 1; i < 32; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "03-0" + i + "-" + march.getYear();
+                idToSet = account.getUserName() + "-03-0" + i + "-" + march.getYear();
             } else {
-                idToSet = "03-" + i + "-" + march.getYear();
+                idToSet = account.getUserName() + "-03-" + i + "-" + march.getYear();
             }
             Day newDay = new Day(idToSet, march, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createAprilDays(Month april) {
+    private void createAprilDays(Month april, Account account) {
         for (int i = 1; i < 31; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "04-0" + i + "-" + april.getYear();
+                idToSet = account.getUserName() + "-04-0" + i + "-" + april.getYear();
             } else {
-                idToSet = "04-" + i + "-" + april.getYear();
+                idToSet = account.getUserName() + "-04-" + i + "-" + april.getYear();
             }
             Day newDay = new Day(idToSet, april, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createMayDays(Month may) {
+    private void createMayDays(Month may, Account account) {
         for (int i = 1; i < 32; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "05-0" + i + "-" + may.getYear();
+                idToSet = account.getUserName() + "-05-0" + i + "-" + may.getYear();
             } else {
-                idToSet = "05-" + i + "-" + may.getYear();
+                idToSet = account.getUserName() + "-05-" + i + "-" + may.getYear();
             }
             Day newDay = new Day(idToSet, may, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createJuneDays(Month june) {
+    private void createJuneDays(Month june, Account account) {
         for (int i = 1; i < 31; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "06-0" + i + "-" + june.getYear();
+                idToSet = account.getUserName() + "-06-0" + i + "-" + june.getYear();
             } else {
-                idToSet = "06-" + i + "-" + june.getYear();
+                idToSet = account.getUserName() + "-06-" + i + "-" + june.getYear();
             }
             Day newDay = new Day(idToSet, june, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createJulyDays(Month july) {
+    private void createJulyDays(Month july, Account account) {
         for (int i = 1; i < 32; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "07-0" + i + "-" + july.getYear();
+                idToSet = account.getUserName() + "-07-0" + i + "-" + july.getYear();
             } else {
-                idToSet = "07-" + i + "-" + july.getYear();
+                idToSet = account.getUserName() + "-07-" + i + "-" + july.getYear();
             }
             Day newDay = new Day(idToSet, july, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createAugustDays(Month august) {
+    private void createAugustDays(Month august, Account account) {
         for (int i = 1; i < 32; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "08-0" + i + "-" + august.getYear();
+                idToSet = account.getUserName() + "-08-0" + i + "-" + august.getYear();
             } else {
-                idToSet = "08-" + i + "-" + august.getYear();
+                idToSet = account.getUserName() + "-08-" + i + "-" + august.getYear();
             }
             Day newDay = new Day(idToSet, august, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createSeptemberDays(Month september) {
+    private void createSeptemberDays(Month september, Account account) {
         for (int i = 1; i < 31; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "09-0" + i + "-" + september.getYear();
+                idToSet = account.getUserName() + "-09-0" + i + "-" + september.getYear();
             } else {
-                idToSet = "09-" + i + "-" + september.getYear();
+                idToSet = account.getUserName() + "-09-" + i + "-" + september.getYear();
             }
             Day newDay = new Day(idToSet, september, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createOctoberDays(Month october) {
+    private void createOctoberDays(Month october, Account account) {
         for (int i = 1; i < 32; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "10-0" + i + "-" + october.getYear();
+                idToSet = account.getUserName() + "-10-0" + i + "-" + october.getYear();
             } else {
-                idToSet = "10-" + i + "-" + october.getYear();
+                idToSet = account.getUserName() + "-10-" + i + "-" + october.getYear();
             }
             Day newDay = new Day(idToSet, october, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createNovemberDays(Month november) {
+    private void createNovemberDays(Month november, Account account) {
         for (int i = 1; i < 31; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "11-0" + i + "-" + november.getYear();
+                idToSet = account.getUserName() + "-11-0" + i + "-" + november.getYear();
             } else {
-                idToSet = "11-" + i + "-" + november.getYear();
+                idToSet = account.getUserName() + "-11-" + i + "-" + november.getYear();
             }
             Day newDay = new Day(idToSet, november, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createDecemberDays(Month december) {
+    private void createDecemberDays(Month december, Account account) {
         for (int i = 1; i < 32; i++) {
             String idToSet;
             if (i < 10) {
-                idToSet = "12-0" + i + "-" + december.getYear();
+                idToSet = account.getUserName() + "-12-0" + i + "-" + december.getYear();
             } else {
-                idToSet = "12-" + i + "-" + december.getYear();
+                idToSet = account.getUserName() + "-12-" + i + "-" + december.getYear();
             }
             Day newDay = new Day(idToSet, december, i);
             dayRepository.save(newDay);
-            createHours(newDay);
+            createHours(newDay, account);
         }
     }
 
-    private void createHours(Day day) {
+    private void createHours(Day day, Account account) {
         for (int h = 0; h < 24; h++) {
             LocalTime startTime = LocalTime.of(h, 0, 0);
             int endHour;
@@ -264,7 +263,7 @@ public class Populator implements CommandLineRunner {
             }
             String idToSet = day.getId() + "-" + h;
             LocalTime endTime = LocalTime.of(endHour, 0, 0);
-            Event newHour = new Event(idToSet, day, true, startTime, endTime, "Free Time");
+            Event newHour = new Event(account, idToSet, day, true, startTime, endTime, "Free Time!");
             eventRepository.save(newHour);
         }
     }
