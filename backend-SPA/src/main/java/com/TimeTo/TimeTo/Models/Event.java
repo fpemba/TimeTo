@@ -22,6 +22,9 @@ public class Event {
     private LocalTime startTime;
     private LocalTime endTime;
     private String name;
+    @JsonIgnore
+    @ManyToOne
+    private Account creator;
 //    @ManyToMany
 //    private Set<UserAccount> userAccounts;
     @JsonIgnore
@@ -32,7 +35,8 @@ public class Event {
     public Event() {
 
     }
-    public Event(String id, Day day, boolean available, LocalTime startTime, LocalTime endTime, String name) {
+    public Event(Account creator, String id, Day day, boolean available, LocalTime startTime, LocalTime endTime, String name) {
+        this.creator = creator;
         this.id = id;
         this.day = day;
         this.available = available;
@@ -60,6 +64,10 @@ public class Event {
 
     public String getId() {
         return id;
+    }
+
+    public Account getCreator() {
+        return creator;
     }
 
     @Override

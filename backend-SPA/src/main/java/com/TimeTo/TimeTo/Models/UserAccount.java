@@ -1,5 +1,7 @@
 package com.TimeTo.TimeTo.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
@@ -13,6 +15,7 @@ public class UserAccount {
     private String firstName;
     private String lastName;
     private String userName;
+
     @OneToOne(mappedBy = "userAccount")
     private Account account;
     @ManyToMany(mappedBy = "friends")
