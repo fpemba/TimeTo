@@ -83,6 +83,7 @@ const createHamburgerBtn = () => {
 
     const compareLink = document.createElement("a");
     compareLink.setAttribute('href', '#');
+    compareLink.classList.add('compare_link')
     navList.appendChild(compareLink);
     const compareText = document.createElement("li");
     compareText.innerText = "Compare";
