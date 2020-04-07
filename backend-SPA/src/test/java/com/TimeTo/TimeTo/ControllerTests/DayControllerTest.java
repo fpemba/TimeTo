@@ -1,10 +1,7 @@
 package com.TimeTo.TimeTo.ControllerTests;
 
 import com.TimeTo.TimeTo.Controllers.DayController;
-import com.TimeTo.TimeTo.Models.Calendar;
-import com.TimeTo.TimeTo.Models.Day;
-import com.TimeTo.TimeTo.Models.Event;
-import com.TimeTo.TimeTo.Models.Month;
+import com.TimeTo.TimeTo.Models.*;
 import com.TimeTo.TimeTo.Repositories.DayRepository;
 import com.TimeTo.TimeTo.Repositories.EventRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,45 +30,46 @@ public class DayControllerTest {
     private Day testDay;
     private Event testEvent;
     private MockMvc mockMvc;
+    private Account testAccount;
 
-//    @BeforeEach
-//    void setUp(){
-//        dayRepository = mock(DayRepository.class);
-//        eventRepository = mock(EventRepository.class);
-//        underTest = new DayController(dayRepository, eventRepository);
-//        testCalendar = new Calendar();
-//        testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
-//        testDay = new Day("1", testMonth, 1);
-//        LocalTime startTime = LocalTime.of(4,0,0);
-//        LocalTime endTime = LocalTime.of(6,0,0);
-//        testEvent = new Event("5",testDay, false, startTime, endTime, "Funzone");
-//        when(dayRepository.findAll()).thenReturn(Collections.singletonList(testDay));
-//        when(dayRepository.findById("1")).thenReturn(Optional.of(testDay));
-//        mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
-//    }
-//
-//    @Test
-//    public void retrieveDaysReturnsListOfDays(){
-//        underTest.retrieveDays();
-//        verify(dayRepository).findAll();
-//    }
-//
-//    @Test
-//    public void retrieveDaysReturnsListOfDaysContainingMockDay(){
-//        Collection<Day> result = underTest.retrieveDays();
-//        assertThat(result).contains(testDay);
-//    }
-//
-//    @Test
-//    public void underTestIsWiredCorrectly() throws Exception{
-//        mockMvc.perform(get("/days/"))
-//                .andExpect(status().isOk());
-//    }
-//
-//    @Test
-//   public void retrieveSingleDayReturnsASingleDay(){
-//        Day result = underTest.retrieveSingleDay("1");
-//        verify(dayRepository).findById("1");
-//        assertThat(result).isEqualTo(testDay);
-//    }
+    @BeforeEach
+    void setUp(){
+        dayRepository = mock(DayRepository.class);
+        eventRepository = mock(EventRepository.class);
+        underTest = new DayController(dayRepository, eventRepository);
+        testCalendar = new Calendar();
+        testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
+        testDay = new Day("1", testMonth, 1);
+        LocalTime startTime = LocalTime.of(4,0,0);
+        LocalTime endTime = LocalTime.of(6,0,0);
+        testEvent = new Event(testAccount, "5",testDay, false, startTime, endTime, "Funzone");
+        when(dayRepository.findAll()).thenReturn(Collections.singletonList(testDay));
+        when(dayRepository.findById("1")).thenReturn(Optional.of(testDay));
+        mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
+    }
+
+    @Test
+    public void retrieveDaysReturnsListOfDays(){
+        underTest.retrieveDays();
+        verify(dayRepository).findAll();
+    }
+
+    @Test
+    public void retrieveDaysReturnsListOfDaysContainingMockDay(){
+        Collection<Day> result = underTest.retrieveDays();
+        assertThat(result).contains(testDay);
+    }
+
+    @Test
+    public void underTestIsWiredCorrectly() throws Exception{
+        mockMvc.perform(get("/days/"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+   public void retrieveSingleDayReturnsASingleDay(){
+        Day result = underTest.retrieveSingleDay("1");
+        verify(dayRepository).findById("1");
+        assertThat(result).isEqualTo(testDay);
+    }
 }

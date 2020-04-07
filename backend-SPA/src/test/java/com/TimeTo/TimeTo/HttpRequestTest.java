@@ -47,7 +47,7 @@ public class HttpRequestTest {
     @Test
     public void eventsEndpointShouldBeOk() {
         ResponseEntity<String> response = testRestTemplate.getForEntity(
-                "http://localhost:" + port + "/events", String.class);
+                "http://localhost:" + port + "/events/", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 

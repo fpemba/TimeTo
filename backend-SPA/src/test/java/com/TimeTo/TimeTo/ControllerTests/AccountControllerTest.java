@@ -24,22 +24,22 @@ public class AccountControllerTest {
     private UserAccount testUserAccount;
     private Calendar testCalendar;
 
-//    @BeforeEach
-//    void setUp(){
-//        testCalendar = new Calendar();
-//        accountRepository = mock(AccountRepository.class);
-//        underTest = new AccountController(accountRepository);
-//        testUserAccount= new UserAccount("Stuart", "Maxwell", "stumax7");
-//        userRepository = mock(UserRepository.class);
-//        testAccount = new Account(testUserAccount, testCalendar);
-//        userRepository.save(testUserAccount);
-//        accountRepository.save(testAccount);
-//        when(accountRepository.findAll()).thenReturn(Collections.singletonList(testAccount));
-//        when(accountRepository.findById(1L)).thenReturn(java.util.Optional.ofNullable(testAccount));
-//    }
-//
-//    @Test
-//    public void AccountShouldHaveACalendar(){
-//
-//    }
+    @BeforeEach
+    void setUp(){
+        testCalendar = new Calendar();
+        accountRepository = mock(AccountRepository.class);
+        underTest = new AccountController(accountRepository);
+        testUserAccount= new UserAccount("Stuart", "Maxwell", "stumax7");
+        userRepository = mock(UserRepository.class);
+        testAccount = new Account(testUserAccount, testCalendar);
+        userRepository.save(testUserAccount);
+        accountRepository.save(testAccount);
+        when(accountRepository.findAll()).thenReturn(Collections.singletonList(testAccount));
+        when(accountRepository.findById(1L)).thenReturn(java.util.Optional.ofNullable(testAccount));
+    }
+
+    @Test
+    public void AccountShouldHaveACalendar(){
+
+    }
 }
