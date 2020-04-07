@@ -1,6 +1,9 @@
 package com.TimeTo.TimeTo.Controllers;
 
+import com.TimeTo.TimeTo.Models.Account;
+import com.TimeTo.TimeTo.Models.Day;
 import com.TimeTo.TimeTo.Models.Event;
+import com.TimeTo.TimeTo.Repositories.AccountRepository;
 import com.TimeTo.TimeTo.Repositories.EventRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +17,7 @@ public class EventController {
 
     public EventController(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
+
     }
 
     @GetMapping("/events/")
@@ -28,11 +32,23 @@ public class EventController {
 
     @DeleteMapping("/events/{id}/")
     public void deleteEvent(@PathVariable String id) {
+        Event e = eventRepository.findById(id).get();
+        Event newFreeTime = new Event(e.getCreator(), e.getId(), e.getDay(), true, e.getStartTime(), e.getEndTime(), "Free Time!");
         eventRepository.deleteById(id);
+        eventRepository.save(newFreeTime);
     }
 
     @PostMapping("/events/")
-    public Event createEvent(@RequestBody Event eventToAdd) {
+    public Event createEvent(@RequestBody Event event) {
+        Account creator = event.getCreator();
+        String id = event.getId();
+        Day day = event.getDay();
+        boolean available = false;
+        LocalTime startTime = event.getStartTime();
+        LocalTime endTime = event.getEndTime();
+        String name = "Have fun";
+        eventRepository.delete(event);
+        Event eventToAdd = new Event(creator, id, day, available, startTime, endTime, name);
         return eventRepository.save(eventToAdd);
     }
 }

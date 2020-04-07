@@ -15,10 +15,12 @@ public class Account {
     @JsonIgnore
     @OneToOne
     private UserAccount userAccount;
+    @OneToMany
+    private Set<Event> events;
     @ManyToMany
     private Set<UserAccount> friends;
 
-    @ManyToOne
+    @OneToOne
     private Calendar calendar;
 
     protected Account() {
@@ -28,6 +30,7 @@ public class Account {
     public Account(UserAccount userAccount, Calendar calendar) {
         friends = new HashSet<>();
         this.userAccount = userAccount;
+        events = new HashSet<>();
         this.calendar = calendar;
     }
 
@@ -53,6 +56,10 @@ public class Account {
 
     public void addFriend(UserAccount friend){
         friends.add(friend);
+    }
+
+    public void addEvent(Event event){
+        events.add(event);
     }
 
     @Override
