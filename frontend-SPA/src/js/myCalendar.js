@@ -41,14 +41,18 @@ const renderMonth = () => {
 
     const myCalendar = document.createElement('div');
     myCalendar.classList.add('my_calendar');
-    // monthPicture.setAttribute('src', './images/index.png')
-    // monthPicture.setAttribute('width', '600')
-    // monthPicture.setAttribute('height', '400')
-    // monthPicture.setAttribute('a', 'href')
+
+    myCalendar.innerHTML=`<object type="text/html" data="./calendar.html" width="700" height="400" ></object> `;
+
+   
     mainHeader.appendChild(myCalendar);
+
 
     return mainHeader;
 }
+
+
+    
 
 const clearBackground = () => {
     const home = document.querySelector('.home');
@@ -70,9 +74,10 @@ const displayMyPage = () => {
     container.append(renderMonth());
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
-
-    // container.appendChild(renderMonthPicture());
+   
 }
+
+
 
 export {
     displayMyPage

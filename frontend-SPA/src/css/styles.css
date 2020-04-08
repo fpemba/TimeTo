@@ -132,14 +132,6 @@ nav {
 .friends-list li {
     list-style: none;
 }
-.my_calendar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 15px 1fr 1fr 1fr 1fr 1fr 1fr;
-    border: 1px solid wheat;
-    height: 70vh;
-    width: 80vw;
-}
 .user_calendar {
     padding-top: 6em;
     grid-column-start: 2;
@@ -353,4 +345,351 @@ footer {
  {
    transform: none;
  }
+
+ .calendarCell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 25px 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+    border: 5px solid white;
+    height: 95vh;
+    width: 95vw;
+    background-color: white;
+    color:white
+   
+
+    
+}
+
+.cell1{
+    display: grid;
+
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell2{
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell3{
+    display: grid;
+    
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell4{
+    display: grid;
+  
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell5{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell6{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell7{
+    display: grid;
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell8{
+    display: grid;
+
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell9{
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell10{
+    display: grid;
+    
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell11{
+    display: grid;
+  
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell12{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell13{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell14{
+    display: grid;
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell15{
+    display: grid;
+
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell16{
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell17{
+    display: grid;
+    
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell18{
+    display: grid;
+  
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell19{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell20{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell21{
+    display: grid;
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell22{
+    display: grid;
+
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell23{
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell24{
+    display: grid;
+    
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell25{
+    display: grid;
+  
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell26{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell27{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell28{
+    display: grid;
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell29{
+    display: grid;
+
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell30{
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell31{
+    display: grid;
+    
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell32{
+    display: grid;
+  
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell33{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell34{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell35{
+    display: grid;
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell36{
+    display: grid;
+
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell37{
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell38{
+    display: grid;
+    
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell39{
+    display: grid;
+  
+    background-color: rgba(46, 99, 146);
+
+}
+
+.cell40{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell41{
+    display: grid;
+   
+    background-color:rgba(46, 99, 146);
+
+}
+
+.cell42{
+    display: grid;
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+
+.sun{
+   
+    background-color: rgba(46, 99, 146);
+}
+
+.mon{
+   
+    background-color: rgba(46, 99, 146);
+}
+
+.tue{
+   
+    background-color: rgba(46, 99, 146);
+}
+
+.wed{
+   
+    background-color: rgba(46, 99, 146);
+}
+
+.thur{
+   
+    background-color: rgba(46, 99, 146);
+}
+
+.fri{
+   
+    background-color: rgba(46, 99, 146);
+}
+
+.sat{
+   
+    background-color: rgba(46, 99, 146);
+}
+
 
