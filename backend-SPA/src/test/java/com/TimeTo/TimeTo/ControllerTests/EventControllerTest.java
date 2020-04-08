@@ -45,12 +45,12 @@ class EventControllerTest {
         Day testDay = new Day();
     }
 
-    @Test
-    public void shouldRetrieveEventById() throws Exception{
-        Day testDay = new Day();
-        Event testEvent = new Event(testAccount, "1", testDay, false, startTime, endTime, "testName");
-        when(eventRepo.findById(testEvent.getId())).thenReturn(java.util.Optional.of(testEvent));
-        mockMvc.perform(MockMvcRequestBuilders.get("/events/1/"))
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    public void shouldRetrieveEventById() throws Exception{
+//        Day testDay = new Day();
+//        Event testEvent = new Event(testAccount, "1", testDay, false, startTime, endTime, "testName");
+//        when(eventRepo.findById(testEvent.getId())).thenReturn(java.util.Optional.of(testEvent));
+//        mockMvc.perform(MockMvcRequestBuilders.get("/events/1/"))
+//                .andExpect(status().isOk());
+//    }
 }
