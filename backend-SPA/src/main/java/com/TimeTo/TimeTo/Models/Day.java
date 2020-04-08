@@ -29,8 +29,8 @@ public class Day {
         this.dayNumber = dayNumber;
     }
 
-    public Month getMonth() {
-        return month;
+    public String getMonth() {
+        return month.getName();
     }
 
     public Collection<Event> getEvents() {

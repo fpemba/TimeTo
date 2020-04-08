@@ -12,6 +12,7 @@ public class Account {
     @Id
     @GeneratedValue
     private Long id;
+    private String username;
     @JsonIgnore
     @OneToOne
     private UserAccount userAccount;
@@ -32,6 +33,7 @@ public class Account {
         this.userAccount = userAccount;
         events = new HashSet<>();
         this.calendar = calendar;
+        this.username = userAccount.getUserName();
     }
 
     public Long getId() {
@@ -39,7 +41,7 @@ public class Account {
     }
 
     public String getUserName() {
-        return userAccount.getUserName();
+        return username;
     }
 
     public UserAccount getUserAccount(){

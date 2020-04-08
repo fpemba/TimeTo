@@ -30,14 +30,17 @@ public class DayControllerTest {
     private Day testDay;
     private Event testEvent;
     private MockMvc mockMvc;
+    private UserAccount testUser;
     private Account testAccount;
 
     @BeforeEach
     void setUp(){
         dayRepository = mock(DayRepository.class);
         eventRepository = mock(EventRepository.class);
-        underTest = new DayController(dayRepository, eventRepository);
+        underTest = new DayController(dayRepository);
         testCalendar = new Calendar();
+        testUser = new UserAccount("Simba", "Mufasason", "LionKing95");
+        testAccount = new Account(testUser, testCalendar);
         testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
         testDay = new Day("1", testMonth, 1);
         LocalTime startTime = LocalTime.of(4,0,0);
