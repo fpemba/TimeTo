@@ -14,8 +14,11 @@ const clearView = () => {
 
 const displayComparePage = ()=>{
     clearView();
-    const container = document.querySelector(".compare_container");
+    const container = document.createElement("body");
+    container.classList.add("compare_container");
     container.append(renderCompareHeader());
 }
 
-export{displayComparePage}
+export{
+    displayComparePage
+}
