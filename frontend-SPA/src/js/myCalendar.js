@@ -28,7 +28,7 @@ const renderMonth = () => {
     leftArrow.setAttribute('width', '100');
     monthHeader.appendChild(leftArrow);
 
-    const monthElement = document.createElement("span");
+    const monthElement = document.createElement("h3");
     monthElement.classList.add("currentMonth");
     monthElement.innerText = "Month";
     monthHeader.appendChild(monthElement);
