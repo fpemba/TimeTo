@@ -4,6 +4,7 @@ import com.TimeTo.TimeTo.Controllers.EventController;
 import com.TimeTo.TimeTo.Models.Account;
 import com.TimeTo.TimeTo.Models.Day;
 import com.TimeTo.TimeTo.Models.Event;
+import com.TimeTo.TimeTo.Repositories.AccountRepository;
 import com.TimeTo.TimeTo.Repositories.DayRepository;
 import com.TimeTo.TimeTo.Repositories.EventRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,12 +28,13 @@ class EventControllerTest {
     private Account testAccount;
     private LocalTime startTime;
     private LocalTime endTime;
+    private AccountRepository accountRepository;
 
     @BeforeEach
     public void setUp(){
         eventRepo = mock(EventRepository.class);
         dayRepo = mock(DayRepository.class);
-        eventController = new EventController(eventRepo);
+        eventController = new EventController(eventRepo, accountRepository);
         mockMvc = MockMvcBuilders.standaloneSetup(eventController).build();
         startTime = LocalTime.of(1, 0, 0);
         endTime = LocalTime.of(2, 0, 0);

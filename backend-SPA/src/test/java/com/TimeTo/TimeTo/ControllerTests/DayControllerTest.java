@@ -36,7 +36,7 @@ public class DayControllerTest {
     void setUp(){
         dayRepository = mock(DayRepository.class);
         eventRepository = mock(EventRepository.class);
-        underTest = new DayController(dayRepository, eventRepository);
+        underTest = new DayController(dayRepository);
         testCalendar = new Calendar();
         testMonth = new Month("testMonth", 1,  1, 2020, testCalendar);
         testDay = new Day("1", testMonth, 1);

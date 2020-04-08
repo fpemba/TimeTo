@@ -22,6 +22,8 @@ public class Event {
     private LocalTime startTime;
     private LocalTime endTime;
     private String name;
+    private String username;
+    private String month;
     @JsonIgnore
     @ManyToOne
     private Account creator;
@@ -43,6 +45,9 @@ public class Event {
         this.startTime = startTime;
         this.endTime = endTime;
         this.name = name;
+        this.username = creator.getUserName();
+        this.month = day.getMonth();
+
 //        userAccounts = new HashSet<>();
     }
 
@@ -70,6 +75,18 @@ public class Event {
         return creator;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -93,6 +110,8 @@ public class Event {
         if (startTime != null ? !startTime.equals(event.startTime) : event.startTime != null) return false;
         if (endTime != null ? !endTime.equals(event.endTime) : event.endTime != null) return false;
         if (name != null ? !name.equals(event.name) : event.name != null) return false;
+        if (username != null ? !username.equals(event.username) : event.username != null) return false;
+        if (creator != null ? !creator.equals(event.creator) : event.creator != null) return false;
         return day != null ? day.equals(event.day) : event.day == null;
     }
 
@@ -103,6 +122,8 @@ public class Event {
         result = 31 * result + (startTime != null ? startTime.hashCode() : 0);
         result = 31 * result + (endTime != null ? endTime.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+        result = 31 * result + (creator != null ? creator.hashCode() : 0);
         result = 31 * result + (day != null ? day.hashCode() : 0);
         return result;
     }

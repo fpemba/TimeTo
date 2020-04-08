@@ -1,8 +1,6 @@
 package com.TimeTo.TimeTo.Models;
 
 
-import com.TimeTo.TimeTo.Models.Calendar;
-import com.TimeTo.TimeTo.Models.Day;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -15,7 +13,7 @@ public class Month {
     @GeneratedValue
     private Long id;
 
-    private String nameOfMonth;
+    private String name;
     private int numberOfMonth;
     private int firstDayOfMonth;
     private int year;
@@ -33,8 +31,8 @@ public class Month {
         return id;
     }
 
-    public Month(String nameOfMonth, int numberOfMonth, int firstDayOfMonth, int year, Calendar calendar) {
-        this.nameOfMonth = nameOfMonth;
+    public Month(String name, int numberOfMonth, int firstDayOfMonth, int year, Calendar calendar) {
+        this.name = name;
         this.numberOfMonth = numberOfMonth;
         this.firstDayOfMonth = firstDayOfMonth;
         this.year = year;
@@ -49,8 +47,8 @@ public class Month {
         return days;
     }
 
-    public String getNameOfMonth() {
-        return nameOfMonth;
+    public String getName() {
+        return name;
     }
 
     public int getNumberOfMonth() {
