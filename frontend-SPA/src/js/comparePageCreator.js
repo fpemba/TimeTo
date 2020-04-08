@@ -1,3 +1,7 @@
+import {
+    createHamburgerBtn
+} from './hamburger.js'
+
 const renderCompareHeader = ()=>{
     const headerElement = document.createElement("header");
     headerElement.classList.add("compare_header");
@@ -14,9 +18,11 @@ const clearView = () => {
 
 const displayComparePage = ()=>{
     clearView();
-    const container = document.createElement("body");
-    container.classList.add("compare_container");
+    const container = document.querySelector(".container");
+    // container.classList.add("compare_container");
     container.append(renderCompareHeader());
+    container.append(createHamburgerBtn());
+
 }
 
 export{

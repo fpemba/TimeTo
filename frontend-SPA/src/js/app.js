@@ -4,11 +4,8 @@ import {
 import {
     displayMyPage
 } from './myCalendar.js';
-// import {displayComparePage} from './comparePageCreator.js';
-
 
 displayHome();
-
 
 const loginButton = document.querySelector(".loginButton");
 loginButton.addEventListener('click', () => {
