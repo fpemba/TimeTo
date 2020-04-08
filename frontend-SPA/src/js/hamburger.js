@@ -3,6 +3,8 @@ import {
     displayComparePage
 } from './comparePageCreator.js';
 
+import {displayMyPage} from './myCalendar.js';
+
 const createHamburgerBtn = () => {
     const nav = document.createElement("nav");
     const menuToggle = document.createElement("div");
@@ -30,6 +32,10 @@ const createHamburgerBtn = () => {
     const myCalendarText = document.createElement("li");
     myCalendarText.innerText = "My Calendar";
     myCalendarLink.appendChild(myCalendarText);
+    myCalendarLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        displayMyPage();
+    })
 
     const inviteLink = document.createElement("a");
     inviteLink.setAttribute('href', '#');
