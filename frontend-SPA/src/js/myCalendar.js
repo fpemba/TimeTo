@@ -86,7 +86,7 @@ const displayMyPage = () => {
     // container.appendChild(renderMonth());
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
-    getEventsByUserNameAndDay().then(element => container.append(element));
+    // getEventsByUserNameAndDay().then(element => container.append(element));
  
    
 }

@@ -1,16 +1,25 @@
 const getEventsByUserNameAndDay = ()=> {
-    return fetch('http://localhost:8080/events/{username}/{day}/')
+    return fetch('http://localhost:8080/days/')
         .then(response => response.json())
-        .then(eventsJson => renderEvents(eventsJson))
+        .then(dayJson => renderDays(dayJson));
+        
 }
 
-const renderEvents = (events) => {
-    events.forEach(event=>{
-        const cell3 = document.querySelector('.cell3');
-        console.log(events);
-        cell3.innerText = event.name;
-    })
+const renderDays = (days) => {
+    console.log("javascript is so good")
+    // days.forEach(day=>{
+    //     console.log("no it isnt");
+    //     const cell3 = document.querySelector('.cell3');
+    //     const newDiv = document.createElement('div');
+    //     newDiv.innerText = day.dayNumber;
+    //     cell3.appendChild(newDiv);
+        
+    // })
     
 }
+
+const calendarCell = document.querySelector('.calendarCell')
+// renderDays().then(element => calendarCell.append(element));
+console.log("This works");
 
 export{getEventsByUserNameAndDay}
