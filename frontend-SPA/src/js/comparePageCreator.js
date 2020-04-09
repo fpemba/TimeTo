@@ -31,6 +31,20 @@ const renderMonthSection = () => {
     rightArrow.setAttribute('width', '100');
     rightArrow.setAttribute('height', '100');
     monthSection.appendChild(rightArrow);
+
+    const compareCalendar = document.createElement('div');
+    compareCalendar.classList.add('myAndFriendCompareCalendar');
+    currentMonth.appendChild(compareCalendar);
+
+    const myCompareCalendar = document.createElement('div');
+    myCompareCalendar.classList.add('my_CompareCalendar');
+    myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="200" height="200" ></object> `;
+    compareCalendar.appendChild(myCompareCalendar);
+
+    const friendsCompareCalendar = document.createElement('div');
+    friendsCompareCalendar.classList.add('friends_CompareCalendar');
+    friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="300" height="300" ></object> `;
+    compareCalendar.appendChild(friendsCompareCalendar);
     
     return monthSection;
 }

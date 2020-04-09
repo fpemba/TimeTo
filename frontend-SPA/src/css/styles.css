@@ -363,6 +363,42 @@ footer {
     
 }
 
+.myAndFriendCompareCalendar{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    /* display: grid; */
+    /* grid-template-rows: 50% 50%; */
+}
+
+.compareCalendarCell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 25px 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+    border: 5px solid white;
+    height: 70vh;
+    width: 140vw;
+    background-color: white;
+    color:white
+   
+}
+
+
+.friendsCompareCalendarCell{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 25px 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+    border: 5px solid white;
+    height: 70vh;
+    width: 140vw;
+    background-color: white;
+    color:white
+}
+
 .cell1{
     display: grid;
 
