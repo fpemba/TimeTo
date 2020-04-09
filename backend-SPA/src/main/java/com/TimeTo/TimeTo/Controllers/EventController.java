@@ -27,9 +27,9 @@ public class EventController {
         return (Collection<Event>) eventRepository.findAll();
     }
 
-    @GetMapping("/events/{username}/{month}/")
-    public Collection<Event> retrieveEventByMonthAndUsername(@PathVariable ("username") String username, @PathVariable ("month") String month){
-        return eventRepository.findByUsernameAndMonth(username, month);
+    @GetMapping("/events/{username}/{day}/")
+    public Collection<Event> retrieveEventByDayAndUsername(@PathVariable ("username") String username, @PathVariable ("day") Day day){
+        return eventRepository.findByUsernameAndDay(username, day);
     }
 
     @GetMapping("/events/{username}/")

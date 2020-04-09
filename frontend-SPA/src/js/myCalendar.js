@@ -2,6 +2,10 @@ import {
     createHamburgerBtn
 } from './hamburger.js'
 
+import{
+    getEventsByUserNameAndDay
+}from './myCalendarFetch.js'
+
 const renderMyHeader = () => {
     const headerElement = document.createElement("header");
     headerElement.classList.add("header");
@@ -36,7 +40,6 @@ const renderMonth = (month) => {
 
     const monthElement = document.createElement("h3");
     monthElement.classList.add("currentMonth");
-   console.log(month);
     monthElement.innerText = month.name;
     monthHeader.appendChild(monthElement);
     mainHeader.appendChild(monthHeader);
@@ -79,10 +82,12 @@ const displayMyPage = () => {
     clearBackground();
     container.appendChild(renderMyHeader());
     // container.append(getMonth());
-    getMonth().then(element => container.append(element))
+    getMonth().then(element => container.append(element));
     // container.appendChild(renderMonth());
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
+    getEventsByUserNameAndDay().then(element => container.append(element));
+ 
    
 }
 
