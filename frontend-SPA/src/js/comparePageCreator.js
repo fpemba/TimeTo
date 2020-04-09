@@ -10,9 +10,12 @@ const renderCompareHeader = ()=>{
 }
 
 const renderMonthSection = () => {
+    // const compareContainer = document.createElement("div")
+    // compareContainer.classList.add("compare_container");
+
     const monthSection = document.createElement("div");
     monthSection.classList.add("month_section");
-    
+    // compareContainer.appendChild(monthSection);
     
     const leftArrow = document.createElement("img");
     leftArrow.classList.add("left_arrow");
@@ -32,12 +35,11 @@ const renderMonthSection = () => {
     rightArrow.setAttribute('width', '100');
     rightArrow.setAttribute('height', '100');
     monthSection.appendChild(rightArrow);
-
     
     const compareCalendar = document.createElement('div');
     compareCalendar.classList.add('myAndFriendCompareCalendar');
+    // compareContainer.appendChild(compareCalendar);
     currentMonth.appendChild(compareCalendar);
-    // containerSection.appendChild(compareCalendar);
 
     const myCompareCalendar = document.createElement('div');
     myCompareCalendar.classList.add('my_CompareCalendar');
@@ -131,7 +133,7 @@ const displayComparePage = ()=>{
     container.append(renderMonthSection());
     container.append(renderFriendSection());
     container.append(renderFooter());
-    container.append(renderCalendar());
+    // container.append(renderCalendar());
 }
 
 export{
