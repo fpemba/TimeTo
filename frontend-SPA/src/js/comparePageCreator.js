@@ -13,6 +13,7 @@ const renderMonthSection = () => {
     const monthSection = document.createElement("div");
     monthSection.classList.add("month_section");
     
+    
     const leftArrow = document.createElement("img");
     leftArrow.classList.add("left_arrow");
     leftArrow.setAttribute('src', "./images/left-arrow.png");
@@ -32,13 +33,15 @@ const renderMonthSection = () => {
     rightArrow.setAttribute('height', '100');
     monthSection.appendChild(rightArrow);
 
+    
     const compareCalendar = document.createElement('div');
     compareCalendar.classList.add('myAndFriendCompareCalendar');
     currentMonth.appendChild(compareCalendar);
+    // containerSection.appendChild(compareCalendar);
 
     const myCompareCalendar = document.createElement('div');
     myCompareCalendar.classList.add('my_CompareCalendar');
-    myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="200" height="200" ></object> `;
+    myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="300" height="300" ></object> `;
     compareCalendar.appendChild(myCompareCalendar);
 
     const friendsCompareCalendar = document.createElement('div');
@@ -48,6 +51,27 @@ const renderMonthSection = () => {
     
     return monthSection;
 }
+
+// const renderCalendar = () => {
+    // const container = document.querySelector('container');
+    // const compareCalendar = document.createElement('div');
+    // compareCalendar.classList.add('myAndFriendCompareCalendar');
+    // currentMonth.appendChild(compareCalendar);
+    // container.appendChild(compareCalendar);
+
+    // const myCompareCalendar = document.createElement('div');
+    // myCompareCalendar.classList.add('my_CompareCalendar');
+    // myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="300" height="300" ></object> `;
+    // compareCalendar.appendChild(myCompareCalendar);
+
+    // const friendsCompareCalendar = document.createElement('div');
+    // friendsCompareCalendar.classList.add('friends_CompareCalendar');
+    // friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="300" height="300" ></object> `;
+    // compareCalendar.appendChild(friendsCompareCalendar);
+
+    // return renderCalendar;
+
+// }
 
 const renderFriendSection = ()=>{
     const friendsList = document.createElement("ul");
@@ -107,6 +131,7 @@ const displayComparePage = ()=>{
     container.append(renderMonthSection());
     container.append(renderFriendSection());
     container.append(renderFooter());
+    container.append(renderCalendar());
 }
 
 export{

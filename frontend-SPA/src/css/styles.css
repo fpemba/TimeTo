@@ -96,9 +96,10 @@ nav {
 .month_section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    grid-column-start: 2;
-    grid-column-end: 4;
+    justify-content: center; 
+    /* display: grid; */
+    /* grid-column-start: 2;
+    grid-column-end: 4; */
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
@@ -364,11 +365,12 @@ footer {
 }
 
 .myAndFriendCompareCalendar{
-    /* display: flex;
+    display: flex; 
     flex-direction: row;
-    justify-content: space-between; */
-    /* display: grid; */
-    /* grid-template-rows: 50% 50%; */
+    justify-content: space-evenly; 
+    
+    /* display: grid; 
+    grid-template-rows: 50% 50%;  */
 }
 
 .compareCalendarCell {
@@ -381,7 +383,9 @@ footer {
     height: 70vh;
     width: 140vw;
     background-color: white;
-    color:white
+    color:white;
+    margin-right: 20px;
+    
    
 }
 
@@ -396,7 +400,9 @@ footer {
     height: 70vh;
     width: 140vw;
     background-color: white;
-    color:white
+    color:white;
+    margin-left: 20px;
+
 }
 
 .cell1{

@@ -17,8 +17,10 @@ const renderFooter = () => {
 }
 
 const renderMyGroups = () => {
-    
+    const container = document.createElement('div')
+    container.classList.add('group-container')
     const myGroups = document.createElement('section');
+    container.appendChild(myGroups);
     myGroups.classList.add('current-groups-body');
     const groupBtn = document.createElement('button');
     groupBtn.textContent = 'Create New Group';
@@ -32,9 +34,9 @@ const renderMyGroups = () => {
     const groupSchedule = document.createElement('h3');
     groupSchedule.classList.add('group-schedule');
     groupSchedule.textContent = 'Group Schedule'
-    myGroups.appendChild(groupSchedule);
+    container.appendChild(groupSchedule);
 
-    return myGroups;
+    return container;
 
 }
 
