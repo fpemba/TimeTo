@@ -2,9 +2,9 @@ import {
     createHamburgerBtn
 } from './hamburger.js'
 
-import{
-    getEventsByUserNameAndDay
-}from './myCalendarFetch.js'
+// import{
+//     getEventsByUserNameAndDay
+// }from './myCalendarFetch.js'
 
 const renderMyHeader = () => {
     const headerElement = document.createElement("header");

@@ -17,6 +17,9 @@ public class Month {
     private int numberOfMonth;
     private int firstDayOfMonth;
     private int year;
+    @JsonIgnore
+    @ManyToOne
+    private Account account;
 
     @JsonIgnore
     @ManyToOne
