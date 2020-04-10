@@ -12,6 +12,24 @@ const renderDaysByMonth = (month) => {
         let cell = document.querySelector(`.cell${currentDay}`);
         currentDay++;
         cell.innerText = day.dayNumber;
+        cell.addEventListener('click', ()=>{
+            const cellModal = document.createElement('div');
+            cellModal.classList.add("cellModal");
+            cell.appendChild(cellModal);
+            const modalPopUp = document.createElement('div');
+            modalPopUp.classList.add("modalPopUp");
+            cellModal.appendChild(modalPopUp);
+            const close = document.createElement("span");
+            close.classList.add("close");
+            cellModal.appendChild(close);
+            const modalContent = document.createElement("div");
+            modalContent.classList.add("modalContent");
+            cellModal.appendChild(modalContent);
+            const calendarCell = document.querySelector(".calendarCell");
+            calendarCell.appendChild(cellModal);
+            cellModal.style.display = "block";
+            console.log("is this even working")
+        })
         });
         }
     // }
