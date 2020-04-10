@@ -17,25 +17,26 @@ const renderMonthSection = () => {
     monthSection.classList.add("month_section");
     // compareContainer.appendChild(monthSection);
     
-    const currentMonth = document.createElement("h3");
-    currentMonth.classList.add("currentMonth");
-    currentMonth.innerText = "Month";
-    monthSection.appendChild(currentMonth);
+    
     
     const leftArrow = document.createElement("img");
     leftArrow.classList.add("left_arrow");
     leftArrow.setAttribute('src', "./images/left-arrow.png");
     leftArrow.setAttribute('width', '100');
     leftArrow.setAttribute('height', '100');
-    currentMonth.appendChild(leftArrow);
-    
-    
+    monthSection.appendChild(leftArrow);
+ 
+    const currentMonth = document.createElement("div");
+    currentMonth.classList.add("currentMonth");
+    currentMonth.innerText = "Month";
+    monthSection.appendChild(currentMonth);
+
     const rightArrow = document.createElement("img");
     rightArrow.classList.add("right_arrow");
     rightArrow.setAttribute('src', "./images/right-arrow.png");
     rightArrow.setAttribute('width', '100');
     rightArrow.setAttribute('height', '100');
-    currentMonth.appendChild(rightArrow);
+    monthSection.appendChild(rightArrow);
     
     const compareCalendar = document.createElement('div');
     compareCalendar.classList.add('myAndFriendCompareCalendar');

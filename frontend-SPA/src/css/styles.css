@@ -76,12 +76,28 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.currentMonth {
+.month_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
     display: grid;
-    /* grid-column-start: 1;
-    grid-column-end: 2; */
-    grid-row-start: 1;
-    grid-row-end: 2;
+    /* grid-template-columns: .2fr 3fr .2fr; 
+    grid-template-rows: 1fr 4fr; */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    height: 50px;
+    line-height: 5em; 
+}
+
+.currentMonth {
+    /* display: grid; 
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3; 
+    grid-row-start: 2;
+    grid-row-end: 3;   */
     font-size: 2rem;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -89,19 +105,23 @@ nav {
 }
 
 .left_arrow {
-    display: grid;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+     /* display: grid;  */
+    /* grid-column-start: 1;
+    grid-column-end: 2; */
+    /* grid-row-start: 1;
+    grid-row-end: 2;   */
+    display: flex;
+    flex-direction: row;
 }
 
 .right_arrow {
-    display: grid;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    /* display: grid; 
+    grid-column-start: 3;
+    grid-column-end: 4;  
+    grid-row-start: 3;
+    grid-row-end: 4;  */
+    display: flex;
+    flex-direction: row;
 }
 
 .monthHeader {
@@ -115,19 +135,7 @@ nav {
     grid-column-end: 3;
 }
 
-.month_section {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
-    display: grid;
-    /* grid-template-columns: .2fr 3fr .2fr; */
-    grid-template-rows: 1fr 4fr;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
-    height: 50px;
-    /* line-height: 5em; */
-}
+
 
 .compare_container {
     display: grid;
@@ -374,31 +382,31 @@ footer {
 }
 
 .myAndFriendCompareCalendar {
-    /* display: flex;
+   display: flex;
     flex-direction: row;
-    justify-content: space-evenly; */
+    justify-content: space-evenly;  
 
-    display: grid; 
-    /* grid-template-columns: 1fr 1fr; */
-    /* grid-column-start: 2;
-    grid-column-end: 3; */
+    /* display: grid;  
+     grid-template-columns: 1fr 1fr; 
+    grid-column-start: 2;
+    grid-column-end: 3; 
     grid-row-start: 2;
     grid-row-end: 3; 
-    align-items: center;
+    align-items: center;  */
 }
 .my_CompareCalendar {
-    margin: 0px;
+    /* margin: 0px;
     padding: 0px;
     grid-column-start: 1;
     grid-column-end: 2;
-    text-align: right;
+    text-align: right; */
 }
 .friends_CompareCalendar {
-    margin: 0px;
+    /* margin: 0px;
     padding: 0px;
     grid-column-start: 2;
     grid-column-end: 3;
-    text-align: left;
+    text-align: left; */
 }
 .compareCalendarCell {
     display: grid;
