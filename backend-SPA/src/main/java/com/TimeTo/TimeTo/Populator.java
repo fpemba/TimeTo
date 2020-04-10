@@ -43,41 +43,48 @@ public class Populator implements CommandLineRunner {
             Account accountCreated = new Account(userAccount, masterCalendar);
             accountRepository.save(accountCreated);
 
-            Month april2020 = new Month("April", 4, 4, 2020, masterCalendar, 30);
+            String id = accountCreated.getUserName() + "April2020";
+            Month april2020 = new Month("April", 4, 4, 2020, masterCalendar, 30, id);
             monthRepository.save(april2020);
             createAprilDays(april2020, accountCreated);
 
-            Month may2020 = new Month("May", 5, 6, 2020, masterCalendar, 31);
+            id = accountCreated.getUserName() + "May2020";
+            Month may2020 = new Month("May", 5, 6, 2020, masterCalendar, 31, id);
             monthRepository.save(may2020);
             createMayDays(may2020, accountCreated);
 
-            Month june2020 = new Month("June", 6, 2, 2020, masterCalendar, 30);
+            id = accountCreated.getUserName() + "June2020";
+            Month june2020 = new Month("June", 6, 2, 2020, masterCalendar, 30, id);
             monthRepository.save(june2020);
             createJuneDays(june2020, accountCreated);
 
-            Month july2020 = new Month("July", 7, 4, 2020, masterCalendar, 31);
+            id = accountCreated.getUserName() + "July2020";
+            Month july2020 = new Month("July", 7, 4, 2020, masterCalendar, 31, id);
             monthRepository.save(july2020);
             createJulyDays(july2020, accountCreated);
 
-
-            Month august2020 = new Month("August", 8, 7, 2020, masterCalendar, 31);
+            id = accountCreated.getUserName() + "August2020";
+            Month august2020 = new Month("August", 8, 7, 2020, masterCalendar, 31, id);
             monthRepository.save(august2020);
             createAugustDays(august2020, accountCreated);
 
-
-            Month september2020 = new Month("September", 9, 3, 2020, masterCalendar, 30);
+            id = accountCreated.getUserName() + "September2020";
+            Month september2020 = new Month("September", 9, 3, 2020, masterCalendar, 30, id);
             monthRepository.save(september2020);
             createSeptemberDays(september2020, accountCreated);
 
-            Month october2020 = new Month("October", 10, 5, 2020, masterCalendar, 31);
+            id = accountCreated.getUserName() + "October2020";
+            Month october2020 = new Month("October", 10, 5, 2020, masterCalendar, 31, id);
             monthRepository.save(october2020);
             createOctoberDays(october2020, accountCreated);
 
-            Month november2020 = new Month("November", 11, 1, 2020, masterCalendar, 30);
+            id = accountCreated.getUserName() + "November2020";
+            Month november2020 = new Month("November", 11, 1, 2020, masterCalendar, 30, id);
             monthRepository.save(november2020);
             createNovemberDays(november2020, accountCreated);
 
-            Month december2020 = new Month("December", 12, 3, 2020, masterCalendar, 31);
+            id = accountCreated.getUserName() + "December2020";
+            Month december2020 = new Month("December", 12, 3, 2020, masterCalendar, 31, id);
             monthRepository.save(december2020);
             createDecemberDays(december2020, accountCreated);
         }

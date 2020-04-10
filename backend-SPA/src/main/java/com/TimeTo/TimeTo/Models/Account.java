@@ -3,6 +3,7 @@ package com.TimeTo.TimeTo.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -21,6 +22,9 @@ public class Account {
     @ManyToMany
     private Set<UserAccount> friends;
 
+//    @OneToMany(mappedBy = "account")
+//    private Set<Month> months;
+
     @OneToOne
     private Calendar calendar;
 
@@ -34,6 +38,7 @@ public class Account {
         events = new HashSet<>();
         this.calendar = calendar;
         this.username = userAccount.getUserName();
+//        months = new HashSet<>();
     }
 
     public Long getId() {
@@ -64,6 +69,18 @@ public class Account {
         events.add(event);
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+//    public Set<Month> getMonths() {
+//        return months;
+//    }
+
     @Override
     public String toString() {
         return "Account{" +
@@ -80,6 +97,7 @@ public class Account {
         Account account = (Account) o;
 
         if (id != null ? !id.equals(account.id) : account.id != null) return false;
+        if (username != null ? !username.equals(account.username) : account.username != null) return false;
         if (userAccount != null ? !userAccount.equals(account.userAccount) : account.userAccount != null) return false;
         return calendar != null ? calendar.equals(account.calendar) : account.calendar == null;
     }
@@ -87,6 +105,7 @@ public class Account {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (userAccount != null ? userAccount.hashCode() : 0);
         result = 31 * result + (calendar != null ? calendar.hashCode() : 0);
         return result;

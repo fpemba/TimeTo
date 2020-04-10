@@ -10,16 +10,15 @@ import java.util.Collection;
 public class Month {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     private String name;
     private int numberOfMonth;
     private int firstDayOfMonth;
     private int year;
-    @JsonIgnore
-    @ManyToOne
-    private Account account;
+
+//    @ManyToOne
+//    private Account account;
 
     @JsonIgnore
     @ManyToOne
@@ -31,17 +30,19 @@ public class Month {
     public Month() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public Month(String name, int numberOfMonth, int firstDayOfMonth, int year, Calendar calendar, int length) {
+    public Month(String name, int numberOfMonth, int firstDayOfMonth, int year, Calendar calendar, int length, String id) {
         this.name = name;
         this.numberOfMonth = numberOfMonth;
         this.firstDayOfMonth = firstDayOfMonth;
         this.year = year;
         this.calendar = calendar;
         this.length = length;
+//        this.account = account;
+        this.id = id;
     }
 
     public Calendar getCalendar() {
@@ -72,6 +73,10 @@ public class Month {
         return length;
     }
 
+//    public Account getAccount() {
+//        return account;
+//    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,6 +90,7 @@ public class Month {
         if (length != month.length) return false;
         if (id != null ? !id.equals(month.id) : month.id != null) return false;
         if (name != null ? !name.equals(month.name) : month.name != null) return false;
+//        if (account != null ? !account.equals(month.account) : month.account != null) return false;
         return calendar != null ? calendar.equals(month.calendar) : month.calendar == null;
     }
 
@@ -95,6 +101,7 @@ public class Month {
         result = 31 * result + numberOfMonth;
         result = 31 * result + firstDayOfMonth;
         result = 31 * result + year;
+//        result = 31 * result + (account != null ? account.hashCode() : 0);
         result = 31 * result + (calendar != null ? calendar.hashCode() : 0);
         result = 31 * result + length;
         return result;

@@ -1,5 +1,5 @@
 const getEventsByUserNameAndDay = ()=> {
-    return fetch('http://localhost:8080/months/5/')
+    return fetch('http://localhost:8080/months/stumax7April2020/')
         .then(response => response.json())
         .then(monthJson => renderDaysByMonth(monthJson))};
         
