@@ -13,8 +13,15 @@ const renderDaysByMonth = (month) => {
         cell.addEventListener('click', ()=>{
             const cellModal = document.createElement('div');
             cellModal.classList.add("cellModal");
-            let dayEventJSON = JSON.stringify(day.events);
-            cellModal.innerText = dayEventJSON;
+            // let dayEventJSON = JSON.stringify(day.events);
+            // cellModal.innerText = dayEventJSON;
+            day.events.forEach(event =>{
+                const eventsList = document.createElement('ul');
+                cellModal.appendChild(eventsList)
+                const eventsListItem = document.createElement('li');
+                eventsListItem.innerText = event.name;
+                eventsList.appendChild(eventsListItem);
+            })
             const close = document.createElement("span");
             close.classList.add("close");
             close.innerHTML = "&times;";
