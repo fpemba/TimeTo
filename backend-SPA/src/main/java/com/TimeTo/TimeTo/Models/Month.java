@@ -77,6 +77,21 @@ public class Month {
 //        return account;
 //    }
 
+
+    @Override
+    public String toString() {
+        return "Month{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", numberOfMonth=" + numberOfMonth +
+                ", firstDayOfMonth=" + firstDayOfMonth +
+                ", year=" + year +
+                ", calendar=" + calendar +
+                ", length=" + length +
+                ", days=" + days +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

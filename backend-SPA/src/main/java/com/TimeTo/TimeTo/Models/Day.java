@@ -46,6 +46,16 @@ public class Day {
     }
 
     @Override
+    public String toString() {
+        return "Day{" +
+                "id='" + id + '\'' +
+                ", month=" + month +
+                ", events=" + events +
+                ", dayNumber=" + dayNumber +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

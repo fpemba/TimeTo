@@ -5,9 +5,7 @@ const getEventsByUserNameAndDay = ()=> {
         
 const renderDaysByMonth = (month) => {
         let monthLength = month.length;
-        console.log(month);
         let currentDay = month.firstDayOfMonth;
-        console.log(month.days);
         month.days.forEach(day => {
         let cell = document.querySelector(`.cell${currentDay}`);
         currentDay++;
@@ -15,7 +13,8 @@ const renderDaysByMonth = (month) => {
         cell.addEventListener('click', ()=>{
             const cellModal = document.createElement('div');
             cellModal.classList.add("cellModal");
-            cellModal.innerText = "I'm a modal!";
+            let dayEventJSON = JSON.stringify(day.events);
+            cellModal.innerText = dayEventJSON;
             const close = document.createElement("span");
             close.classList.add("close");
             close.innerHTML = "&times;";
