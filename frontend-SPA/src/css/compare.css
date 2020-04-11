@@ -27,12 +27,7 @@ header {
     grid-template-rows: 20% 60% 20%;
     grid-template-columns: 10% 80% 10%;
 }
-.compare_container {
-    /* display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto;
-    background-color: red; */
-  }
+
 
  .my_CompareCalendar {
     grid-column: 1;
