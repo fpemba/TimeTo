@@ -2,9 +2,24 @@
     display: none; 
     position: fixed; 
     z-index: 1;
-    background-color: red;
+    background-color: white;
+    color: rgba(46, 99, 146);
+    height: 95vh;
+    width: 95vw;
+}
+
+.modalContent{
+    background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  color: black
 }
 
 .close{
+    color: #aaa;
     float: right;
+    font-size: 28px;
+    font-weight: bold;
 }

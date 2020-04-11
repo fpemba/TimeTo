@@ -15,20 +15,17 @@ const renderDaysByMonth = (month) => {
         cell.addEventListener('click', ()=>{
             const cellModal = document.createElement('div');
             cellModal.classList.add("cellModal");
-            cell.appendChild(cellModal);
-            const modalPopUp = document.createElement('div');
-            modalPopUp.classList.add("modalPopUp");
-            cellModal.appendChild(modalPopUp);
+            cellModal.innerText = "I'm a modal!";
             const close = document.createElement("span");
             close.classList.add("close");
+            close.innerHTML = "&times;";
             cellModal.appendChild(close);
-            const modalContent = document.createElement("div");
-            modalContent.classList.add("modalContent");
-            cellModal.appendChild(modalContent);
+            close.addEventListener('click',()=>{
+                cellModal.style.display = "none";
+            })
             const calendarCell = document.querySelector(".calendarCell");
             calendarCell.appendChild(cellModal);
             cellModal.style.display = "block";
-            console.log("is this even working")
         })
         });
         }
