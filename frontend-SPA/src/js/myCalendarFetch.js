@@ -21,6 +21,27 @@ const renderDaysByMonth = (month) => {
                 const eventsListItem = document.createElement('li');
                 eventsListItem.innerText = event.name;
                 eventsList.appendChild(eventsListItem);
+                eventsListItem.addEventListener('click', ()=>{
+                    while (cellModal.firstChild) {
+                        cellModal.removeChild(cellModal.firstChild);
+                    }
+                    const eventTitle = document.createElement("h1");
+                    eventTitle.innerText = event.name;
+                    cellModal.appendChild(eventTitle);
+                    const startTime = document.createElement("p")
+                    startTime.innerText ="Start time: " + event.startTime;
+                    eventTitle.appendChild(startTime);
+                    const endTime = document.createElement("p");
+                    endTime.innerText = "End time: " + event.endTime;
+                    startTime.appendChild(endTime);
+                    const close = document.createElement("span");
+                    close.classList.add("close");
+                    close.innerHTML = "&times;";
+                    cellModal.appendChild(close);
+                    close.addEventListener('click',()=>{
+                        cellModal.style.display = "none";
+                    })
+                })
             })
             const close = document.createElement("span");
             close.classList.add("close");
