@@ -21,62 +21,49 @@ header {
     font-size: 5em;
     color: white;
 }
+.container{
 
-.login {
-    display: inline-block;
-    margin-top: 7em;
-    padding: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    width: 15rem;
-    line-height: 2rem;
-    border: 1px solid rgb(16, 97, 163);
-    background-color: rgba(46, 99, 146, 0.479);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 10% 80% 10%;
 }
 
-.signIn {
-    font-size: 30px;
-}
 
-.forgotUserOrPw {
-    font-size: 14px;
-    color: white;
-}
-
-.forgotUserOrPw:hover {
-    color: blue;
-}
-
-button {
-    padding: .7rem;
-    font-family: arial;
-    color: white;
-    background-color: rgb(16, 97, 163);
-    border-style: groove;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: rgb(24, 80, 24);
-}
-
-footer {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-}
-
-nav {
-    font-family: Arial, Helvetica, sans-serif;
+ .my_CompareCalendar {
     grid-column: 1;
-    grid-row: 1;
-}
+    grid-row: 2;
+    
+ }
+ .friends_CompareCalendar {
+    grid-column: 3;
+    grid-row: 2;
+   
+ }
+ .compareCalendarCell {
+     display: grid;
+     grid-template-columns:repeat(7, 60px);
+     grid-template-rows:repeat(7, 40px);
+     row-gap: 5px;
+     column-gap: 5px;
+     border: 5px solid white;
+     background-color: white;
+     color: white;
+ 
+ 
+ }
+
+ .friendsCompareCalendarCell {
+    display: grid;
+    grid-template-columns:repeat(7, 60px);
+    grid-template-rows:repeat(7, 40px);
+    row-gap: 5px;
+    column-gap: 5px;
+    border: 5px solid white;
+    background-color: white;
+    color: white;
+
+ }
+
 
 .month_section {
     font-size: 2rem;
@@ -87,16 +74,17 @@ nav {
 }
 
 .currentMonth {
+
     font-size: 2rem;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     grid-row:1;
-
 }
 
 .left_arrow {
     grid-row:1;
     justify-self: right;
+   
 }
 
 .right_arrow {
@@ -113,6 +101,29 @@ nav {
     text-align: center;
     grid-column-start: 2;
     grid-column-end: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+nav {
+    font-family: Arial, Helvetica, sans-serif;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .friends-list {
@@ -159,58 +170,10 @@ footer {
     bottom: 5px;
 }
 
-.group-container {
-    display: grid;
-    grid-template-columns: 2fr 4fr 6fr;
-    grid-template-rows: 2fr 1fr 8fr;
-}
 
-.groups-header {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    text-align: center;
-}
 
-.groups-hamburger {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
 
-.current-groups-body {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    color: white;
-}
 
-.group-schedule {
-    border-left: 1px solid white;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    color: white;
-}
-
-.group-titles {
-    color: white;
-}
-
-/*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- *
- *
- * If you are thinking of using this in
- * production code, beware of the browser
- * prefixes.
- */
 
 .menuToggle {
     display: block;
@@ -311,7 +274,7 @@ footer {
   */
 .menu {
     position: absolute;
-    width: 125px;
+    width: 100px;
     margin: -50px 0 0 -50px;
     padding: 25px;
     padding-top: 50px;
@@ -320,10 +283,8 @@ footer {
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
-
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
-
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
@@ -339,85 +300,29 @@ footer {
     transform: none;
 }
 
-.calendarCell {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 25px 1fr 1fr 1fr 1fr 1fr 1fr;
-    row-gap: 5px;
-    column-gap: 5px;
-    border: 5px solid white;
-    height: 95vh;
-    width: 95vw;
-    background-color: white;
-
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.my_CompareCalendar {
-    grid-column: 1;
-    grid-row: 2;
-}
-.friends_CompareCalendar {
-    grid-column: 3;
-    grid-row: 2;
-}
-.compareCalendarCell {
-    display: grid;
-     grid-template-columns:repeat(7, 60px);
-     grid-template-rows:repeat(7, 40px);
-     row-gap: 5px;
-     column-gap: 5px;
-     border: 5px solid white;
-     background-color: white;
-     color: white;
 
 
-}
 
-.friendsCompareCalendarCell {
-
-    display: grid;
-    grid-template-columns:repeat(7, 60px);
-    grid-template-rows:repeat(7, 40px);
-    row-gap: 5px;
-    column-gap: 5px;
-    border: 5px solid white;
-    background-color: white;
-    color: white;
-
-}
 
 .cell1 {
-   
-
     background-color: rgba(46, 99, 146);
-
 }
 
 .cell2 {
-   
-
     background-color: rgba(46, 99, 146);
-
 }
 
 .cell3 {
-    
-
     background-color: rgba(46, 99, 146);
-
 }
 
 .cell4 {
-    
-
+   
     background-color: rgba(46, 99, 146);
-
 }
 
 .cell5 {
-   
+    
 
     background-color: rgba(46, 99, 146);
 
@@ -452,7 +357,7 @@ footer {
 }
 
 .cell10 {
-    
+   
 
     background-color: rgba(46, 99, 146);
 
@@ -466,26 +371,29 @@ footer {
 }
 
 .cell12 {
-   
+    
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell13 {
-    display: grid;
+    
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell14 {
-   
+    
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell15 {
-   
+    
+
     background-color: rgba(46, 99, 146);
 
 }
@@ -498,14 +406,14 @@ footer {
 }
 
 .cell17 {
-    
+   
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell18 {
-   
+    
 
     background-color: rgba(46, 99, 146);
 
@@ -519,15 +427,14 @@ footer {
 }
 
 .cell20 {
-   
+    
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell21 {
-    display: grid;
-
+    
     background-color: rgba(46, 99, 146);
 
 }
@@ -554,7 +461,8 @@ footer {
 }
 
 .cell25 {
-   
+    
+
     background-color: rgba(46, 99, 146);
 
 }
@@ -568,6 +476,7 @@ footer {
 
 .cell27 {
    
+
     background-color: rgba(46, 99, 146);
 
 }
@@ -580,34 +489,33 @@ footer {
 }
 
 .cell29 {
-   
-
+    
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell30 {
     
-
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell31 {
     
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell32 {
-    
+   
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell33 {
-    
+   
 
     background-color: rgba(46, 99, 146);
 
@@ -621,7 +529,7 @@ footer {
 }
 
 .cell35 {
-   
+    
 
     background-color: rgba(46, 99, 146);
 
@@ -635,14 +543,13 @@ footer {
 }
 
 .cell37 {
-   
-
+    
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell38 {
-    
+   
 
     background-color: rgba(46, 99, 146);
 
@@ -670,10 +577,8 @@ footer {
 }
 
 .cell42 {
-    
 
     background-color: rgba(46, 99, 146);
-
 }
 
 

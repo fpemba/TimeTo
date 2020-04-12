@@ -5,6 +5,10 @@ import {
 
 import {displayMyPage} from './myCalendar.js';
 
+import {
+    displayMyGroupPage
+} from './manage-group.js'
+
 const createHamburgerBtn = () => {
     const nav = document.createElement("nav");
     const menuToggle = document.createElement("div");
@@ -62,6 +66,10 @@ const createHamburgerBtn = () => {
     const manageText = document.createElement("li");
     manageText.innerText = "Manage Groups";
     manageLink.appendChild(manageText);
+    manageLink.addEventListener('click', (event) => {
+        event.preventDefault()
+        displayMyGroupPage()
+    });
 
     const importLink = document.createElement("a");
     importLink.setAttribute('href', '#');
