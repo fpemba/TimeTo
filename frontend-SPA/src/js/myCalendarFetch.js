@@ -1,4 +1,4 @@
-import { displayMyPage } from "./myCalendar";
+import { displayMyPage } from "./myCalendar.js";
 
 const getEventsByUserNameAndDay = () => {
     return fetch('http://localhost:8080/months/stumax7April2020/')
@@ -56,16 +56,17 @@ const renderDaysByMonth = (month) => {
                         submitButton.innerText = "Submit";
                         cellModal.appendChild(submitButton);
                         submitButton.addEventListener('click', () => {
-                            const newEventJson = {
-                                "name": eventForm.value
-                            }
+                            // const newEventJson = {
+                            //     "name": eventForm.value,
+                            // }
+                            let newName = eventForm.value;
                             let id = event.id;
                             fetch(`http://localhost:8080/events/${id}/`, {
                                     method: "PATCH",
                                     headers: {
                                         'Content-Type': 'application/json'
                                     },
-                                    body: JSON.stringify(newEventJson)
+                                    body: newName
                                 })
                                 .then(response => response.json())
 

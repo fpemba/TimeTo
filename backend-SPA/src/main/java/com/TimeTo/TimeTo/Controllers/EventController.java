@@ -65,10 +65,10 @@ public class EventController {
 //    }
 
     @PatchMapping("/events/{id}/")
-    public Event patchEvent(@PathVariable String id, @RequestBody String newName ){
+    public void patchEvent(@PathVariable String id, @RequestBody String newName ){
         Event retrievedEvent = eventRepository.findById(id).get();
         retrievedEvent.changeName(newName);
         retrievedEvent.changeAvailability();
-        return eventRepository.save(retrievedEvent);
+        eventRepository.save(retrievedEvent);
     }
 }
