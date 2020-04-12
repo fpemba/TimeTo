@@ -17,18 +17,20 @@ const renderMonthSection = () => {
     monthSection.classList.add("month_section");
     // compareContainer.appendChild(monthSection);
     
+    
+    
     const leftArrow = document.createElement("img");
     leftArrow.classList.add("left_arrow");
     leftArrow.setAttribute('src', "./images/left-arrow.png");
     leftArrow.setAttribute('width', '100');
     leftArrow.setAttribute('height', '100');
     monthSection.appendChild(leftArrow);
-    
-    const currentMonth = document.createElement("h3");
+ 
+    const currentMonth = document.createElement("div");
     currentMonth.classList.add("currentMonth");
     currentMonth.innerText = "Month";
     monthSection.appendChild(currentMonth);
-    
+
     const rightArrow = document.createElement("img");
     rightArrow.classList.add("right_arrow");
     rightArrow.setAttribute('src', "./images/right-arrow.png");
@@ -36,44 +38,18 @@ const renderMonthSection = () => {
     rightArrow.setAttribute('height', '100');
     monthSection.appendChild(rightArrow);
     
-    const compareCalendar = document.createElement('div');
-    compareCalendar.classList.add('myAndFriendCompareCalendar');
-    // compareContainer.appendChild(compareCalendar);
-    currentMonth.appendChild(compareCalendar);
-
     const myCompareCalendar = document.createElement('div');
     myCompareCalendar.classList.add('my_CompareCalendar');
-    myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="300" height="300" ></object> `;
-    compareCalendar.appendChild(myCompareCalendar);
+    myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="460" height="320" ></object> `;
+    monthSection.appendChild(myCompareCalendar);
 
     const friendsCompareCalendar = document.createElement('div');
     friendsCompareCalendar.classList.add('friends_CompareCalendar');
-    friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="300" height="300" ></object> `;
-    compareCalendar.appendChild(friendsCompareCalendar);
+    friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="460" height="320"></object> `;
+    monthSection.appendChild(friendsCompareCalendar);
     
     return monthSection;
 }
-
-// const renderCalendar = () => {
-    // const container = document.querySelector('container');
-    // const compareCalendar = document.createElement('div');
-    // compareCalendar.classList.add('myAndFriendCompareCalendar');
-    // currentMonth.appendChild(compareCalendar);
-    // container.appendChild(compareCalendar);
-
-    // const myCompareCalendar = document.createElement('div');
-    // myCompareCalendar.classList.add('my_CompareCalendar');
-    // myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="300" height="300" ></object> `;
-    // compareCalendar.appendChild(myCompareCalendar);
-
-    // const friendsCompareCalendar = document.createElement('div');
-    // friendsCompareCalendar.classList.add('friends_CompareCalendar');
-    // friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="300" height="300" ></object> `;
-    // compareCalendar.appendChild(friendsCompareCalendar);
-
-    // return renderCalendar;
-
-// }
 
 const renderFriendSection = ()=>{
     const friendsList = document.createElement("ul");
