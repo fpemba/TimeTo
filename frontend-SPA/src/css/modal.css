@@ -1,0 +1,19 @@
+.cellModal{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    background-color: white;
+    color: rgba(46, 99, 146);
+    height: 95vh;
+    width: 95vw;
+    overflow: scroll;
+}
+
+.close{
+    color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 28px;
+    font-weight: bold;
+}

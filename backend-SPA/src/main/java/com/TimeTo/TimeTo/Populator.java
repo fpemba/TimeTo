@@ -43,41 +43,48 @@ public class Populator implements CommandLineRunner {
             Account accountCreated = new Account(userAccount, masterCalendar);
             accountRepository.save(accountCreated);
 
-            Month april2020 = new Month("April", 4, 4, 2020, masterCalendar);
+            String id = accountCreated.getUserName() + "April2020";
+            Month april2020 = new Month("April", 4, 4, 2020, masterCalendar, 30, id);
             monthRepository.save(april2020);
             createAprilDays(april2020, accountCreated);
 
-            Month may2020 = new Month("May", 5, 6, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "May2020";
+            Month may2020 = new Month("May", 5, 6, 2020, masterCalendar, 31, id);
             monthRepository.save(may2020);
             createMayDays(may2020, accountCreated);
 
-            Month june2020 = new Month("June", 6, 2, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "June2020";
+            Month june2020 = new Month("June", 6, 2, 2020, masterCalendar, 30, id);
             monthRepository.save(june2020);
             createJuneDays(june2020, accountCreated);
 
-            Month july2020 = new Month("July", 7, 4, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "July2020";
+            Month july2020 = new Month("July", 7, 4, 2020, masterCalendar, 31, id);
             monthRepository.save(july2020);
             createJulyDays(july2020, accountCreated);
 
-
-            Month august2020 = new Month("August", 8, 7, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "August2020";
+            Month august2020 = new Month("August", 8, 7, 2020, masterCalendar, 31, id);
             monthRepository.save(august2020);
             createAugustDays(august2020, accountCreated);
 
-
-            Month september2020 = new Month("September", 9, 3, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "September2020";
+            Month september2020 = new Month("September", 9, 3, 2020, masterCalendar, 30, id);
             monthRepository.save(september2020);
             createSeptemberDays(september2020, accountCreated);
 
-            Month october2020 = new Month("October", 10, 5, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "October2020";
+            Month october2020 = new Month("October", 10, 5, 2020, masterCalendar, 31, id);
             monthRepository.save(october2020);
             createOctoberDays(october2020, accountCreated);
 
-            Month november2020 = new Month("November", 11, 1, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "November2020";
+            Month november2020 = new Month("November", 11, 1, 2020, masterCalendar, 30, id);
             monthRepository.save(november2020);
             createNovemberDays(november2020, accountCreated);
 
-            Month december2020 = new Month("December", 12, 3, 2020, masterCalendar);
+            id = accountCreated.getUserName() + "December2020";
+            Month december2020 = new Month("December", 12, 3, 2020, masterCalendar, 31, id);
             monthRepository.save(december2020);
             createDecemberDays(december2020, accountCreated);
         }
@@ -85,7 +92,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createJanuaryDays(Month january, Account account) {
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i <= january.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-01-0" + i + "-" + january.getYear();
@@ -99,7 +106,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createFebruaryDays(Month february, Account account) {
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i <= february.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-02-0" + i + "-" + february.getYear();
@@ -113,7 +120,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createMarchDays(Month march, Account account) {
-        for (int i = 1; i < 32; i++) {
+        for (int i = 1; i <= march.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-03-0" + i + "-" + march.getYear();
@@ -127,7 +134,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createAprilDays(Month april, Account account) {
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i <= april.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-04-0" + i + "-" + april.getYear();
@@ -141,7 +148,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createMayDays(Month may, Account account) {
-        for (int i = 1; i < 32; i++) {
+        for (int i = 1; i <= may.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-05-0" + i + "-" + may.getYear();
@@ -155,7 +162,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createJuneDays(Month june, Account account) {
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i <= june.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-06-0" + i + "-" + june.getYear();
@@ -169,7 +176,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createJulyDays(Month july, Account account) {
-        for (int i = 1; i < 32; i++) {
+        for (int i = 1; i <= july.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-07-0" + i + "-" + july.getYear();
@@ -183,7 +190,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createAugustDays(Month august, Account account) {
-        for (int i = 1; i < 32; i++) {
+        for (int i = 1; i <= august.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-08-0" + i + "-" + august.getYear();
@@ -197,7 +204,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createSeptemberDays(Month september, Account account) {
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i <= september.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-09-0" + i + "-" + september.getYear();
@@ -211,7 +218,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createOctoberDays(Month october, Account account) {
-        for (int i = 1; i < 32; i++) {
+        for (int i = 1; i <= october.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-10-0" + i + "-" + october.getYear();
@@ -225,7 +232,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createNovemberDays(Month november, Account account) {
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i <= november.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-11-0" + i + "-" + november.getYear();
@@ -239,7 +246,7 @@ public class Populator implements CommandLineRunner {
     }
 
     private void createDecemberDays(Month december, Account account) {
-        for (int i = 1; i < 32; i++) {
+        for (int i = 1; i <= december.getLength(); i++) {
             String idToSet;
             if (i < 10) {
                 idToSet = account.getUserName() + "-12-0" + i + "-" + december.getYear();

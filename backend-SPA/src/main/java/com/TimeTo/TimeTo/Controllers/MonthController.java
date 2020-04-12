@@ -12,11 +12,9 @@ import java.util.Collection;
 @RestController
 public class MonthController {
     private MonthRepository monthRepository;
-    private DayRepository dayRepository;
 
-    public MonthController(MonthRepository monthRepository, DayRepository dayRepository) {
+    public MonthController(MonthRepository monthRepository) {
         this.monthRepository = monthRepository;
-        this.dayRepository = dayRepository;
     }
 
     @GetMapping("/months/")
@@ -25,7 +23,7 @@ public class MonthController {
     }
 
     @GetMapping("/months/{id}/")
-    public Month retrieveSingleMonth(@PathVariable Long id) {
+    public Month retrieveSingleMonth(@PathVariable String id) {
         return monthRepository.findById(id).get();
     }
 }

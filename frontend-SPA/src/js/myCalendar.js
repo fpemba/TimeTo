@@ -2,6 +2,10 @@ import {
     createHamburgerBtn
 } from './hamburger.js'
 
+// import{
+//     getEventsByUserNameAndDay
+// }from './myCalendarFetch.js'
+
 const renderMyHeader = () => {
     const headerElement = document.createElement("header");
     headerElement.classList.add("header");
@@ -16,7 +20,13 @@ const renderFooter = () => {
     return footerElement;
 }
 
-const renderMonth = () => {
+const getMonth = ()=> {
+    return fetch("http://localhost:8080/months/stumax7April2020/")
+        .then(response => response.json())
+        .then(monthJson => renderMonth(monthJson))
+} 
+
+const renderMonth = (month) => {
 
     const mainHeader = document.createElement('main');
     mainHeader.classList.add("calendar_container");
@@ -30,7 +40,7 @@ const renderMonth = () => {
 
     const monthElement = document.createElement("h3");
     monthElement.classList.add("currentMonth");
-    monthElement.innerText = "Month";
+    monthElement.innerText = month.name;
     monthHeader.appendChild(monthElement);
     mainHeader.appendChild(monthHeader);
 
@@ -71,9 +81,13 @@ const displayMyPage = () => {
     const container = document.querySelector(".container");
     clearBackground();
     container.appendChild(renderMyHeader());
-    container.append(renderMonth());
+    // container.append(getMonth());
+    getMonth().then(element => container.append(element));
+    // container.appendChild(renderMonth());
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
+    // getEventsByUserNameAndDay().then(element => container.append(element));
+ 
    
 }
 

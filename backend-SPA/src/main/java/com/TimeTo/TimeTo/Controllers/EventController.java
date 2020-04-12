@@ -27,9 +27,9 @@ public class EventController {
         return (Collection<Event>) eventRepository.findAll();
     }
 
-    @GetMapping("/events/{username}/{month}/")
-    public Collection<Event> retrieveEventByMonthAndUsername(@PathVariable ("username") String username, @PathVariable ("month") String month){
-        return eventRepository.findByUsernameAndMonth(username, month);
+    @GetMapping("/events/{username}/{day}/")
+    public Collection<Event> retrieveEventByDayAndUsername(@PathVariable ("username") String username, @PathVariable ("day") Day day){
+        return eventRepository.findByUsernameAndDay(username, day);
     }
 
     @GetMapping("/events/{username}/")
@@ -42,25 +42,33 @@ public class EventController {
         return eventRepository.findById(id);
     }
 
-    @DeleteMapping("/event/{id}/")
-    public void deleteEvent(@PathVariable String id) {
-        Event e = eventRepository.findById(id).get();
-        Event newFreeTime = new Event(e.getCreator(), e.getId(), e.getDay(), true, e.getStartTime(), e.getEndTime(), "Free Time!");
-        eventRepository.deleteById(id);
-        eventRepository.save(newFreeTime);
-    }
+//    @DeleteMapping("/event/{id}/")
+//    public void deleteEvent(@PathVariable String id) {
+//        Event e = eventRepository.findById(id).get();
+//        Event newFreeTime = new Event(e.getCreator(), e.getId(), e.getDay(), true, e.getStartTime(), e.getEndTime(), "Free Time!");
+//        eventRepository.deleteById(id);
+//        eventRepository.save(newFreeTime);
+//    }
 
-    @PostMapping("/events/")
-    public Event createEvent(@RequestBody Event event) {
-        Account creator = event.getCreator();
-        String id = event.getId();
-        Day day = event.getDay();
-        boolean available = false;
-        LocalTime startTime = event.getStartTime();
-        LocalTime endTime = event.getEndTime();
-        String name = "Have fun";
-        eventRepository.delete(event);
-        Event eventToAdd = new Event(creator, id, day, available, startTime, endTime, name);
-        return eventRepository.save(eventToAdd);
+//  @PostMapping("/events/")
+//    public Event createEvent(@RequestBody Event event) {
+//        Account creator = event.getCreator();
+//        String id = event.getId();
+//        Day day = event.getDay();
+//        boolean available = false;
+//        LocalTime startTime = event.getStartTime();
+//        LocalTime endTime = event.getEndTime();
+//        String name = "Have fun";
+//        eventRepository.delete(event);
+//        Event eventToAdd = new Event(creator, id, day, available, startTime, endTime, name);
+//        return eventRepository.save(eventToAdd);
+//    }
+
+    @PatchMapping("/events/{id}/")
+    public void patchEvent(@PathVariable String id, @RequestBody String newName ){
+        Event retrievedEvent = eventRepository.findById(id).get();
+        retrievedEvent.changeName(newName);
+        retrievedEvent.changeAvailability();
+        eventRepository.save(retrievedEvent);
     }
 }
