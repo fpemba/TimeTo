@@ -19,7 +19,7 @@ const renderDaysByMonth = (month) => {
                 const eventsList = document.createElement('ul');
                 cellModal.appendChild(eventsList)
                 const eventsListItem = document.createElement('li');
-                eventsListItem.innerText = event.name;
+                eventsListItem.innerText = event.startTime + ": " + event.name;
                 eventsList.appendChild(eventsListItem);
                 eventsListItem.addEventListener('click', ()=>{
                     while (cellModal.firstChild) {
