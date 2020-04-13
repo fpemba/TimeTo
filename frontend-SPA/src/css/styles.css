@@ -87,32 +87,48 @@ nav {
 
 .month_section {
     font-size: 2rem;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: grid;
-    grid-template-rows: 30% 70%;
     grid-template-columns: 45% 10% 45%;
-    /* grid-column-start: 2; */
+    align-items: center;
+}
+
+.left_arrow {
+    grid-row:1;
+    justify-self: right;
+   grid-column-start: 1;
+   grid-column-end: 2;
 }
 
 .currentMonth {
     font-size: 2rem;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    grid-row: 1;
-}
-
-.left_arrow {
-    grid-row:1;
-    justify-self: right;
+    grid-column-start:2;
+    grid-column-end: 3;
 }
 
 .right_arrow {
-    grid-row:1;
+    grid-column-start:3;
+    grid-column-end: 4;
     justify-self: left;
 }
 
 .monthHeader {
     display: inline-flex;
     align-items: center;
+}
+.myCalendarTitle{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.friendCalendarTitle{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .compare_header {
@@ -360,13 +376,33 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.my_CompareCalendar {
-    grid-column: 1;
-    grid-row: 2;
+.compareContainer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 50% 50%;
 }
+
+.calendarContainer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.my_CompareCalendar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
 .friends_CompareCalendar {
-    grid-column: 3;
-    grid-row: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 .compareCalendarCell {
     display: grid;
