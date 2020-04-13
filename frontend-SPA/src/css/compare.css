@@ -21,24 +21,84 @@ header {
     font-size: 5em;
     color: white;
 }
-.container{
 
+.container{
     display: grid;
-    grid-template-rows: 20% 60% 20%;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 70% 20%;
+    grid-template-columns: 10% 75% 15%;
 }
 
+.compareContainer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 50% 50%;
+}
+
+.calendarContainer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
 
  .my_CompareCalendar {
-    grid-column: 1;
-    grid-row: 2;
-    
+    grid-column-start: 1;
+    grid-column-end: 2;
  }
+
  .friends_CompareCalendar {
-    grid-column: 3;
-    grid-row: 2;
-   
+    grid-column-start: 2;
+    grid-column-end: 3;
  }
+
+ .month_section {
+    font-size: 2rem;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    align-items: center;
+}
+
+.left_arrow {
+    grid-row:1;
+    justify-self: right;
+   grid-column-start: 1;
+   grid-column-end: 2;
+}
+
+.myCalendarTitle{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.friendCalendarTitle{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.currentMonth {
+    font-size: 2rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-column-start:2;
+    grid-column-end: 3;
+}
+
+.right_arrow {
+    grid-column-start:3;
+    grid-column-end: 4;
+    justify-self: left;
+}
+
  .compareCalendarCell {
      display: grid;
      grid-template-columns:repeat(7, 60px);
@@ -64,34 +124,6 @@ header {
 
  }
 
-
-.month_section {
-    font-size: 2rem;
-    display: grid;
-    grid-template-rows: 30% 70%;
-    grid-template-columns: 45% 5% 45%;
-    grid-column-start: 2;
-}
-
-.currentMonth {
-
-    font-size: 2rem;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    grid-row:1;
-}
-
-.left_arrow {
-    grid-row:1;
-    justify-self: right;
-   
-}
-
-.right_arrow {
-    grid-row:1;
-    justify-self: left;
-}
-
 .monthHeader {
     display: inline-flex;
     align-items: center;
@@ -102,17 +134,6 @@ header {
     grid-column-start: 2;
     grid-column-end: 3;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 footer {
     color: white;
@@ -132,6 +153,8 @@ nav {
     color: white;
     line-height: 3em;
     grid-column: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
     /* margin-top: 2em; */
     padding-right: 3em;
     margin-top: 3em;

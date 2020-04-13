@@ -10,12 +10,12 @@ const renderCompareHeader = ()=>{
 }
 
 const renderMonthSection = () => {
-    // const compareContainer = document.createElement("div")
-    // compareContainer.classList.add("compare_container");
+    const compareContainer = document.createElement("div")
+    compareContainer.classList.add("compareContainer");
 
     const monthSection = document.createElement("div");
     monthSection.classList.add("month_section");
-    // compareContainer.appendChild(monthSection);
+    compareContainer.appendChild(monthSection);
     
     
     
@@ -37,18 +37,33 @@ const renderMonthSection = () => {
     rightArrow.setAttribute('width', '100');
     rightArrow.setAttribute('height', '100');
     monthSection.appendChild(rightArrow);
+
+    const calendarContainer = document.createElement("div");
+    calendarContainer.classList.add("calendarContainer");
     
+
     const myCompareCalendar = document.createElement('div');
     myCompareCalendar.classList.add('my_CompareCalendar');
     myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="460" height="320" ></object> `;
-    monthSection.appendChild(myCompareCalendar);
+    calendarContainer.appendChild(myCompareCalendar);
+    const myCalendarTitle = document.createElement("h3");
+    myCalendarTitle.classList.add("myCalendarTitle");
+    myCalendarTitle.innerText = "My Calendar";
+    myCompareCalendar.prepend(myCalendarTitle);
 
     const friendsCompareCalendar = document.createElement('div');
     friendsCompareCalendar.classList.add('friends_CompareCalendar');
     friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="460" height="320"></object> `;
-    monthSection.appendChild(friendsCompareCalendar);
+    calendarContainer.appendChild(friendsCompareCalendar);
+    const friendCalendarTitle = document.createElement("h3");
+    friendCalendarTitle.classList.add("friendCalendarTitle");
+    friendCalendarTitle.innerText = "Friend's Calendar";
+    friendsCompareCalendar.prepend(friendCalendarTitle);
+
+    compareContainer.appendChild(calendarContainer);
+    compareContainer.appendChild(monthSection);
     
-    return monthSection;
+    return compareContainer;
 }
 
 const renderFriendSection = ()=>{
