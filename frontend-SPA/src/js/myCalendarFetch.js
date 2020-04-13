@@ -1,11 +1,12 @@
-const getEventsByUserNameAndDay = () => {
-    return fetch('http://localhost:8080/months/stumax7April2020/')
+const getEventsByUserNameAndDay = (user) => {
+    return fetch(`http://localhost:8080/months/${user}April2020/`)
         .then(response => response.json())
         .then(monthJson => renderDaysByMonth(monthJson))
 };
 
 const renderCell = (day, currentDay) => {
     let cell = document.querySelector(`.cell${currentDay}`);
+
     cell.innerText = day.dayNumber;
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
@@ -131,10 +132,6 @@ const submitChangedSchedule = (cellModal, event) => {
             
         })
 }
-
-const calendarCell = document.querySelector('.calendarCell')
-console.log(calendarCell);
-getEventsByUserNameAndDay();
 
 export {
     getEventsByUserNameAndDay

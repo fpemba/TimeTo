@@ -7,10 +7,10 @@ import {
 
 displayHome();
 
-const loginButton = document.querySelector(".loginButton");
-loginButton.addEventListener('click', () => {
-    displayMyPage()
-});
+// const loginButton = document.querySelector(".loginButton");
+// loginButton.addEventListener('click', () => {
+//     displayMyPage()
+// });
 
 
 // const monthPicture = document.querySelector(".calendar");
