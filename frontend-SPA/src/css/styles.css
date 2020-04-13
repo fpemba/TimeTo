@@ -413,8 +413,6 @@ footer {
      border: 5px solid white;
      background-color: white;
      color: white;
-
-
 }
 
 .friendsCompareCalendarCell {
@@ -431,11 +429,12 @@ footer {
 }
 
 .cell1 {
-   
-
     background-color: rgba(46, 99, 146);
-
 }
+
+.cell1:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell2 {
    
@@ -444,12 +443,20 @@ footer {
 
 }
 
+.cell2:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell3 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell3:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell4 {
     
@@ -458,12 +465,17 @@ footer {
 
 }
 
+.cell4:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell5 {
-   
-
     background-color: rgba(46, 99, 146);
-
 }
+
+.cell5:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell6 {
    
@@ -472,12 +484,20 @@ footer {
 
 }
 
+.cell6:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell7 {
    
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell7:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell8 {
    
@@ -486,12 +506,20 @@ footer {
 
 }
 
+.cell8:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell9 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell9:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell10 {
     
@@ -500,6 +528,10 @@ footer {
 
 }
 
+.cell10:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell11 {
     
 
@@ -507,11 +539,19 @@ footer {
 
 }
 
+.cell11:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell12 {
    
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell12:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell13 {
     display: grid;
@@ -520,17 +560,29 @@ footer {
 
 }
 
+.cell13:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell14 {
    
     background-color: rgba(46, 99, 146);
 
 }
 
+.cell14:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell15 {
    
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell15:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell16 {
     
@@ -539,12 +591,20 @@ footer {
 
 }
 
+.cell16:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell17 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell17:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell18 {
    
@@ -553,12 +613,20 @@ footer {
 
 }
 
+.cell18:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell19 {
    
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell19:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell20 {
    
@@ -567,12 +635,20 @@ footer {
 
 }
 
+.cell20:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell21 {
     display: grid;
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell21:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell22 {
     
@@ -581,12 +657,20 @@ footer {
 
 }
 
+.cell22:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell23 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell23:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell24 {
     
@@ -595,11 +679,19 @@ footer {
 
 }
 
+.cell24:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell25 {
    
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell25:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell26 {
    
@@ -608,11 +700,19 @@ footer {
 
 }
 
+.cell26:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell27 {
    
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell27:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell28 {
     
@@ -621,12 +721,20 @@ footer {
 
 }
 
+.cell28:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell29 {
    
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell29:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell30 {
     
@@ -635,11 +743,19 @@ footer {
 
 }
 
+.cell30:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell31 {
     
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell31:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell32 {
     
@@ -648,12 +764,20 @@ footer {
 
 }
 
+.cell32:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell33 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell33:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell34 {
     
@@ -662,12 +786,20 @@ footer {
 
 }
 
+.cell34:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell35 {
    
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell35:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell36 {
     
@@ -676,12 +808,20 @@ footer {
 
 }
 
+.cell36:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell37 {
    
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell37:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell38 {
     
@@ -690,12 +830,20 @@ footer {
 
 }
 
+.cell38:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell39 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell39:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 .cell40 {
     
@@ -704,6 +852,10 @@ footer {
 
 }
 
+.cell40:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell41 {
     
 
@@ -711,12 +863,20 @@ footer {
 
 }
 
+.cell41:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 .cell42 {
     
 
     background-color: rgba(46, 99, 146);
 
 }
+
+.cell42:hover{
+    background-color: rgb(77, 159, 231);
+ }
 
 
 .sun {
