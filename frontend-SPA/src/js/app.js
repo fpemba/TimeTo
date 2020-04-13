@@ -7,11 +7,6 @@ import {
 
 displayHome();
 
-let user = user
-const defineUser = () =>{
-    
-}
-
 // const loginButton = document.querySelector(".loginButton");
 // loginButton.addEventListener('click', () => {
 //     displayMyPage()

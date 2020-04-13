@@ -64,7 +64,8 @@ const renderLogin = () => {
 
     loginButton.addEventListener('click', () => {
         user = usernameInput.value;
-        displayMyPage(user);
+        console.log(user);
+        displayMyPage();
     });
 
     return mainSection;
@@ -85,4 +86,8 @@ const displayHome = () => {
 
 export {
     displayHome
+}
+
+export {
+    user
 }

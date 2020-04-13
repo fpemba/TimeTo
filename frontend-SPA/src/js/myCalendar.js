@@ -3,8 +3,8 @@ import {
 } from './hamburger.js'
 
 import{
-    getEventsByUserNameAndDay
-}from './myCalendarFetch.js'
+    user
+}from './homePageCreator.js'
 
 const renderMyHeader = () => {
     const headerElement = document.createElement("header");
@@ -86,7 +86,7 @@ const displayMyPage = () => {
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
     // getEventsByUserNameAndDay().then(element => container.append(element));
-    
+    console.log(user);
    
 }
 
