@@ -2,6 +2,8 @@ import {
     displayMyPage
 } from './myCalendar.js';
 
+let user;
+
 const renderHeader = () => {
     const headerElement = document.createElement("header");
     headerElement.classList.add("header");
@@ -61,7 +63,7 @@ const renderLogin = () => {
     loginSection.appendChild(registerButton);
 
     loginButton.addEventListener('click', () => {
-        const user = usernameInput.value;
+        user = usernameInput.value;
         displayMyPage(user);
     });
 

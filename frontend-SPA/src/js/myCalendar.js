@@ -20,13 +20,13 @@ const renderFooter = () => {
     return footerElement;
 }
 
-const getMonth = (user)=> {
-    return fetch(`http://localhost:8080/months/${user}April2020/`)
+const getMonth = ()=> {
+    return fetch("http://localhost:8080/months/stumax7April2020/")
         .then(response => response.json())
-        .then(monthJson => renderMonth(monthJson, user))
+        .then(monthJson => renderMonth(monthJson))
 } 
 
-const renderMonth = (month, user) => {
+const renderMonth = (month) => {
 
     const mainHeader = document.createElement('main');
     mainHeader.classList.add("calendar_container");
@@ -57,7 +57,6 @@ const renderMonth = (month, user) => {
    
     mainHeader.appendChild(myCalendar);
 
-    getEventsByUserNameAndDay(user);
     return mainHeader;
 }
 
@@ -76,14 +75,13 @@ const clearView = () => {
 }
 
 
-const displayMyPage = (user) => {
-    console.log(user);
+const displayMyPage = () => {
     clearView();
     const container = document.querySelector(".container");
     clearBackground();
     container.appendChild(renderMyHeader());
     // container.append(getMonth());
-    getMonth(user).then(element => container.append(element));
+    getMonth().then(element => container.append(element));
     // container.appendChild(renderMonth());
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
