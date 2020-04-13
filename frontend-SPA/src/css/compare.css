@@ -28,6 +28,10 @@ header {
     grid-template-columns: 10% 80% 10%;
 }
 
+.compareContainer{
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
 
  .my_CompareCalendar {
     grid-column: 1;
