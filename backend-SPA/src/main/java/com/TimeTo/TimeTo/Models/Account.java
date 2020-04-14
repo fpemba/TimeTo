@@ -19,7 +19,8 @@ public class Account {
     private UserAccount userAccount;
     @OneToMany
     private Set<Event> events;
-    @ManyToMany
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<UserAccount> friends;
 
 //    @OneToMany(mappedBy = "account")
@@ -110,4 +111,5 @@ public class Account {
         result = 31 * result + (calendar != null ? calendar.hashCode() : 0);
         return result;
     }
+
 }
