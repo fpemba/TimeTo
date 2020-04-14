@@ -2,6 +2,14 @@ import {
     createHamburgerBtn
 } from './hamburger.js'
 
+import {
+    user
+} from './app.js'
+
+import {
+    getCompareEventsByUserNameAndDay
+} from './myCompareCalendarFetch.js'
+
 const renderCompareHeader = ()=>{
     const headerElement = document.createElement("header");
     headerElement.classList.add("compare_header");
@@ -93,6 +101,8 @@ const renderMonthSection = () => {
         myCalendar.appendChild(cell);
         cellNumber++;
     }
+
+    getCompareEventsByUserNameAndDay(user);
 
 
     calendarContainer.appendChild(myCompareCalendar);
