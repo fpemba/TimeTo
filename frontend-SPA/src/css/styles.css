@@ -368,8 +368,8 @@ footer {
     row-gap: 5px;
     column-gap: 5px;
     border: 5px solid white;
-    height: 95vh;
-    width: 95vw;
+    height: 65vh;
+    width: 65vw;
     background-color: white;
 
     color:white;
@@ -912,4 +912,26 @@ footer {
 .sat {
 
     background-color: rgba(46, 99, 146);
+}
+
+.cellModal{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    background-color: white;
+    color: rgba(46, 99, 146);
+    height: 65vh;
+    width: 65vw;
+    overflow: scroll;
+}
+
+.close{
+    color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-top: 13%;
+    padding-right: 15%;
+    font-size: 28px;
+    font-weight: bold;
 }

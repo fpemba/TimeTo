@@ -1,10 +1,11 @@
 import {
     createHamburgerBtn
 } from './hamburger.js'
+import { getEventsByUserNameAndDay } from './myCalendarFetch.js';
 
-// import{
-//     getEventsByUserNameAndDay
-// }from './myCalendarFetch.js'
+import{
+    user
+}from './app.js'
 
 const renderMyHeader = () => {
     const headerElement = document.createElement("header");
@@ -20,13 +21,13 @@ const renderFooter = () => {
     return footerElement;
 }
 
-const getMonth = ()=> {
-    return fetch("http://localhost:8080/months/stumax7April2020/")
+const getMonth = (user)=> {
+    return fetch(`http://localhost:8080/months/${user.username}April2020/`)
         .then(response => response.json())
-        .then(monthJson => renderMonth(monthJson))
+        .then(monthJson => renderMonth(monthJson, user))
 } 
 
-const renderMonth = (month) => {
+const renderMonth = (month, user) => {
 
     const mainHeader = document.createElement('main');
     mainHeader.classList.add("calendar_container");
@@ -50,11 +51,52 @@ const renderMonth = (month) => {
     monthHeader.appendChild(rightArrow);
 
     const myCalendar = document.createElement('div');
-    myCalendar.classList.add('my_calendar');
+    myCalendar.classList.add('calendarCell');
 
-    myCalendar.innerHTML=`<object type="text/html" data="./calendar.html" width="700" height="400" ></object> `;
+    const sun = document.createElement('div');
+    sun.classList.add('sun')
+    sun.innerText = "Sunday"
+    myCalendar.appendChild(sun);
 
-   
+    const mon = document.createElement('div');
+    mon.classList.add('mon')
+    mon.innerText = "Monday"
+    myCalendar.appendChild(mon);
+
+    const tue = document.createElement('div');
+    tue.classList.add('tue')
+    tue.innerText = "Tuesday"
+    myCalendar.appendChild(tue);
+
+    const wed = document.createElement('div');
+    wed.classList.add('wed')
+    wed.innerText = "Wednesday"
+    myCalendar.appendChild(wed);
+
+    const thur = document.createElement('div');
+    thur.classList.add('thur')
+    thur.innerText = "Thursday"
+    myCalendar.appendChild(thur);
+
+    const fri = document.createElement('div');
+    fri.classList.add('fri')
+    fri.innerText = "Friday"
+    myCalendar.appendChild(fri);
+
+    const sat = document.createElement('div');
+    sat.classList.add('sat')
+    sat.innerText = "Saturday"
+    myCalendar.appendChild(sat);
+
+    let cellNumber = 1;
+    while (cellNumber <= 42){
+        let cell = document.createElement('div');
+        cell.classList.add(`cell${cellNumber}`);
+        myCalendar.appendChild(cell);
+        cellNumber++;
+    }
+    // myCalendar.innerHTML=`<object type="text/html" data="./calendar.html" width="700" height="400" ></object> `;
+    getEventsByUserNameAndDay(user);
     mainHeader.appendChild(myCalendar);
 
 
@@ -76,18 +118,18 @@ const clearView = () => {
 }
 
 
-const displayMyPage = () => {
+const displayMyPage = (user) => {
     clearView();
     const container = document.querySelector(".container");
     clearBackground();
     container.appendChild(renderMyHeader());
     // container.append(getMonth());
-    getMonth().then(element => container.append(element));
+    getMonth(user).then(element => container.append(element));
     // container.appendChild(renderMonth());
     container.appendChild(renderFooter());
     container.appendChild(createHamburgerBtn());
     // getEventsByUserNameAndDay().then(element => container.append(element));
- 
+    console.log(user);
    
 }
 
