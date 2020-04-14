@@ -44,7 +44,57 @@ const renderMonthSection = () => {
 
     const myCompareCalendar = document.createElement('div');
     myCompareCalendar.classList.add('my_CompareCalendar');
-    myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="460" height="320" ></object> `;
+    // myCompareCalendar.innerHTML=`<object type="text/html" data="./comparePageCalendar.html" width="460" height="320" ></object> `;
+
+    const myCalendar = document.createElement('div');
+    myCalendar.classList.add('compareCalendarCell');
+
+    myCompareCalendar.appendChild(myCalendar);
+
+    const sun = document.createElement('div');
+    sun.classList.add('sun')
+    sun.innerText = "Sun"
+    myCalendar.appendChild(sun);
+
+    const mon = document.createElement('div');
+    mon.classList.add('mon')
+    mon.innerText = "Mon"
+    myCalendar.appendChild(mon);
+
+    const tue = document.createElement('div');
+    tue.classList.add('tue')
+    tue.innerText = "Tue"
+    myCalendar.appendChild(tue);
+
+    const wed = document.createElement('div');
+    wed.classList.add('wed')
+    wed.innerText = "Wed"
+    myCalendar.appendChild(wed);
+
+    const thur = document.createElement('div');
+    thur.classList.add('thur')
+    thur.innerText = "Thur"
+    myCalendar.appendChild(thur);
+
+    const fri = document.createElement('div');
+    fri.classList.add('fri')
+    fri.innerText = "Fri"
+    myCalendar.appendChild(fri);
+
+    const sat = document.createElement('div');
+    sat.classList.add('sat')
+    sat.innerText = "Sat"
+    myCalendar.appendChild(sat);
+
+    let cellNumber = 1;
+    while (cellNumber <= 42){
+        let cell = document.createElement('div');
+        cell.classList.add(`cell${cellNumber}`);
+        myCalendar.appendChild(cell);
+        cellNumber++;
+    }
+
+
     calendarContainer.appendChild(myCompareCalendar);
     const myCalendarTitle = document.createElement("h3");
     myCalendarTitle.classList.add("myCalendarTitle");
@@ -53,7 +103,57 @@ const renderMonthSection = () => {
 
     const friendsCompareCalendar = document.createElement('div');
     friendsCompareCalendar.classList.add('friends_CompareCalendar');
-    friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="460" height="320"></object> `;
+    // friendsCompareCalendar.innerHTML=`<object type="text/html" data="./friendscompareCalendar.html" width="460" height="320"></object> `;
+
+    const friendCalendar = document.createElement('div');
+    friendCalendar.classList.add('friendsCompareCalendarCell');
+
+    friendsCompareCalendar.appendChild(friendCalendar);
+
+    const mySun = document.createElement('div');
+    mySun.classList.add('sun')
+    mySun.innerText = "Sun"
+    friendCalendar.appendChild(mySun);
+
+    const myMon = document.createElement('div');
+    myMon.classList.add('mon')
+    myMon.innerText = "Mon"
+    friendCalendar.appendChild(myMon);
+
+    const myTue = document.createElement('div');
+    myTue.classList.add('tue')
+    myTue.innerText = "Tue"
+    friendCalendar.appendChild(myTue);
+
+    const myWed = document.createElement('div');
+    myWed.classList.add('wed')
+    myWed.innerText = "Wed"
+    friendCalendar.appendChild(myWed);
+
+    const myThur = document.createElement('div');
+    myThur.classList.add('thur')
+    myThur.innerText = "Thur"
+    friendCalendar.appendChild(myThur);
+
+    const myFri = document.createElement('div');
+    myFri.classList.add('fri')
+    myFri.innerText = "Fri"
+    friendCalendar.appendChild(myFri);
+
+    const mySat = document.createElement('div');
+    mySat.classList.add('sat')
+    mySat.innerText = "Sat"
+    friendCalendar.appendChild(mySat);
+
+    let myCellNumber = 1;
+    while (myCellNumber <= 42){
+        let myCell = document.createElement('div');
+        myCell.classList.add(`friendCell${myCellNumber}`);
+        friendCalendar.appendChild(myCell);
+        myCellNumber++;
+    }
+
+    
     calendarContainer.appendChild(friendsCompareCalendar);
     const friendCalendarTitle = document.createElement("h3");
     friendCalendarTitle.classList.add("friendCalendarTitle");
