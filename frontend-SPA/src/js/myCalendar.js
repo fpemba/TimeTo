@@ -51,12 +51,54 @@ const renderMonth = (month, user) => {
     monthHeader.appendChild(rightArrow);
 
     const myCalendar = document.createElement('div');
-    myCalendar.classList.add('my_calendar');
+    myCalendar.classList.add('calendarCell');
 
-    myCalendar.innerHTML=`<object type="text/html" data="./calendar.html" width="700" height="400" ></object> `;
+    const sun = document.createElement('div');
+    sun.classList.add('sun')
+    sun.innerText = "Sunday"
+    myCalendar.appendChild(sun);
+
+    const mon = document.createElement('div');
+    mon.classList.add('mon')
+    mon.innerText = "Monday"
+    myCalendar.appendChild(mon);
+
+    const tue = document.createElement('div');
+    tue.classList.add('tue')
+    tue.innerText = "Tuesday"
+    myCalendar.appendChild(tue);
+
+    const wed = document.createElement('div');
+    wed.classList.add('wed')
+    wed.innerText = "Wednesday"
+    myCalendar.appendChild(wed);
+
+    const thur = document.createElement('div');
+    thur.classList.add('thur')
+    thur.innerText = "Thursday"
+    myCalendar.appendChild(thur);
+
+    const fri = document.createElement('div');
+    fri.classList.add('fri')
+    fri.innerText = "Friday"
+    myCalendar.appendChild(fri);
+
+    const sat = document.createElement('div');
+    sat.classList.add('sat')
+    sat.innerText = "Saturday"
+    myCalendar.appendChild(sat);
+
+    let cellNumber = 1;
+    while (cellNumber <= 42){
+        let cell = document.createElement('div');
+        cell.classList.add(`cell${cellNumber}`);
+        myCalendar.appendChild(cell);
+        cellNumber++;
+    }
+    // myCalendar.innerHTML=`<object type="text/html" data="./calendar.html" width="700" height="400" ></object> `;
     getEventsByUserNameAndDay(user);
-   
     mainHeader.appendChild(myCalendar);
+
 
     return mainHeader;
 }
