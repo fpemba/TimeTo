@@ -2,14 +2,14 @@ import {
     user
 } from './app.js'
 
-const getCompareEventsByUserNameAndDay = (user) => {
+const getFriendCompareEventsByUserNameAndDay = (user) => {
     return fetch(`http://localhost:8080/months/${user.username}April2020/`)
         .then(response => response.json())
         .then(monthJson => renderDaysByMonth(monthJson))
 };
 
 const renderCell = (day, currentDay) => {
-    let cell = document.querySelector(`.cell${currentDay}`);
+    let cell = document.querySelector(`.friendCell${currentDay}`);
     cell.innerText = day.dayNumber;
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
@@ -47,10 +47,13 @@ const renderEventsByDay = (cellModal, event) => {
         cellModal.style.display = "none";
     })
    
-    const compareCalendarCell = document.querySelector(".compareCalendarCell");
+
+    const friendsCompareCalendarCell = document.querySelector(".friendsCompareCalendarCell");
     // const pageContainer = document.querySelector(".container");
-    compareCalendarCell.append(cellModal);
+    friendsCompareCalendarCell.append(cellModal);
     cellModal.style.display = "block";
+
+  
 }
 const renderEventDetails = (cellModal, event) => {
     while (cellModal.firstChild) {
@@ -79,7 +82,7 @@ const renderEventDetails = (cellModal, event) => {
     close.innerHTML = "&times;";
     cellModal.appendChild(close);
     close.addEventListener('click', () => {
-        getCompareEventsByUserNameAndDay(user);
+        getFriendCompareEventsByUserNameAndDay(user);
         cellModal.style.display = "none";
     })
 }
@@ -128,7 +131,7 @@ const submitChangedSchedule = (cellModal, event) => {
         close2.innerHTML = "&times;";
         cellModal.appendChild(close2);
         close2.addEventListener('click', () => {
-            getCompareEventsByUserNameAndDay(user);
+            getFriendCompareEventsByUserNameAndDay(user);
             cellModal.style.display = "none";
         })
 
@@ -138,5 +141,5 @@ const submitChangedSchedule = (cellModal, event) => {
 // getEventsByUserNameAndDay();
 
 export {
-    getCompareEventsByUserNameAndDay
+    getFriendCompareEventsByUserNameAndDay
 }

@@ -10,6 +10,10 @@ import {
     getCompareEventsByUserNameAndDay
 } from './myCompareCalendarFetch.js'
 
+import {
+    getFriendCompareEventsByUserNameAndDay
+} from './myFriendCompareCalendarFetch.js'
+
 const renderCompareHeader = ()=>{
     const headerElement = document.createElement("header");
     headerElement.classList.add("compare_header");
@@ -163,6 +167,7 @@ const renderMonthSection = () => {
         myCellNumber++;
     }
 
+    getFriendCompareEventsByUserNameAndDay(user);
     
     calendarContainer.appendChild(friendsCompareCalendar);
     const friendCalendarTitle = document.createElement("h3");
