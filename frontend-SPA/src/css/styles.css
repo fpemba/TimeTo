@@ -90,17 +90,17 @@ nav {
     font-size: 2rem;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    grid-row:1;
+    grid-row: 1;
 
 }
 
 .left_arrow {
-    grid-row:1;
+    grid-row: 1;
     justify-self: right;
 }
 
 .right_arrow {
-    grid-row:1;
+    grid-row: 1;
     justify-self: left;
 }
 
@@ -350,7 +350,7 @@ footer {
     width: 65vw;
     background-color: white;
 
-    color:white;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -358,19 +358,21 @@ footer {
     grid-column: 1;
     grid-row: 2;
 }
+
 .friends_CompareCalendar {
     grid-column: 3;
     grid-row: 2;
 }
+
 .compareCalendarCell {
     display: grid;
-     grid-template-columns:repeat(7, 60px);
-     grid-template-rows:repeat(7, 40px);
-     row-gap: 5px;
-     column-gap: 5px;
-     border: 5px solid white;
-     background-color: white;
-     color: white;
+    grid-template-columns: repeat(7, 60px);
+    grid-template-rows: repeat(7, 40px);
+    row-gap: 5px;
+    column-gap: 5px;
+    border: 5px solid white;
+    background-color: white;
+    color: white;
 
 
 }
@@ -378,8 +380,8 @@ footer {
 .friendsCompareCalendarCell {
 
     display: grid;
-    grid-template-columns:repeat(7, 60px);
-    grid-template-rows:repeat(7, 40px);
+    grid-template-columns: repeat(7, 60px);
+    grid-template-rows: repeat(7, 40px);
     row-gap: 5px;
     column-gap: 5px;
     border: 5px solid white;
@@ -389,84 +391,84 @@ footer {
 }
 
 .cell1 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell2 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell3 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell4 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell5 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell6 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell7 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell8 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell9 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell10 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell11 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell12 {
-   
+
     background-color: rgba(46, 99, 146);
 
 }
@@ -479,47 +481,47 @@ footer {
 }
 
 .cell14 {
-   
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell15 {
-   
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell16 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell17 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell18 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell19 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell20 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
@@ -533,144 +535,144 @@ footer {
 }
 
 .cell22 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell23 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell24 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell25 {
-   
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell26 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell27 {
-   
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell28 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell29 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell30 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell31 {
-    
+
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell32 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell33 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell34 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell35 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell36 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell37 {
-   
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell38 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell39 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell40 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell41 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
 }
 
 .cell42 {
-    
+
 
     background-color: rgba(46, 99, 146);
 
@@ -710,4 +712,23 @@ footer {
 .sat {
 
     background-color: rgba(46, 99, 146);
+}
+
+.cellModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    color: rgba(46, 99, 146);
+    height: 65vh;
+    width: 65vw;
+    overflow: scroll;
+}
+
+.close {
+    color: rgba(46, 99, 146);
+    /* color: white; */
+    float:right;
+    font-size: 28px;
+    font-weight: bold;
 }

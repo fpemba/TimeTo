@@ -14,8 +14,9 @@ const renderCell = (day, currentDay) => {
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
         cellModal.classList.add("cellModal");
+        let doesModalHaveClose = false;
         day.events.forEach(event => {
-            renderEventsByDay(cellModal, event);
+            renderEventsByDay(cellModal, event, doesModalHaveClose);
         })
     });
 }
@@ -28,7 +29,7 @@ const renderDaysByMonth = (month) => {
         currentDay++;
     })
 }
-const renderEventsByDay = (cellModal, event) => {
+const renderEventsByDay = (cellModal, event, doesModalHaveClose) => {
     const eventsList = document.createElement('ul');
     cellModal.appendChild(eventsList)
     const eventsListItem = document.createElement('li');
@@ -38,15 +39,20 @@ const renderEventsByDay = (cellModal, event) => {
     eventsListItem.addEventListener('click', () => {
         renderEventDetails(cellModal, event);
     })
+    if(doesModalHaveClose = false){
+        doesModalHaveClose = true;
     const close = document.createElement("span");
     close.classList.add("close");
     close.innerHTML = "&times;";
-    cellModal.appendChild(close);
+    cellModal.prepend(close);
     close.addEventListener('click', () => {
         cellModal.style.display = "none";
     })
+    }    
+
     const calendarCell = document.querySelector(".calendarCell");
-    calendarCell.appendChild(cellModal);
+    // const pageContainer = document.querySelector(".container");
+    calendarCell.append(cellModal);
     cellModal.style.display = "block";
 }
 const renderEventDetails = (cellModal, event) => {
@@ -76,7 +82,7 @@ const renderEventDetails = (cellModal, event) => {
     close.innerHTML = "&times;";
     cellModal.appendChild(close);
     close.addEventListener('click', () => {
-        getEventsByUserNameAndDay();
+        getEventsByUserNameAndDay(user);
         cellModal.style.display = "none";
     })
 }
@@ -125,7 +131,7 @@ const submitChangedSchedule = (cellModal, event) => {
         close2.innerHTML = "&times;";
         cellModal.appendChild(close2);
         close2.addEventListener('click', () => {
-            getEventsByUserNameAndDay();
+            getEventsByUserNameAndDay(user);
             cellModal.style.display = "none";
         })
 
