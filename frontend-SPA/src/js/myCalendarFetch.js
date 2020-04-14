@@ -1,10 +1,9 @@
 import {
     user
-} from './homePageCreator.js'
+} from './app.js'
 
-const getEventsByUserNameAndDay = () => {
-    console.log(user);
-    return fetch('http://localhost:8080/months/stumax7April2020/')
+const getEventsByUserNameAndDay = (user) => {
+    return fetch(`http://localhost:8080/months/${user.username}April2020/`)
         .then(response => response.json())
         .then(monthJson => renderDaysByMonth(monthJson))
 };
@@ -22,6 +21,7 @@ const renderCell = (day, currentDay) => {
 }
 
 const renderDaysByMonth = (month) => {
+
     let currentDay = month.firstDayOfMonth;
     month.days.forEach(day => {
         renderCell(day, currentDay);
@@ -126,14 +126,13 @@ const submitChangedSchedule = (cellModal, event) => {
         cellModal.appendChild(close2);
         close2.addEventListener('click', () => {
             getEventsByUserNameAndDay();
-            console.log("This is refreshing");
             cellModal.style.display = "none";
         })
 
     })
 }
 
-getEventsByUserNameAndDay();
+// getEventsByUserNameAndDay();
 
 export {
     getEventsByUserNameAndDay
