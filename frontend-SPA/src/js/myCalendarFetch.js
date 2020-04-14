@@ -14,9 +14,9 @@ const renderCell = (day, currentDay) => {
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
         cellModal.classList.add("cellModal");
-        let doesModalHaveClose = false;
+        
         day.events.forEach(event => {
-            renderEventsByDay(cellModal, event, doesModalHaveClose);
+            renderEventsByDay(cellModal, event);
         })
     });
 }
@@ -29,7 +29,7 @@ const renderDaysByMonth = (month) => {
         currentDay++;
     })
 }
-const renderEventsByDay = (cellModal, event, doesModalHaveClose) => {
+const renderEventsByDay = (cellModal, event) => {
     const eventsList = document.createElement('ul');
     cellModal.appendChild(eventsList)
     const eventsListItem = document.createElement('li');
@@ -39,16 +39,14 @@ const renderEventsByDay = (cellModal, event, doesModalHaveClose) => {
     eventsListItem.addEventListener('click', () => {
         renderEventDetails(cellModal, event);
     })
-    if(doesModalHaveClose = false){
-        doesModalHaveClose = true;
     const close = document.createElement("span");
     close.classList.add("close");
     close.innerHTML = "&times;";
-    cellModal.prepend(close);
+    cellModal.appendChild(close);
     close.addEventListener('click', () => {
         cellModal.style.display = "none";
     })
-    }    
+   
 
     const calendarCell = document.querySelector(".calendarCell");
     // const pageContainer = document.querySelector(".container");
