@@ -4,7 +4,9 @@ import {
 import {
     displayMyPage
 } from './myCalendar.js';
-
+const user = {	
+    username:""	
+};
 displayHome();
 
 // const loginButton = document.querySelector(".loginButton");
