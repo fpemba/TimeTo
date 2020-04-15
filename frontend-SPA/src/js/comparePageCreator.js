@@ -167,7 +167,7 @@ const renderMonthSection = () => {
         myCellNumber++;
     }
 
-    getFriendCompareEventsByUserNameAndDay(user);
+    getUserFriendList(user);
     
     calendarContainer.appendChild(friendsCompareCalendar);
     const friendCalendarTitle = document.createElement("h3");
@@ -181,38 +181,55 @@ const renderMonthSection = () => {
     return compareContainer;
 }
 
-const renderFriendSection = ()=>{
+const getUserFriendList = (user) => {
+    return fetch(`http://localhost:8080/account/${user.username}`)
+    .then(response => response.json())
+    .then(friendListJson => renderFriendSection(friendListJson))
+}
+
+const renderFriendSection = (friends)=>{
     const friendsList = document.createElement("ul");
     friendsList.classList.add("friends-list");
-    
+    let compareContainerFriend = document.querySelector('.container');
+    compareContainerFriend.appendChild(friendsList);
+
     const friendsTitle = document.createElement("h3");
     friendsTitle.innerText = "Friends";
     friendsList.appendChild(friendsTitle);
 
-    const friend1 = document.createElement("li");
-    friend1.innerText = "Friend";
-    friendsList.appendChild(friend1);
-    const friend2 = document.createElement("li");
-    friend2.innerText = "Friend";
-    friendsList.appendChild(friend2);
-    const friend3 = document.createElement("li");
-    friend3.innerText = "Friend";
-    friendsList.appendChild(friend3);
-    const friend4 = document.createElement("li");
-    friend4.innerText = "Friend";
-    friendsList.appendChild(friend4);
-    const friend5 = document.createElement("li");
-    friend5.innerText = "Friend";
-    friendsList.appendChild(friend5);
-    const friend6 = document.createElement("li");
-    friend6.innerText = "Friend";
-    friendsList.appendChild(friend6);
-    const friend7 = document.createElement("li");
-    friend7.innerText = "Friend";
-    friendsList.appendChild(friend7);
-    const friend8 = document.createElement("li");
-    friend8.innerText = "Friend";
-    friendsList.appendChild(friend8);
+    friends.forEach(friend=> {
+        let singleFriend = document.createElement('li');
+        singleFriend.innerText = friend;
+        friendsList.appendChild(singleFriend);
+        singleFriend.addEventListener('click', ()=> {
+            getFriendCompareEventsByUserNameAndDay(friend);
+        })
+    })
+
+    // const friend1 = document.createElement("li");
+    // friend1.innerText = "Friend";
+    // friendsList.appendChild(friend1);
+    // const friend2 = document.createElement("li");
+    // friend2.innerText = "Friend";
+    // friendsList.appendChild(friend2);
+    // const friend3 = document.createElement("li");
+    // friend3.innerText = "Friend";
+    // friendsList.appendChild(friend3);
+    // const friend4 = document.createElement("li");
+    // friend4.innerText = "Friend";
+    // friendsList.appendChild(friend4);
+    // const friend5 = document.createElement("li");
+    // friend5.innerText = "Friend";
+    // friendsList.appendChild(friend5);
+    // const friend6 = document.createElement("li");
+    // friend6.innerText = "Friend";
+    // friendsList.appendChild(friend6);
+    // const friend7 = document.createElement("li");
+    // friend7.innerText = "Friend";
+    // friendsList.appendChild(friend7);
+    // const friend8 = document.createElement("li");
+    // friend8.innerText = "Friend";
+    // friendsList.appendChild(friend8);
 
     return friendsList;
 }

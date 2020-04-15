@@ -2,8 +2,8 @@ import {
     user
 } from './app.js'
 
-const getFriendCompareEventsByUserNameAndDay = (user) => {
-    return fetch(`http://localhost:8080/months/${user.username}April2020/`)
+const getFriendCompareEventsByUserNameAndDay = (friend) => {
+    return fetch(`http://localhost:8080/months/${friend}April2020/`)
         .then(response => response.json())
         .then(monthJson => renderDaysByMonth(monthJson))
 };
