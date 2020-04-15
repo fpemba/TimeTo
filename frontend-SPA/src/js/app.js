@@ -13,7 +13,9 @@ displayHome();
 // loginButton.addEventListener('click', () => {
 //     displayMyPage()
 // });
-
+export{
+user
+}
 
 // const monthPicture = document.querySelector(".calendar");
 // monthPicture.addEventListener('click', ()=>{displayComparePage()});
