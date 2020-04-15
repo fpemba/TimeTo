@@ -11,10 +11,19 @@ const getFriendCompareEventsByUserNameAndDay = (friend) => {
 const renderCell = (day, currentDay) => {
     let cell = document.querySelector(`.friendCell${currentDay}`);
     cell.innerText = day.dayNumber;
+    let dayAvailable = false;
+    day.events.forEach(event => {
+        if (event.available == true) {
+            dayAvailable = true;
+        }
+    })
+    if(dayAvailable == true) {
+        cell.style.backgroundColor = 'rgb(77, 159, 231)';
+    }
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
         cellModal.classList.add("cellModal");
-        
+
         day.events.forEach(event => {
             renderEventsByDay(cellModal, event);
         })
@@ -46,14 +55,14 @@ const renderEventsByDay = (cellModal, event) => {
     close.addEventListener('click', () => {
         cellModal.style.display = "none";
     })
-   
+
 
     const friendsCompareCalendarCell = document.querySelector(".friendsCompareCalendarCell");
     // const pageContainer = document.querySelector(".container");
     friendsCompareCalendarCell.append(cellModal);
     cellModal.style.display = "block";
 
-  
+
 }
 const renderEventDetails = (cellModal, event) => {
     while (cellModal.firstChild) {
