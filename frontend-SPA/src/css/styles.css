@@ -400,10 +400,7 @@ footer {
     grid-column-end: 2;
 }
 
-.friends_CompareCalendar {
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
+
 .compareCalendarCell {
     display: grid;
      grid-template-columns:repeat(7, 60px);
@@ -413,6 +410,11 @@ footer {
      border: 5px solid white;
      background-color: white;
      color: white;
+}
+
+.friends_CompareCalendar {
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .friendsCompareCalendarCell {
@@ -877,6 +879,460 @@ footer {
 .cell42:hover{
     background-color: rgb(77, 159, 231);
  }
+
+
+
+
+ .friendCell1 {
+    background-color: rgba(46, 99, 146);
+}
+
+.friendCell1:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell2 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell2:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell3 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell3:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell4 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell4:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell5 {
+    background-color: rgba(46, 99, 146);
+}
+
+.friendCell5:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell6 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell6:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell7 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell7:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell8 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell8:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell9 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell9:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell10 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell10:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell11 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell11:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell12 {
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell12:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell13 {
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell13:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell14 {
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell14:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell15 {
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell15:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell16 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell16:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell17 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell17:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell18 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell18:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell19 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell19:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell20 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell20:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell21 {
+    display: grid;
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell21:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell22 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell22:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell23 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell23:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell24 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell24:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell25 {
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell25:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell26 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell26:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell27 {
+   
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell27:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell28 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell28:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell29 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell29:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell30 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell30:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell31 {
+    
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell31:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell32 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell32:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell33 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell33:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell34 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell34:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell35 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell35:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell36 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell36:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell37 {
+   
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell37:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell38 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell38:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell39 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell39:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell40 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell40:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell41 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell41:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
+.friendCell42 {
+    
+
+    background-color: rgba(46, 99, 146);
+
+}
+
+.friendCell42:hover{
+    background-color: rgb(77, 159, 231);
+ }
+
 
 
 .sun {
