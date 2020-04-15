@@ -9,6 +9,10 @@ import {
     displayMyGroupPage
 } from './manage-group.js'
 
+import {
+    user
+} from './app.js'
+
 const createHamburgerBtn = () => {
     const nav = document.createElement("nav");
     const menuToggle = document.createElement("div");
@@ -38,15 +42,15 @@ const createHamburgerBtn = () => {
     myCalendarLink.appendChild(myCalendarText);
     myCalendarLink.addEventListener('click', (event) => {
         event.preventDefault();
-        displayMyPage();
+        displayMyPage(user);
     })
 
-    const inviteLink = document.createElement("a");
-    inviteLink.setAttribute('href', '#');
-    navList.appendChild(inviteLink);
-    const inviteText = document.createElement("li");
-    inviteText.innerText = "Invite";
-    inviteLink.appendChild(inviteText);
+    // const inviteLink = document.createElement("a");
+    // inviteLink.setAttribute('href', '#');
+    // navList.appendChild(inviteLink);
+    // const inviteText = document.createElement("li");
+    // inviteText.innerText = "Invite";
+    // inviteLink.appendChild(inviteText);
 
     const compareLink = document.createElement("a");
     compareLink.setAttribute('href', '#');
@@ -60,23 +64,23 @@ const createHamburgerBtn = () => {
         displayComparePage()
     });
 
-    const manageLink = document.createElement("a");
-    manageLink.setAttribute('href', '#');
-    navList.appendChild(manageLink);
-    const manageText = document.createElement("li");
-    manageText.innerText = "Manage Groups";
-    manageLink.appendChild(manageText);
-    manageLink.addEventListener('click', (event) => {
-        event.preventDefault()
-        displayMyGroupPage()
-    });
+    // const manageLink = document.createElement("a");
+    // manageLink.setAttribute('href', '#');
+    // navList.appendChild(manageLink);
+    // const manageText = document.createElement("li");
+    // manageText.innerText = "Manage Groups";
+    // manageLink.appendChild(manageText);
+    // manageLink.addEventListener('click', (event) => {
+    //     event.preventDefault()
+    //     displayMyGroupPage()
+    // });
 
-    const importLink = document.createElement("a");
-    importLink.setAttribute('href', '#');
-    navList.appendChild(importLink);
-    const importText = document.createElement("li");
-    importText.innerText = "Import Calendar";
-    importLink.appendChild(importText);
+    // const importLink = document.createElement("a");
+    // importLink.setAttribute('href', '#');
+    // navList.appendChild(importLink);
+    // const importText = document.createElement("li");
+    // importText.innerText = "Import Calendar";
+    // importLink.appendChild(importText);
 
     return nav;
 }

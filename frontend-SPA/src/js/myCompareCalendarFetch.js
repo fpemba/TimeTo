@@ -22,7 +22,7 @@ const renderCell = (day, currentDay) => {
     }
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
-        cellModal.classList.add("cellModal");
+        cellModal.classList.add("compareCellModal");
         
         day.events.forEach(event => {
             renderEventsByDay(cellModal, event);
@@ -49,7 +49,7 @@ const renderEventsByDay = (cellModal, event) => {
         renderEventDetails(cellModal, event);
     })
     const close = document.createElement("span");
-    close.classList.add("close");
+    close.classList.add("compareClose");
     close.innerHTML = "&times;";
     cellModal.appendChild(close);
     close.addEventListener('click', () => {
@@ -84,7 +84,7 @@ const renderEventDetails = (cellModal, event) => {
         submitChangedSchedule(cellModal, event);
     })
     const close = document.createElement("span");
-    close.classList.add("close");
+    close.classList.add("compareClose");
     close.innerHTML = "&times;";
     cellModal.appendChild(close);
     close.addEventListener('click', () => {
@@ -133,7 +133,7 @@ const submitChangedSchedule = (cellModal, event) => {
         changeScheduleButton.innerText = "Change schedule";
         space.appendChild(changeScheduleButton);
         const close2 = document.createElement("span");
-        close2.classList.add("close");
+        close2.classList.add("compareClose");
         close2.innerHTML = "&times;";
         cellModal.appendChild(close2);
         close2.addEventListener('click', () => {

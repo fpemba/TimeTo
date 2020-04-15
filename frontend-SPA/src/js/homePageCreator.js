@@ -42,27 +42,32 @@ const renderLogin = () => {
     usernameInput.setAttribute("placeholder", "Username");
     loginForm.appendChild(usernameInput);
 
+    const usernameSpace = document.createElement("p");
+    loginForm.appendChild(usernameSpace);
+
     const passwordInput = document.createElement("input");
     passwordInput.setAttribute("placeholder", "Password");
     loginForm.appendChild(passwordInput);
+
+    const space = document.createElement("p");
+    loginForm.appendChild(space);
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("loginButton");
     loginButton.innerText = "Log In";
     loginForm.appendChild(loginButton);
 
-    const space = document.createElement("p");
-    loginForm.appendChild(space);
+   
 
-    const forgotPW = document.createElement("a");
-    forgotPW.classList.add("forgotUserOrPw");
-    forgotPW.innerText = "Forgot username or password";
-    loginForm.appendChild(forgotPW);
+    // const forgotPW = document.createElement("a");
+    // forgotPW.classList.add("forgotUserOrPw");
+    // forgotPW.innerText = "Forgot username or password";
+    // loginForm.appendChild(forgotPW);
 
-    const registerButton = document.createElement("button");
-    registerButton.classList.add("registerButton");
-    registerButton.innerText = "Register";
-    loginSection.appendChild(registerButton);
+    // const registerButton = document.createElement("button");
+    // registerButton.classList.add("registerButton");
+    // registerButton.innerText = "Register";
+    // loginSection.appendChild(registerButton);
 
     loginButton.addEventListener('click', () => {
         user.username = usernameInput.value;
