@@ -11,6 +11,15 @@ const getCompareEventsByUserNameAndDay = (user) => {
 const renderCell = (day, currentDay) => {
     let cell = document.querySelector(`.cell${currentDay}`);
     cell.innerText = day.dayNumber;
+    let dayAvailable = false;
+    day.events.forEach(event => {
+        if (event.available == true) {
+            dayAvailable = true;
+        }
+    })
+    if(dayAvailable == true) {
+        cell.style.backgroundColor = 'rgb(77, 159, 231)';
+    }
     cell.addEventListener('click', () => {
         const cellModal = document.createElement('div');
         cellModal.classList.add("compareCellModal");
