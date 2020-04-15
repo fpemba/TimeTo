@@ -204,6 +204,12 @@ const renderFriendSection = (friends)=>{
         singleFriend.addEventListener('click', ()=> {
             getFriendCompareEventsByUserNameAndDay(friend);
         })
+        singleFriend.addEventListener('mouseover', ()=> {
+            singleFriend.style.fontSize = 'larger';
+        })
+        singleFriend.addEventListener('mouseleave', ()=>{
+            singleFriend.style.fontSize = 'medium';
+        })
     })
 
     // const friend1 = document.createElement("li");

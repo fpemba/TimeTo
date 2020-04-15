@@ -96,16 +96,12 @@ public class Populator implements CommandLineRunner {
             createDecemberDays(december2020, accountCreated);
         }
 
-
-
         for (Account account : accountRepository.findAll()) {
             for (UserAccount userAccount : userRepository.findAll()) {
                 account.addFriend(userAccount);
             }
             accountRepository.save(account);
         }
-
-
 
     }
 

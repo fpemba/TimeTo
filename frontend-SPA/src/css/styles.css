@@ -405,11 +405,13 @@ footer {
     display: grid;
      grid-template-columns:repeat(7, 60px);
      grid-template-rows:repeat(7, 40px);
+     text-align: center;
      row-gap: 5px;
      column-gap: 5px;
      border: 5px solid white;
      background-color: white;
      color: white;
+     justify-content: center;
 }
 
 .friends_CompareCalendar {
@@ -427,7 +429,7 @@ footer {
     border: 5px solid white;
     background-color: white;
     color: white;
-
+    justify-content: center;
 }
 
 .cell1 {
