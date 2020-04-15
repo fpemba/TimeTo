@@ -1391,3 +1391,46 @@ footer {
     font-size: 28px;
     font-weight: bold;
 }
+
+.compareCellModal{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    background-color: white;
+    color: rgba(46, 99, 146);
+    height: 320px;
+    width: 447px;
+    overflow: scroll;
+}
+
+.compareClose{
+    color: rgba(46, 99, 146);
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-top: 21%;
+    padding-right: 53%;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+.friendCellModal{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    background-color: white;
+    color: rgba(46, 99, 146);
+    height: 320px;
+    width: 447px;
+    overflow: scroll;
+}
+.friendClose{
+    color:  rgba(46, 99, 146);
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-top: 21%;
+    padding-right: 16%;
+    font-size: 28px;
+    font-weight: bold;
+}

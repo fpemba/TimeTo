@@ -40,7 +40,7 @@ const renderMonthSection = () => {
  
     const currentMonth = document.createElement("div");
     currentMonth.classList.add("currentMonth");
-    currentMonth.innerText = "Month";
+    currentMonth.innerText = "April";
     monthSection.appendChild(currentMonth);
 
     const rightArrow = document.createElement("img");
