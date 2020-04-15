@@ -2,6 +2,7 @@ package com.TimeTo.TimeTo;
 
 import com.TimeTo.TimeTo.Models.*;
 import com.TimeTo.TimeTo.Repositories.*;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -35,11 +36,17 @@ public class Populator implements CommandLineRunner {
         userRepository.save(userAccount1);
         UserAccount userAccount2 = new UserAccount("Gaelan", "Shively", "Praetor");
         userRepository.save(userAccount2);
+        UserAccount userAccount3 = new UserAccount("Anna", "Lizon", "FreeRangeLocust");
+        userRepository.save(userAccount3);
+        UserAccount userAccount4 = new UserAccount("Fatuma", "Pemba", "fpemba");
+        userRepository.save(userAccount4);
+        UserAccount userAccount5 = new UserAccount("Brian", "Waterman", "waterboy93");
+        userRepository.save(userAccount5);
 
-
+        Calendar masterCalendar = new Calendar();
+        calendarRepository.save(masterCalendar);
         for (UserAccount userAccount : userRepository.findAll()) {
-            Calendar masterCalendar = new Calendar();
-            calendarRepository.save(masterCalendar);
+
             Account accountCreated = new Account(userAccount, masterCalendar);
             accountRepository.save(accountCreated);
 
@@ -88,6 +95,47 @@ public class Populator implements CommandLineRunner {
             monthRepository.save(december2020);
             createDecemberDays(december2020, accountCreated);
         }
+
+
+
+        for (Account account : accountRepository.findAll()) {
+            for (UserAccount userAccount : userRepository.findAll()) {
+                account.addFriend(userAccount);
+            }
+            accountRepository.save(account);
+        }
+
+//        for(Account account : accountRepository.findAll()){
+//            String retrievedAccount = account.getUserName();
+//            if(retrievedAccount == userAccount1.getUserName()) {
+//                account.addFriend(userAccount2);
+//                account.addFriend(userAccount3);
+//                account.addFriend(userAccount4);
+//                account.addFriend(userAccount5);
+//            } else if(retrievedAccount == userAccount2.getUserName()){
+//                account.addFriend(userAccount1);
+//                account.addFriend(userAccount3);
+//                account.addFriend(userAccount4);
+//                account.addFriend(userAccount5);
+//            } else if(retrievedAccount == userAccount3.getUserName()){
+//                account.addFriend(userAccount1);
+//                account.addFriend(userAccount2);
+//                account.addFriend(userAccount4);
+//                account.addFriend(userAccount5);
+//            } else if(retrievedAccount == userAccount4.getUserName()){
+//                account.addFriend(userAccount1);
+//                account.addFriend(userAccount3);
+//                account.addFriend(userAccount2);
+//                account.addFriend(userAccount5);
+//            } else if(retrievedAccount == userAccount5.getUserName()){
+//                account.addFriend(userAccount1);
+//                account.addFriend(userAccount3);
+//                account.addFriend(userAccount4);
+//                account.addFriend(userAccount2);
+//            }
+//
+//            accountRepository.save(account);
+//        }
 
     }
 
