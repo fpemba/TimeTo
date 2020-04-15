@@ -105,37 +105,7 @@ public class Populator implements CommandLineRunner {
             accountRepository.save(account);
         }
 
-//        for(Account account : accountRepository.findAll()){
-//            String retrievedAccount = account.getUserName();
-//            if(retrievedAccount == userAccount1.getUserName()) {
-//                account.addFriend(userAccount2);
-//                account.addFriend(userAccount3);
-//                account.addFriend(userAccount4);
-//                account.addFriend(userAccount5);
-//            } else if(retrievedAccount == userAccount2.getUserName()){
-//                account.addFriend(userAccount1);
-//                account.addFriend(userAccount3);
-//                account.addFriend(userAccount4);
-//                account.addFriend(userAccount5);
-//            } else if(retrievedAccount == userAccount3.getUserName()){
-//                account.addFriend(userAccount1);
-//                account.addFriend(userAccount2);
-//                account.addFriend(userAccount4);
-//                account.addFriend(userAccount5);
-//            } else if(retrievedAccount == userAccount4.getUserName()){
-//                account.addFriend(userAccount1);
-//                account.addFriend(userAccount3);
-//                account.addFriend(userAccount2);
-//                account.addFriend(userAccount5);
-//            } else if(retrievedAccount == userAccount5.getUserName()){
-//                account.addFriend(userAccount1);
-//                account.addFriend(userAccount3);
-//                account.addFriend(userAccount4);
-//                account.addFriend(userAccount2);
-//            }
-//
-//            accountRepository.save(account);
-//        }
+
 
     }
 
