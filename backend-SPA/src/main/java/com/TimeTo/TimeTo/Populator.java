@@ -277,14 +277,28 @@ public class Populator implements CommandLineRunner {
         for (int h = 0; h < 24; h++) {
             LocalTime startTime = LocalTime.of(h, 0, 0);
             int endHour;
-            if (h <= 22) {
+            String name;
+            Boolean available;
+            if (h <= 8) {
                 endHour = h + 1;
+                name = "Sleep";
+                available = false;
+            } else if (h <= 18) {
+                endHour = h + 1;
+                name = "Work";
+                available = false;
+            } else if (h<=22){
+                endHour = h+1;
+                name = "Free time!";
+                available = true;
             } else {
                 endHour = 0;
+                name = "Sleep";
+                available = false;
             }
             String idToSet = day.getId() + "-" + h;
             LocalTime endTime = LocalTime.of(endHour, 0, 0);
-            Event newHour = new Event(account, idToSet, day, true, startTime, endTime, "Free Time!");
+            Event newHour = new Event(account, idToSet, day, available, startTime, endTime, name);
             eventRepository.save(newHour);
         }
     }
