@@ -25,6 +25,10 @@ const renderMyGroups = () => {
     const groupBtn = document.createElement('button');
     groupBtn.textContent = 'Create New Group';
     myGroups.appendChild(groupBtn);
+    groupBtn.addEventListener('click',(event) =>{
+        event.preventDefault()
+        console.log('button was clicked');
+    })
 
     const currentGroups = document.createElement('h3');
     currentGroups.classList.add('group-titles');
